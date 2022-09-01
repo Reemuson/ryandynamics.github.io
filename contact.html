@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>reemuson.com — I build ideas.</title>
+
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script> <!-- font awesome import-->
+</head>
+<body>
+    <nav>
+        <!-- <img src="src/logo.svg" alt="" class="logo" height="36" width="auto"> -->
+        <h1><a href="index.html">reemuson.com</a></h1>
+
+        <!-- Begin hamburger -->
+        <input type="checkbox" id="hamburger">
+
+        <label for="hamburger" id="hamburger-icon">
+            <i class="fas fa-stream"></i>
+        </label>
+        <!-- End hamburger -->
+
+        <ul class="nav-links">
+            <li><a href="photography.html">Photography</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <main>
+        <div class="page-wrapper">
+            <section class="page contact" id="contact">
+                <div class="contact-wrapper">
+                    <div class="form-area">
+                        <div class="contact-text">
+                            <h1>Let's Talk!</h1>
+                            <h2>I'd love to talk with you about your next big project. Drop me a line and I'll get to you within a couple business days.</h2>
+                        </div>
+                        <div class="form-text">
+                            <form 
+                                action="https://formspree.io/xknzzvvz"
+                                method="POST"
+                            >
+                                <div class="field">
+                                    <input type="text" name="name" class="input" placeholder="" required pattern=".*\S.*">
+                                    <label for="text" class="label">Name</label>
+                                </div>
+                                <div class="field">
+                                    <input type="email" name="_replyto" class="input" placeholder="" required>
+                                    <label for="email" class="label">Email</label>
+                                </div>
+                                <div class="fieldtext">
+                                    <label for="message" class="label">Message</label>
+                                    <textarea name="message" cols="50" rows="10"></textarea>
+                                </div>
+                                <button class="btn btn-contact" type="submit">Get in touch!</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <p>Copyright © 2020 Ryan</p>
+    </footer>
+</body>
+</html>

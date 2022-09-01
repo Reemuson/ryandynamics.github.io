@@ -4,114 +4,75 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Ryan.</title>
+    <title>reemuson.com — I build ideas.</title>
 
     <link rel="stylesheet" href="/css/style.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script> <!-- font awesome import-->
 </head>
 <body>
     <nav>
-        <img src="src/logo.svg" alt="" class="logo" height="36" width="auto">
+        <!-- <img src="src/logo.svg" alt="" class="logo" height="36" width="auto"> -->
+        <h1><a href="index.html">reemuson.com</a></h1>
+
+        <!-- Begin hamburger -->
         <input type="checkbox" id="hamburger">
+
         <label for="hamburger" id="hamburger-icon">
             <i class="fas fa-stream"></i>
         </label>
+        <!-- End hamburger -->
+
         <ul class="nav-links">
-            <li><a href="index.html#about">About</a></li>
-            <li><a href="index.html#projects">Projects</a></li>
-            <li><a href="index.html#contact">Contact</a></li>
+            <li><a href="photography.html">Photography</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
     <main>
         <div class="page-wrapper">
             <section class="page about" id="about">
                 <div class="hero-wrapper">
-                    <h1>I make your ideas a <mark>reality</mark>.</h1>
-                    <h2>C/C++ developer, 3D artist, UI/UX designer.</h2>
-                    <p>A creative, quick working problem solver ready to execute your groundbreaking ideas.</p>
-                    <div class="button-wrapper">
-                        <a href="index.html#contact" class="btn btn-hireme">Hire me!</a>
+                    <div class="1">
+                        <h1>Hey! 👋 I do things,</h1>
+                        <h2>My name is Ryan, nice to meet you.</h2>
+                        <p>This is a "small" culmination of everything I have done. From big project wins to pictures I think look nice. It's a bit of everything, but everything here is me 😁</p>
+                    </div>
+                    <div class="2">
+                        <img src="" alt="">
+                    </div>
+                    <div class="3">
+                        <div class="button-wrapper">
+                            <a href="contact.html" class="btn btn-contact">Get in touch!</a>
+                        </div>
+                        <div class="button-wrapper">
+                            <a href="projects.html" class="btn btn-projects">See my work!</a>
+                        </div>
                     </div>
                 </div>
                 <div class="benefits-wrapper">
                     <ul>
                         <li>
-                            <i class="fas fa-code" id="benefit-1"></i>
-                            <h1>Coding Skills</h1>
+                            <i class="fas fa-code" id="benefit benefit-1"></i>
+                            <h1>Development</h1>
                             <p>
-                                Extensive knowledge in OOL languages such as C/C++. Knowledge of web-development and responsive web UI/UX design.
+                                Work with me to create a responsive, usable product that makes sense to users and secureley developed.
                             </p>
                         </li>
                         <li>
-                            <i class="fas fa-paint-brush" id="benefit-2"></i>
-                            <h1>Holistic Process</h1>
+                            <i class="fas fa-paint-brush" id="benefit benefit-2"></i>
+                            <h1>Support</h1>
                             <p>
-                                From start to finish, every project is approached with a holistic process to cater to every need known or unknown.
+                                From start to finish, every project is approached with a holistic process.
                             </p>
                         </li>
                         <li>
-                            <i class="fas fa-drafting-compass" id="benefit-3"></i>
-                            <h1>Design Aware</h1>
+                            <i class="fas fa-drafting-compass" id="benefit benefit-3"></i>
+                            <h1>Design</h1>
                             <p>
                                 Modern design principles and careful consideration are used to ensure the product exceeds requirements and expectations.
                             </p>
                         </li>
                     </ul>
-                </div>
-            </section>
-            <section class="page projects" id="projects">
-                <h1>My Projects</h1>
-                <div class="card-wrapper">
-                    <div class="card">
-                        <h1>Stocker</h1>
-                        <p>An inventory management system with jobkeeping, timekeeping and invoicing written in C++.</p>
-                        <a href="#" class="btn live">Live Demonstration</a>
-                        <a href="#" class="btn source">Source</a>
-                    </div>
-            
-                    <div class="card">
-                        <h1>Molecuview</h1>
-                        <p>Software for drawing molecule structures based on IUPAC nomencature written in C++.</p>
-                        <a href="#" class="btn live">Live Demonstration</a>
-                        <a href="#" class="btn source">Source</a>
-                    </div>
-            
-                    <div class="card">
-                        <h1>Flgn</h1>
-                        <p>A webapp for a ride-hailing service to taxi inebriated individuals to home.</p>
-                        <a href="#" class="btn live">Live Demonstration</a>
-                        <a href="#" class="btn source">Source</a>
-                    </div>
-                </div>
-            </section>
-            <section class="page contact" id="contact">
-                <div class="contact-wrapper">
-                    <div class="form-area">
-                        <div class="contact-text">
-                            <h1>Let's Talk!</h1>
-                            <h2>I'd love to talk with you about your next big project. Drop me a line and I'll get to you within a couple business days.</h2>
-                        </div>
-                        <div class="form-text">
-                            <form 
-                                action="https://formspree.io/xknzzvvz"
-                                method="POST"
-                            >
-                                <div class="field">
-                                    <input type="text" name="name" class="input" placeholder="" required pattern=".*\S.*">
-                                    <label for="text" class="label">Name</label>
-                                </div>
-                                <div class="field">
-                                    <input type="email" name="_replyto" class="input" placeholder="" required>
-                                    <label for="email" class="label">Email</label>
-                                </div>
-                                <div class="fieldtext">
-                                    <label for="message" class="label">Message</label>
-                                    <textarea name="message" cols="50" rows="10"></textarea>
-                                </div>
-                                <button class="btn btn-contact" type="submit">Get in touch!</button>
-                            </form>
-                        </div>
-                    </div>
                 </div>
             </section>
         </div>

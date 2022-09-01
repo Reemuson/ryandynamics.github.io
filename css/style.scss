@@ -2,17 +2,17 @@
 
 // Variables
 $colour-1: #FAFAFA;
-$colour-2: #E8E9EB;
-$colour-3: #E0DFD5;
-$colour-4: #313638;
-$colour-5: #F09D51;
-$colour-6: #F06543;
+$colour-2: #DDDDDD;
+$colour-3: #639FAB;
+$colour-4: #222222;
+$colour-5: #CE2231;
+$colour-6: #1C5D99;
 
-$h1: 2em;
-$h2: 1.5em;
-$h3: 1.25em;
-$h4: 1.125em;
-$p: 1em;
+$h1: 2.5rem;
+$h2: 1.5rem;
+$h3: 1.25rem;
+$h4: 1.125rem;
+$p: 1rem;
 
 *, *::before, *::after {
     margin: 0;
@@ -24,35 +24,44 @@ body {
     font-family: 'Manrope', sans-serif;
     font-weight: 500;
     font-size: 1rem;
-    background-color: $colour-4;
+    background-color: $colour-2;
 }
 
 // Responsive navbar
 nav {
-    background: $colour-6;
-    top: 3vh;
-    height: 6vh;
-    width: 90%;
+    background: $colour-5;
+    top: 2.5vh;
+    height: 5rem;
+    width: 95%;
     z-index: 10;
     position: fixed;
-    border-radius: 5px;
-    padding: 0 5%;
-    margin: 0 5%;
+    border-radius: 0.5rem;
+    padding: 0 2.5vw;
+    margin: 0 2.5vw;
     display: flex;
     justify-content: space-between;
     align-items: center;
 
     .logo {
-        height: 4vh;
+        height: 3rem;
         z-index: 11;
     }
 
+    h1 { 
+        a {
+            color: $colour-1;
+            text-decoration: none;
+        }
+    }
+
+    // Web & Mobile Nav Links
     .nav-links {
-        background-color: $colour-6;
+        background-color: $colour-3;
         top: 12vh;
         width: 90%;
         left: 100%;
         height: 43vh;
+        z-index: 11;
         position: fixed;
         border-radius: 5px;
         margin: 0 5%;
@@ -61,22 +70,19 @@ nav {
         transition: all .5s ease-out;
 
         li {
-
             a {
                 display: block;
                 color: $colour-1;
-                background: $colour-5;
-                font-size: $p;
+                font-size: $h2;
                 font-weight: 700;
                 width: 80vw;
                 margin: 6vh 5vw 0;
                 line-height: 6vh;
                 text-decoration: none;
-                border-radius: .25em;
-
+            
                 &:hover {
-                    filter: brightness(1.1);
-                    transition: .5s;
+                    transform: scale(1.1);
+                    transition: .1s;
                 }
             }
         }
@@ -110,7 +116,7 @@ main {
 }
 
 .page {
-    padding: 5%;
+    padding: 10%;
 
     ul {
         list-style: none;
@@ -139,8 +145,7 @@ main {
 }
 
 .about {
-    color: $colour-3;
-    min-height: 90vh;
+    color: $colour-4;
     
     h1 {
         font-size: $h1;
@@ -155,6 +160,10 @@ main {
         padding-top: .5em;
         display: none;
     }
+    
+    .box {
+        display: flex;
+    }
 
     .btn-wrapper {
         position: absolute;
@@ -163,14 +172,26 @@ main {
         transform: translate(-50%, -50%);
     }
 
-    .btn-hireme {
-        background-color: $colour-5;
-        color: $colour-1;
+    .btn {
         margin: 2em 0 0;
         width: 10em;
         height: 3em;
         line-height: 3em;
         justify-content: center;
+
+        &:first-child {
+            margin-right: 4em;
+        }
+    }
+
+    .btn-contact {
+        color: $colour-1;
+        background-color: $colour-5;
+    }
+
+    .btn-projects {
+        color: $colour-1;
+        background-color: $colour-6;
     }
 
     .benefits-wrapper {
@@ -191,10 +212,13 @@ main {
             justify-content: center;
             align-items: center;
 
+            .benefit {
+                width: 100%;
+            }
+
             li {
                 text-align: center;
                 padding: 0 1em 0 1em;
-                max-width: 100%;
 
                 p {
                     display: none;
@@ -221,7 +245,6 @@ main {
 .projects {
     background-color: $colour-3;
     color: $colour-4;
-    min-height: 100vh;
 
     h1 {
         font-size: $h1;
@@ -290,7 +313,6 @@ main {
 }
 .contact {
     color: $colour-1;
-    min-height: 95vh;
 
     .contact-wrapper {
         .form-area {

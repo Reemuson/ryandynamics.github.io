@@ -10,19 +10,19 @@ body {
   font-family: 'Manrope', sans-serif;
   font-weight: 500;
   font-size: 1rem;
-  background-color: #313638;
+  background-color: #DDDDDD;
 }
 
 nav {
-  background: #F06543;
-  top: 3vh;
-  height: 6vh;
-  width: 90%;
+  background: #CE2231;
+  top: 2.5vh;
+  height: 5rem;
+  width: 95%;
   z-index: 10;
   position: fixed;
-  border-radius: 5px;
-  padding: 0 5%;
-  margin: 0 5%;
+  border-radius: 0.5rem;
+  padding: 0 2.5vw;
+  margin: 0 2.5vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -35,16 +35,22 @@ nav {
 }
 
 nav .logo {
-  height: 4vh;
+  height: 3rem;
   z-index: 11;
 }
 
+nav h1 a {
+  color: #FAFAFA;
+  text-decoration: none;
+}
+
 nav .nav-links {
-  background-color: #F06543;
+  background-color: #639FAB;
   top: 12vh;
   width: 90%;
   left: 100%;
   height: 43vh;
+  z-index: 11;
   position: fixed;
   border-radius: 5px;
   margin: 0 5%;
@@ -57,21 +63,19 @@ nav .nav-links {
 nav .nav-links li a {
   display: block;
   color: #FAFAFA;
-  background: #F09D51;
-  font-size: 1em;
+  font-size: 1.5rem;
   font-weight: 700;
   width: 80vw;
   margin: 6vh 5vw 0;
   line-height: 6vh;
   text-decoration: none;
-  border-radius: .25em;
 }
 
 nav .nav-links li a:hover {
-  -webkit-filter: brightness(1.1);
-          filter: brightness(1.1);
-  -webkit-transition: .5s;
-  transition: .5s;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-transition: .1s;
+  transition: .1s;
 }
 
 nav #hamburger-icon {
@@ -111,7 +115,7 @@ main {
 }
 
 .page {
-  padding: 5%;
+  padding: 10%;
 }
 
 .page ul {
@@ -124,14 +128,14 @@ main {
 
 .page mark {
   background: none;
-  color: #F06543;
+  color: #1C5D99;
 }
 
 .page .btn {
   display: block;
   cursor: pointer;
   font-weight: 700;
-  font-size: 1em;
+  font-size: 1rem;
   text-decoration: none;
   text-align: center;
   border-radius: 5px;
@@ -145,22 +149,27 @@ main {
 }
 
 .about {
-  color: #E0DFD5;
-  min-height: 90vh;
+  color: #222222;
 }
 
 .about h1 {
-  font-size: 2em;
+  font-size: 2.5rem;
 }
 
 .about h2 {
   padding-top: 1em;
-  font-size: 1em;
+  font-size: 1rem;
 }
 
 .about p {
   padding-top: .5em;
   display: none;
+}
+
+.about .box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .about .btn-wrapper {
@@ -171,9 +180,7 @@ main {
           transform: translate(-50%, -50%);
 }
 
-.about .btn-hireme {
-  background-color: #F09D51;
-  color: #FAFAFA;
+.about .btn {
   margin: 2em 0 0;
   width: 10em;
   height: 3em;
@@ -183,12 +190,26 @@ main {
           justify-content: center;
 }
 
+.about .btn:first-child {
+  margin-right: 4em;
+}
+
+.about .btn-contact {
+  color: #FAFAFA;
+  background-color: #CE2231;
+}
+
+.about .btn-projects {
+  color: #FAFAFA;
+  background-color: #1C5D99;
+}
+
 .about .benefits-wrapper {
   margin-top: 2em;
 }
 
 .about .benefits-wrapper h1 {
-  font-size: 1.25em;
+  font-size: 1.25rem;
 }
 
 .about .benefits-wrapper ul {
@@ -209,10 +230,13 @@ main {
           align-items: center;
 }
 
+.about .benefits-wrapper ul .benefit {
+  width: 100%;
+}
+
 .about .benefits-wrapper ul li {
   text-align: center;
   padding: 0 1em 0 1em;
-  max-width: 100%;
 }
 
 .about .benefits-wrapper ul li p {
@@ -225,25 +249,24 @@ main {
 }
 
 .about .benefits-wrapper ul li i#benefit-1 {
-  color: #F09D51;
+  color: #CE2231;
 }
 
 .about .benefits-wrapper ul li i#benefit-2 {
-  color: #E0DFD5;
+  color: #639FAB;
 }
 
 .about .benefits-wrapper ul li i#benefit-3 {
-  color: #F06543;
+  color: #1C5D99;
 }
 
 .projects {
-  background-color: #E0DFD5;
-  color: #313638;
-  min-height: 100vh;
+  background-color: #639FAB;
+  color: #222222;
 }
 
 .projects h1 {
-  font-size: 2em;
+  font-size: 2.5rem;
   padding: 0 0 1em;
 }
 
@@ -263,7 +286,7 @@ main {
 }
 
 .projects .card-wrapper .card {
-  background: #F09D51;
+  background: #CE2231;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -293,8 +316,8 @@ main {
   margin: .5rem 0;
   width: 15em;
   color: #FAFAFA;
-  background: #313638;
-  font-size: 1em;
+  background: #222222;
+  font-size: 1rem;
   font-weight: bold;
   text-decoration: none;
 }
@@ -322,7 +345,6 @@ main {
 
 .contact {
   color: #FAFAFA;
-  min-height: 95vh;
 }
 
 .contact .contact-wrapper .form-area {
@@ -345,12 +367,12 @@ main {
 }
 
 .contact .contact-wrapper .form-area .contact-text h1 {
-  font-size: 2em;
-  color: #F09D51;
+  font-size: 2.5rem;
+  color: #CE2231;
 }
 
 .contact .contact-wrapper .form-area .contact-text h2 {
-  font-size: 1em;
+  font-size: 1rem;
   padding-top: 1em;
 }
 
@@ -363,7 +385,7 @@ main {
   width: 100%;
   position: relative;
   margin: 2em auto 1em;
-  background-color: #E0DFD5;
+  background-color: #639FAB;
 }
 
 .contact .contact-wrapper .form-area .form-text .fieldtext .label {
@@ -373,8 +395,8 @@ main {
 }
 
 .contact .contact-wrapper .form-area .form-text .label {
-  font-size: 1.125em;
-  color: #F09D51;
+  font-size: 1.125rem;
+  color: #CE2231;
   z-index: 1;
   display: block;
   position: absolute;
@@ -396,15 +418,15 @@ main {
 .contact .contact-wrapper .form-area .form-text .input {
   outline: none;
   border: none;
-  border-bottom: 2px solid #F09D51;
+  border-bottom: 2px solid #CE2231;
   overflow: hidden;
   margin: 0;
   width: 100%;
   padding: .25em 0;
   background: none;
   font-family: 'Manrope', sans-serif;
-  color: #313638;
-  font-size: 1em;
+  color: #222222;
+  font-size: 1rem;
   font-weight: 500;
 }
 
@@ -423,16 +445,16 @@ main {
 
 .contact .contact-wrapper .form-area .form-text textarea {
   border: none;
-  border-bottom: 2px solid #F09D51;
+  border-bottom: 2px solid #CE2231;
   overflow: hidden;
   resize: none;
   margin: 2em auto 1em;
   width: 100%;
   height: 10em;
-  background-color: #E0DFD5;
+  background-color: #639FAB;
   font-family: 'Manrope', sans-serif;
-  color: #313638;
-  font-size: 1em;
+  color: #222222;
+  font-size: 1rem;
   font-weight: 500;
 }
 
@@ -445,7 +467,7 @@ main {
 .contact .contact-wrapper .form-area .form-text .btn-contact {
   padding: 1.25em 3em;
   margin-top: 2em;
-  background-color: #F09D51;
+  background-color: #CE2231;
   color: #FAFAFA;
   width: 100%;
   border: none;
@@ -454,9 +476,9 @@ main {
 footer {
   position: relative;
   height: 5vh;
-  background-color: #313638;
+  background-color: #222222;
   color: #FAFAFA;
-  font-size: 1em;
+  font-size: 1rem;
   font-weight: 500;
   text-align: center;
   line-height: 5vh;
