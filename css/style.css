@@ -134,6 +134,7 @@ main {
 }
 .about .box-2 {
   display: grid;
+  justify-items: center;
 }
 .about .box-2 .photo-of-month {
   margin: 1rem 0 0 0;
@@ -413,10 +414,7 @@ footer {
   line-height: 2.5rem;
 }
 
-@media screen and (min-width: 600px) {
-  body {
-    font-size: 1.1em;
-  }
+@media screen and (min-width: 850px) {
   nav {
     position: static;
     margin-top: 3vh;
@@ -424,7 +422,6 @@ footer {
   nav .nav-links {
     position: static;
     margin-right: 0%;
-    background: none;
     width: auto;
     height: 4vh;
   }
@@ -438,6 +435,7 @@ footer {
     height: 4vh;
     line-height: 4vh;
     width: auto;
+    background: none;
   }
   nav #hamburger-icon {
     display: none;
@@ -445,36 +443,39 @@ footer {
   nav label#hamburger-icon {
     display: none;
   }
-  main {
-    padding: 0;
-  }
-  .about {
-    min-height: 91vh;
-  }
   .about p {
     display: inline-block;
   }
-  .about .benefits-wrapper {
+  .about .wrapper-hero {
+    display: flex;
+  }
+  .about .wrapper-hero .box-1 {
+    padding: 0 2rem 0 0;
+  }
+  .about .wrapper-benefits {
     margin-top: 4em;
   }
-  .about .benefits-wrapper ul {
+  .about .wrapper-benefits ul {
     flex-direction: row;
     flex-wrap: nowrap;
     align-items: baseline;
   }
-  .about .benefits-wrapper ul li p {
+  .about .wrapper-benefits ul li {
+    flex: 1 1 0;
+  }
+  .about .wrapper-benefits ul li p {
     display: inline-block;
   }
-  .about .benefits-wrapper ul li i {
-    font-size: 5em;
+  .about .wrapper-benefits ul li i {
+    font-size: 2.5rem;
   }
-  .projects .card-wrapper {
+  .projects .wrapper-card {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
   }
-  .projects .card-wrapper .card {
+  .projects .wrapper-card .card {
     margin: 2em;
     transition: transform 0.5s;
   }
@@ -494,19 +495,19 @@ footer {
       opacity: 1;
     }
   }
-  .projects .card-wrapper .card:nth-child(1) {
+  .projects .wrapper-card .card:nth-child(1) {
     -webkit-animation: fadeIn 0.5s 0.25s backwards;
             animation: fadeIn 0.5s 0.25s backwards;
   }
-  .projects .card-wrapper .card:nth-child(2) {
+  .projects .wrapper-card .card:nth-child(2) {
     -webkit-animation: fadeIn 0.5s 0.5s backwards;
             animation: fadeIn 0.5s 0.5s backwards;
   }
-  .projects .card-wrapper .card:nth-child(3) {
+  .projects .wrapper-card .card:nth-child(3) {
     -webkit-animation: fadeIn 0.5s 0.75s backwards;
             animation: fadeIn 0.5s 0.75s backwards;
   }
-  .projects .card-wrapper .card:hover {
+  .projects .wrapper-card .card:hover {
     transform: scale(1.1);
   }
   .contact .contact-wrapper {

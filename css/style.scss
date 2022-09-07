@@ -166,7 +166,8 @@ main {
     
     .box-2 {
         display: grid;
-
+        justify-items: center;
+        
         .photo-of-month {
             margin: 1rem 0 0 0;
             width: 90vw;
@@ -475,10 +476,7 @@ footer {
     line-height: 2.5rem;
 }
 
-@media screen and (min-width: 600px) {
-    body {
-        font-size: 1.1em;
-    }
+@media screen and (min-width: 850px) {
     nav {
         position: static;
         margin-top: 3vh;
@@ -486,7 +484,6 @@ footer {
         .nav-links {
             position: static;
             margin-right: 0%;
-            background: none;
             width: auto;
             height: 4vh;
 
@@ -500,6 +497,7 @@ footer {
                     height: 4vh;
                     line-height: 4vh;
                     width: auto;
+                    background: none;
                 }
             }
         }
@@ -512,18 +510,20 @@ footer {
         }
     }
 
-    main {
-        padding: 0;
-    }
-
     .about {
-        min-height: 91vh;
-        
         p {
             display: inline-block;
         }
+        
+        .wrapper-hero {
+            display: flex;
 
-        .benefits-wrapper {
+            .box-1 {
+                padding: 0 2rem 0 0;
+            }
+        }
+
+        .wrapper-benefits {
             margin-top: 4em;
             
             ul {
@@ -532,11 +532,12 @@ footer {
                 align-items: baseline;
 
                 li {
+                    flex: 1 1 0;
                     p {
                         display: inline-block
                     }
                     i {
-                        font-size: 5em;
+                        font-size: $h1;
                     }
                 }
             }
@@ -544,7 +545,7 @@ footer {
     }
 
     .projects {
-        .card-wrapper {
+        .wrapper-card {
             flex-direction: row;
             flex-wrap: wrap;
             justify-content: center;
