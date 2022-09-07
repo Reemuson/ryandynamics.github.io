@@ -7,7 +7,7 @@
     <title>reemuson.com — I build ideas.</title>
 
     <link rel="stylesheet" href="/css/style.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script> <!-- font awesome import-->
+    <script src="https://kit.fontawesome.com/1f41a79a4e.js" crossorigin="anonymous"></script> <!-- font awesome import-->
 </head>
 <body>
     <nav>
@@ -18,47 +18,111 @@
         <input type="checkbox" id="hamburger">
 
         <label for="hamburger" id="hamburger-icon">
-            <i class="fas fa-stream"></i>
+            <i class="fa-solid fa-bars"></i>
         </label>
         <!-- End hamburger -->
 
         <ul class="nav-links">
-            <li><a href="photography.html">Photography</a></li>
+            <li><a href="projects.html#photos">Photography</a></li>
             <li><a href="projects.html">Projects</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
     <main>
-        <div class="page-wrapper">
+        <div class="wrapper-page">
             <section class="page projects" id="projects">
                 <h1>My Projects</h1>
-                <div class="card-wrapper">
+                <div class="wrapper-card">
                     <div class="card">
                         <h1>Stocker</h1>
                         <p>An inventory management system with jobkeeping, timekeeping and invoicing written in C++.</p>
-                        <a href="#" class="btn live">Live Demonstration</a>
-                        <a href="#" class="btn source">Source</a>
+                        <a href="#" class="button-live" id="button">Live Demonstration</a>
+                        <a href="#" class="button-source" id="button">Source</a>
                     </div>
             
                     <div class="card">
                         <h1>Molecuview</h1>
                         <p>Software for drawing molecule structures based on IUPAC nomencature written in C++.</p>
-                        <a href="#" class="btn live">Live Demonstration</a>
-                        <a href="#" class="btn source">Source</a>
+                        <a href="#" class="button-live" id="button">Live Demonstration</a>
+                        <a href="#" class="button-source" id="button">Source</a>
                     </div>
             
                     <div class="card">
                         <h1>Flgn</h1>
                         <p>A webapp for a ride-hailing service to taxi inebriated individuals to home.</p>
-                        <a href="#" class="btn live">Live Demonstration</a>
-                        <a href="#" class="btn source">Source</a>
+                        <a href="#" class="button-live" id="button">Live Demonstration</a>
+                        <a href="#" class="button-source" id="button">Source</a>
                     </div>
                 </div>
+            </section>
+            <section class="page photos" id="photos">
+                <h1>My Photos</h1>
+                <div class="wrapper-photos">  
+                    <a href="#image1"> 
+                      <img src="/src/img-splash-photo-of-month-september.png" class="thumb"/><!--you'll want to change the link in there, it's just a placeholder-->
+                    </a>
+                    <!--what the user sees before clicking anything-->
+                      
+                    <div id="image1" class="lightbox"> <!--what the user sees after clicking the first image-->
+                      <a href="#_"> <!--no need for a left arrow because there is no previous image to go to-->
+                        <img src="/src/img-splash-photo-of-month-september.png" />
+                          <!--this is the actual image that 'grows'. You'll want this link to match the one in #image1-->
+                      </a>
+                        
+                      <a href="#_"><!--this href takes out out of full screen. -->
+                        <i class="exit fa-solid fa-xmark"></i><!--exit button-->
+                      </a>
+                        
+                      <a href="#image2"><!--this href leads you to the next image in the slideshow-->
+                        <i class="next fa-solid fa-arrow-right"></i><!--next button-->
+                      </a> 
+                    </div>
+                      
+                    <a href="#image2"><!--this href leads you to the previous image-->
+                      <img src="/src/20220429_1092.jpeg" class="thumb"/>
+                    </a>
+                      
+                    <div id="image2" class="lightbox"><!--from here on out, the same comments apply. Notice that the href for the previous selector is set to the id of the lightbox div for the previous image, opposite goes for the next selector. This is what makes the slider work. There are some that use CSS and huge margins, but I prefer to keep my markup and css simple enough to explain. Hope you can use this!-->
+                      <a href="#image1">
+                        <i class="previous fa-solid fa-arrow-left"></i>
+                      </a>
+
+                      <a href="#_">
+                        <img src="src/20220429_1092.jpeg">
+                      </a>
+                        
+                      <a href="#_">
+                        <i class="exit fa-solid fa-xmark"></i>
+                      </a>
+                        
+                      <a href="#image3">
+                        <i class="next fa-solid fa-arrow-right"></i>
+                      </a>
+                    </div>
+                      
+                    <a href="#image3">
+                      <img src="/src/20220115_0540.jpeg" class="thumb"/>
+                    </a>
+                      
+                    <div id="image3" class="lightbox">
+                      <a href="#image2">
+                        <i class="previous fa-solid fa-arrow-left"></i>
+                      </a>
+
+                      <a href="#_">
+                        <img src="/src/20220115_0540.jpeg"/>
+                      </a>
+
+                      <a href="#_">
+                        <i class="exit fa-solid fa-xmark"></i>
+                      </a>
+                    </div>
+                  </div><!--/wrapper-photos-->
             </section>
         </div>
     </main>
     <footer>
-        <p>Copyright © 2020 Ryan</p>
+        <p>Copyright © 2022 Ryan</p>
     </footer>
 </body>
 </html>

@@ -14,6 +14,8 @@ $h3: 1.25rem;
 $h4: 1.125rem;
 $p: 1rem;
 
+$nav: 2.5rem;
+
 *, *::before, *::after {
     margin: 0;
     padding: 0;
@@ -31,11 +33,11 @@ body {
 nav {
     background: $colour-5;
     top: 2.5vh;
-    height: 5rem;
-    width: 95%;
+    height: $nav;
+    width: 95vw;
     z-index: 10;
     position: fixed;
-    border-radius: 0.5rem;
+    border-radius: .5rem;
     padding: 0 2.5vw;
     margin: 0 2.5vw;
     display: flex;
@@ -56,34 +58,28 @@ nav {
 
     // Web & Mobile Nav Links
     .nav-links {
-        background-color: $colour-3;
         top: 12vh;
-        width: 90%;
+        width: 95vw;
         left: 100%;
-        height: 43vh;
         z-index: 11;
         position: fixed;
-        border-radius: 5px;
-        margin: 0 5%;
+        margin: 0 2.5vw;
         text-align: center;
         list-style: none;
         transition: all .5s ease-out;
 
         li {
             a {
+                background-color: $colour-6;
+                border-radius: .5rem;
                 display: block;
                 color: $colour-1;
                 font-size: $h2;
                 font-weight: 700;
-                width: 80vw;
-                margin: 6vh 5vw 0;
-                line-height: 6vh;
+                line-height: 5rem;
+                height: 5rem;
                 text-decoration: none;
-            
-                &:hover {
-                    transform: scale(1.1);
-                    transition: .1s;
-                }
+                margin: 2em 0 0 0;
             }
         }
     }
@@ -107,16 +103,16 @@ nav {
 }
 
 main {
-    padding-top: 10vh;
+    padding-top: $nav; // remove height for navbar
 }
 
-.page-wrapper {
+.wrapper-page {
     display: flex;
     flex-direction: column;
 }
 
 .page {
-    padding: 10%;
+    padding: 0 5% 0 5%;
 
     ul {
         list-style: none;
@@ -128,14 +124,17 @@ main {
         background: none;
         color: $colour-6;
     }
-    .btn {
+    #button {
         display: block;
         cursor: pointer;
         font-weight: 700;
         font-size: $p;
         text-decoration: none;
         text-align: center;
-        border-radius: 5px;
+        border-radius: .5rem;
+        width: fit-content;
+        max-width: 15rem;
+        padding: 1rem;
 
         &:hover, &:focus {
             filter: brightness(1.2);
@@ -148,93 +147,79 @@ main {
     color: $colour-4;
     
     h1 {
+        padding-top: 3rem;
         font-size: $h1;
     }
 
     h2 {
-        padding-top: 1em;
+        padding-top: 1rem;
         font-size: $p;
     }
 
-    p {
-        padding-top: .5em;
-        display: none;
+    .wrapper-hero-paragraph {
+        padding-top: 3rem;
+
+        p {
+            padding-bottom: 1rem;
+        }
     }
     
-    .box {
-        display: flex;
-    }
+    .box-2 {
+        display: grid;
 
-    .btn-wrapper {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
-
-    .btn {
-        margin: 2em 0 0;
-        width: 10em;
-        height: 3em;
-        line-height: 3em;
-        justify-content: center;
-
-        &:first-child {
-            margin-right: 4em;
+        .photo-of-month {
+            margin: 1rem 0 0 0;
+            width: 90vw;
+            max-width: 50rem;
+            border: .5rem solid $colour-4;
+            border-radius: .5rem;
+        }
+        
+        .link-photo-of-month {
+            padding: .5rem 0 1rem 0;
         }
     }
 
-    .btn-contact {
+    .button-contact {
         color: $colour-1;
         background-color: $colour-5;
+        margin: 2rem auto;
     }
 
-    .btn-projects {
+    .button-projects {
         color: $colour-1;
         background-color: $colour-6;
+        margin: 0 auto;
     }
 
-    .benefits-wrapper {
-        margin-top: 2em;
-
+    .wrapper-benefits {
         h1 {
+            padding-top: 0;
             font-size: $h3;
         }
         
         ul {
-            display: -webkit-box;
-            display: -moz-box;
-            display: -ms-flexbox;
-            display: -webkit-flex;
             display: flex;
             flex-direction: column;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-
-            .benefit {
-                width: 100%;
-            }
 
             li {
                 text-align: center;
-                padding: 0 1em 0 1em;
-
+                
                 p {
                     display: none;
                 }
 
                 i {
-                    font-size: 3em;
-                    padding: .6em 0;
+                    padding: 1rem 0;
+                    font-size: $h2;
 
-                    &#benefit-1 {
-                        color: $colour-5;
+                    .benefit-1 {
+                        color: $colour-2;
                     }
-                    &#benefit-2 {
+                    .benefit-2 {
                         color: $colour-3;
                     }
-                    &#benefit-3 {
+                    .benefit-3 {
                         color: $colour-6;
                     }
                 }
@@ -243,30 +228,25 @@ main {
     }
 }
 .projects {
-    background-color: $colour-3;
     color: $colour-4;
 
     h1 {
         font-size: $h1;
-        padding: 0 0 1em;
+        padding-top: 3rem;
     }
 
-    .card-wrapper {
-        display: -webkit-box;
-        display: -moz-box;
-        display: -ms-flexbox;
-        display: -webkit-flex;
+    .wrapper-card {
         display: flex;
         align-items: center;
         align-content: center;
         flex-direction: column;
     
         .card {
-            background: $colour-5;
-            display: -webkit-box;
-            display: -moz-box;
-            display: -ms-flexbox;
-            display: -webkit-flex;
+            h1 {
+                padding-top: 0rem;
+            }
+
+            background: $colour-3;
             display: flex;
             flex-direction: column;
             flex-shrink: 0;
@@ -278,22 +258,17 @@ main {
             width: 90vw;
             height: 25em;
             margin: 2em;
-    
-            .btn {
-                padding: 1rem 2rem;
-                border-radius: .5em;
-                margin: .5rem 0;
-                width: 15em;
+
+            .button-live {
                 color: $colour-1;
-                background: $colour-4;
-                font-size: $p;
-                font-weight: bold;
-                text-decoration: none;
-    
-                &:hover {
-                    filter: brightness(1.1);
-                    transition: .5s;
-                }
+                background-color: $colour-5;
+                min-width: 15rem;
+            }
+            .button-source {
+                color: $colour-1;
+                background-color: $colour-6;
+                min-width: 15rem;
+                margin-top: 1rem;
             }
     
             h1 {
@@ -311,8 +286,76 @@ main {
         }
     }    
 }
+.photos {
+    color: $colour-4;
+
+    h1 {
+        font-size: $h1;
+        padding-top: 6rem;
+    }
+
+    .thumb {
+        display: inline;
+        max-height: 200px;
+    }
+
+    .wrapper-photos {
+        text-align: center;
+
+        img {
+            border-radius: .5rem;
+            border: .5rem solid $colour-4;
+            margin: .5rem;
+        }
+    }
+
+    .lightbox {
+        display: none; /**sets the default display to hide the lightbox until it's the :target**/
+        position: fixed; /**the rest of this styling makes the lightbox full screen when selected**/
+        z-index: 999;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        top: 0;
+        left: 0;
+        background: rgba(34, 34, 34, .8);
+
+        img { /**sets the styling of the image in the lightbox**/
+            max-width: 80%;
+            max-height: 90%;
+        }
+        &:target { /**this is where the magic happens. makes the lightbox display when it's the target of a clickable link**/
+            outline: none;
+            display: block;
+        }
+    }
+    .previous { /**styling the left arrow**/
+        font-size: $h2;
+        position: fixed;
+        left: 5%;
+        top: 49%;
+        width: $h1;
+        color: $colour-1;
+    }
+    .exit { /**styling the exit button**/
+        font-size: $h2;
+        position: fixed;
+        top: 5%;
+        right: 5%;
+        width: $h1;
+        color: $colour-1;
+    }
+    .next { /**styling the right arrow**/
+        font-size: $h2;
+        position: fixed;
+        right: 5%;
+        top: 49%;
+        width: $h1;
+        color: $colour-1;
+    }
+}
 .contact {
-    color: $colour-1;
+    color: $colour-4;
 
     .contact-wrapper {
         .form-area {
@@ -329,8 +372,9 @@ main {
                 align-self: center;
 
                 h1 {
+                    padding-top: 3rem;
                     font-size: $h1;
-                    color: $colour-5;
+                    color: $colour-4;
                 }
                 h2 {
                     font-size: $p;
@@ -343,7 +387,7 @@ main {
                     width: 100%;
                     position: relative;
                     margin: 2em auto 1em;
-                    background-color: $colour-3;
+                    background-color: $colour-2;
                 }
                 .fieldtext .label {
                     position: absolute;
@@ -395,7 +439,7 @@ main {
                     margin: 2em auto 1em;
                     width: 100%;
                     height: 10em;
-                    background-color: $colour-3;
+                    background-color: $colour-2;
                     font-family: 'Manrope', sans-serif;
                     color: $colour-4;
                     font-size: $p;
@@ -407,13 +451,12 @@ main {
                         outline: none;
                     }
                 }
-                .btn-contact {
-                    padding: 1.25em 3em;
-                    margin-top: 2em;
+                .form-button-contact {
                     background-color: $colour-5;
                     color: $colour-1;
-                    width: 100%;
                     border: none;
+                    margin-bottom: 2rem;
+                    min-width: 90vw;
                 }
             }
         }
@@ -422,14 +465,14 @@ main {
 
 footer {
     position: relative;
-    height: 5vh;
+    height: 2.5rem;
     background-color: $colour-4;
 
     color: $colour-1;
     font-size: $p;
     font-weight: 500;
     text-align: center;
-    line-height: 5vh;
+    line-height: 2.5rem;
 }
 
 @media screen and (min-width: 600px) {

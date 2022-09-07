@@ -7,7 +7,7 @@
     <title>reemuson.com — I build ideas.</title>
 
     <link rel="stylesheet" href="/css/style.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script> <!-- font awesome import-->
+    <script src="https://kit.fontawesome.com/1f41a79a4e.js" crossorigin="anonymous"></script> <!-- font awesome import-->
 </head>
 <body>
     <nav>
@@ -18,67 +18,69 @@
         <input type="checkbox" id="hamburger">
 
         <label for="hamburger" id="hamburger-icon">
-            <i class="fas fa-stream"></i>
+            <i class="fa-solid fa-bars"></i>
         </label>
         <!-- End hamburger -->
 
         <ul class="nav-links">
-            <li><a href="photography.html">Photography</a></li>
+            <li><a href="projects.html#photos">Photography</a></li>
             <li><a href="projects.html">Projects</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
     <main>
-        <div class="page-wrapper">
+        <div class="wrapper-page">
             <section class="page about" id="about">
-                <div class="hero-wrapper">
-                    <div class="1">
-                        <h1>Hey! 👋 I do things,</h1>
-                        <h2>My name is Ryan, nice to meet you.</h2>
-                        <p>This is a "small" culmination of everything I have done. From big project wins to pictures I think look nice. It's a bit of everything, but everything here is me 😁</p>
-                    </div>
-                    <div class="2">
-                        <img src="" alt="">
-                    </div>
-                    <div class="3">
-                        <div class="button-wrapper">
-                            <a href="contact.html" class="btn btn-contact">Get in touch!</a>
+                <div class="wrapper-hero">
+                    <div class="box-1">
+                        <h1>Hey! 👋 I'm Ryan.</h1>
+                        <h2>It's nice to meet you, I do some stuff.</h2>
+                        <div class="wrapper-hero-paragraph">
+                            <p>This is a "small" culmination of everything I have done.</p>
+                            <p>From big project wins to pictures I think look nice. It's a bit of everything, but everything here is me 😁</p>
                         </div>
-                        <div class="button-wrapper">
-                            <a href="projects.html" class="btn btn-projects">See my work!</a>
-                        </div>
+                    </div>
+                    <div class="box-2">
+                        <img src="/src/img-splash-photo-of-month-september.png" alt="photograph of the month" class="photo-of-month">
+                        <a href="projects.html#image1" class="link link-photo-of-month">Photo of the month!</a>
+                    </div>
+                    <div class="box-3">
+                        <a href="projects.html" class="button-projects" id="button">See my work!</a>
                     </div>
                 </div>
-                <div class="benefits-wrapper">
+                <div class="wrapper-benefits">
                     <ul>
                         <li>
-                            <i class="fas fa-code" id="benefit benefit-1"></i>
+                            <i class="fas fa-code" class="benefit benefit-1"></i>
                             <h1>Development</h1>
                             <p>
                                 Work with me to create a responsive, usable product that makes sense to users and secureley developed.
                             </p>
                         </li>
                         <li>
-                            <i class="fas fa-paint-brush" id="benefit benefit-2"></i>
+                            <i class="fas fa-paint-brush" class="benefit benefit-2"></i>
                             <h1>Support</h1>
                             <p>
                                 From start to finish, every project is approached with a holistic process.
                             </p>
                         </li>
                         <li>
-                            <i class="fas fa-drafting-compass" id="benefit benefit-3"></i>
+                            <i class="fas fa-drafting-compass" class="benefit benefit-3"></i>
                             <h1>Design</h1>
                             <p>
                                 Modern design principles and careful consideration are used to ensure the product exceeds requirements and expectations.
                             </p>
                         </li>
                     </ul>
+                    <div class="wrapper-button-contact">
+                        <a href="contact.html" class="button-contact" id="button">Get in touch!</a>
+                    </div>
                 </div>
             </section>
         </div>
     </main>
     <footer>
-        <p>Copyright © 2020 Ryan</p>
+        <p>Copyright © 2022 Ryan</p>
     </footer>
 </body>
 </html>
