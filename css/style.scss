@@ -881,7 +881,8 @@ footer {
             }
 
             .box-2 .project-of-month {
-                width: 20vw;
+                width: 30vw;
+                max-width: 500px;
             }
         }
 
@@ -1003,7 +1004,17 @@ footer {
             }
 
             .form-text {
-                width: 50vw;
+                width: 100vw;
+            }
+        }
+    }
+
+    #contact {
+        #wrapper-contact {
+            .form-area {
+                .form-text {
+                    width: 50vw;
+                }
             }
         }
     }

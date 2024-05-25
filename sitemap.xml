@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+		<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url>
+	<loc>https://www.ryandynamics.com/</loc>
+	<lastmod>2024-05-25T09:12:14+01:00</lastmod>
+	<priority>1.0</priority>
+    <changefreq>monthly</changefreq>
+</url>
+<url>
+	<loc>https://www.ryandynamics.com/drafting</loc>
+	<lastmod>2024-05-25T09:12:14+01:00</lastmod>
+	<priority>1.0</priority>
+    <changefreq>monthly</changefreq>
+</url>
+<url>
+	<loc>https://www.ryandynamics.com/3d-printing</loc>
+	<lastmod>2024-05-25T09:12:14+01:00</lastmod>
+	<priority>1.0</priority>
+    <changefreq>monthly</changefreq>
+</url>
+<url>
+	<loc>https://www.ryandynamics.com/electronics</loc>
+	<lastmod>2024-05-25T09:12:14+01:00</lastmod>
+	<priority>1.0</priority>
+    <changefreq>monthly</changefreq>
+</url>
+<url>
+	<loc>https://www.ryandynamics.com/programming</loc>
+	<lastmod>2024-05-25T09:12:14+01:00</lastmod>
+	<priority>1.0</priority>
+    <changefreq>monthly</changefreq>
+</url>
+<url>
+	<loc>https://www.ryandynamics.com/projects-and-insights</loc>
+	<lastmod>2024-05-25T09:12:14+01:00</lastmod>
+	<priority>1.0</priority>
+    <changefreq>monthly</changefreq>
+</url>
+<url>
+	<loc>https://www.ryandynamics.com/contact</loc>
+	<lastmod>2024-05-25T09:12:14+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://www.ryandynamics.com/project/project-cydcase</loc>
+	<lastmod>2024-05-25T09:12:14+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>https://www.ryandynamics.com/project/project-drybox</loc>
+	<lastmod>2024-05-25T09:12:16+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>https://www.ryandynamics.com/project/project-aquilawire</loc>
+	<lastmod>2024-05-25T09:12:16+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>https://www.ryandynamics.com/insight/insight-materialcreep</loc>
+	<lastmod>2024-05-25T09:12:16+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>https://www.ryandynamics.com/insight/insight-builtorbought</loc>
+	<lastmod>2024-05-25T09:12:16+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+</urlset>
