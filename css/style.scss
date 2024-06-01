@@ -16,7 +16,7 @@ $h3: 1.25rem;
 $h4: 1.125rem;
 $p: 1rem;
 
-$nav: 2.5rem;
+$nav: 4rem;
 
 *,
 *::before,
@@ -33,7 +33,7 @@ html {
 
 body {
     font-family: 'Manrope', sans-serif;
-    font-weight: 500;
+    font-weight: 400;
     font-size: 1rem;
     background-color: $colour-2;
 }
@@ -52,15 +52,30 @@ nav {
     justify-content: space-between;
     align-items: center;
 
-    .logo {
-        height: 3rem;
-        z-index: 11;
+    .nav-wrapper {
+        display: flex;
+        justify-content: space-between;
+        flex: 1;
+        align-items: center;
+            
+        width: calc(100vw - 100px);
+        max-width: 1200px;
+        margin: 0 auto;
     }
 
-    h1 {
-        a {
+    .logo-wrapper {
+        display: contents;
+        text-decoration: none;
+
+        .logo {
+            filter: invert(100%);
+            height: 3rem;
+            z-index: 11;
+        }
+    
+        h1 {
             color: $colour-1;
-            text-decoration: none;
+            margin: 0 auto;
         }
     }
 
@@ -68,8 +83,8 @@ nav {
     .nav-links {
         background-color: $colour-5;
         top: -100%;
+        left: 0;
         width: calc(100vw - 40px);
-        left: 0vw;
         z-index: 11;
         position: fixed;
         margin: 20px 20px;
@@ -152,7 +167,7 @@ nav {
                 padding: 1rem;
                 text-decoration: none;
                 color: $colour-1;
-                font-weight: 500;
+                font-weight: 700;
                 text-align: center;
                 border-radius: 0.5rem;
 
@@ -171,6 +186,7 @@ nav {
         order: 1;
         z-index: 11;
         cursor: pointer;
+        margin-left: auto;
     }
 
     label#hamburger-icon {
@@ -187,8 +203,8 @@ nav {
 }
 
 main {
-    padding: $nav 15px 2.5rem 15px;
-    width: calc(100vw - 40px);
+    padding: $nav 0 2.5rem 0;
+    width: calc(100vw - 80px);
     max-width: 1200px;
     margin: auto;
 
@@ -266,7 +282,7 @@ main {
         color: $colour-1;
         background-color: $colour-5;
         margin: 0 auto;
-        padding: 0.5rem;
+        padding: 1rem;
     }
 
     .button-learn {
@@ -325,18 +341,30 @@ main {
 
         ul {
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
 
             li {
                 text-align: center;
-
-                p {
-                    display: none;
+                flex: 1 1 25%;
+                box-sizing: border-box;
+                max-width: 25%;
+    
+                @media (max-width: 850px) {
+                    flex: 1 1 50%; // Two items per row for smaller screens
+                    max-width: 50%;
+                }
+    
+                @media (max-width: 600px) {
+                    flex: 1 1 100%; // One item per row for very small screens
+                    max-width: 100%;
                 }
 
                 i {
                     padding-top: 2rem;
-                    font-size: $h2;
+                    padding-bottom: 1rem;
+                    font-size: 5rem;
                 }
             }
         }
@@ -429,12 +457,6 @@ main {
         font-size: $h1;
     }
 
-    h1 {
-        padding-top: 3rem;
-        padding-bottom: 3rem;
-        font-size: $h1;
-    }
-
     p {
         padding-bottom: 1rem;
     }
@@ -462,7 +484,7 @@ main {
 
                 i {
                     padding: 1rem 0;
-                    font-size: $h2;
+                    font-size: $h1;
 
                     .benefit-1 {
                         color: $colour-2;
@@ -781,7 +803,18 @@ footer {
 @media screen and (min-width: 850px) {
     nav {
         position: static;
-        margin-top: 3vh;
+        border-radius: 0;
+        margin: 0;
+        width: 100%;
+
+        .logo-wrapper {
+            display: flex;
+            align-items: center;
+
+            .logo {
+                padding-right: 1rem;
+            }
+        }
 
         .nav-links {
             position: static;
@@ -818,7 +851,7 @@ footer {
 
             .dropdown-button {
                 background: none;
-                margin-bottom: 10px;
+                margin-bottom: 20px;
                 padding: 0 1rem;
                 height: 4vh;
                 line-height: 4vh;
@@ -841,9 +874,8 @@ footer {
                 list-style: none;
                 padding: 1rem;
 
-                // Set width to be equal to the width of the dropdown button
                 width: fit-content;
-                min-width: 100%; // Ensure dropdown menu takes full width if content is wider than button
+                min-width: 100%;
 
                 li {
                     a {
@@ -894,11 +926,10 @@ footer {
             }
 
             ul {
-                flex-direction: row;
-                justify-content: space-evenly;
+                flex-wrap: no-wrap;
 
                 li {
-                    flex: 0 0 30%;
+                    flex: 1 1 30%;
 
                     p {
                         display: inline-block;
