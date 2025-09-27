@@ -1,3 +1,3 @@
 # Portfolio
 
-As someone who isn't a web-developer this was a fun project. Learning how to make a website and the associated standards and assumptions was a long task but the end result is a nice responsive (which is a new term to me) portfolio website.
+As someone who doesn't do much web development (more-so low level programming). This was an interesting exercise and has been a source of learning. This website is the main site for Ryan Dynamics, an industrial consultancy. This website is also coded soley in HTML and CSS, no Javascript. It's responsive and has quite a few interesting design choices. The codebase isn't something to behold, however, it functions quite well.
