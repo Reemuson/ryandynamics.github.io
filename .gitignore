@@ -14,6 +14,9 @@ vendor/bundle/
 # --- Node ---
 node_modules/
 
+# --- Generated image assets ---
+/assets/images
+
 # --- OS cruft ---
 # macOS
 .DS_Store

@@ -20,3 +20,6 @@ gem "bigdecimal","~> 3.1"     # required by Liquid
 # Timezone (Windows needs tzinfo-data)
 gem "tzinfo", "~> 2.0"
 gem "tzinfo-data", platforms: [:windows]
+
+# image processing (Ruby-only, uses ImageMagick)
+gem "jekyll_picture_tag", "~> 2.1"
