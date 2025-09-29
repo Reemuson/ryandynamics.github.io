@@ -1,0 +1,18 @@
+@use "../settings" as s;
+
+main {
+	padding: s.$nav 0 2.5rem 0;
+	width: calc(100vw - 80px);
+	max-width: s.$max-width;
+	margin: auto;
+}
+
+.wrapper-page {
+	display: flex;
+	flex-direction: column;
+}
+
+.page mark {
+	background: none;
+	color: s.$colour-6;
+}

@@ -1,0 +1,21 @@
+@use "../settings" as s;
+
+@include s.respond(lg) {
+	.page.contact {
+		#wrapper-contact {
+			display: flex;
+			gap: 3rem;
+			align-items: flex-start;
+
+			.wrapper-hero {
+				max-width: 30vw;
+				margin: 0;
+			}
+
+			.form-area {
+				display: block;
+				margin: 0;
+			}
+		}
+	}
+}

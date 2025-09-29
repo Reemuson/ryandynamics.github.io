@@ -1,0 +1,66 @@
+---
+layout: default
+title: Projects and Insights
+description: Explore Ryan Dynamics' recent projects and insightful blog posts on industrial design, electronics, and 3D printing innovations.
+permalink: /projects-and-insights/
+redirect_from: [/projects-and-insights, /projects-and-insights.html]
+---
+
+<div class="wrapper-page">
+	<section class="page projects-and-insights" id="projects-and-insights">
+		<div class="wrapper-hero">
+			<h1>Explore <span class="highlight-bold">projects</span> and
+				<span class="highlight-red">insights.</span>
+			</h1>
+			<div class="wrapper-hero-paragraph">
+				<p>
+					Explore our latest builds, experiments, and reflections. From
+					practical designs to lessons learned.
+				</p>
+			</div><!--/wrapper-hero-paragraph-->
+		</div><!--/wrapper-hero-->
+		<div class="wrapper-projects">
+			<h2 class="section-title">Projects</h2>
+			<div class="wrapper-section-paragraph">
+				<p>
+					A selection of the designs, prototypes, and conversions we've
+					brought to life.
+				</p>
+			</div><!--/wrapper-section-paragraph-->
+			<div class="wrapper-card">
+				{% if site.project and site.project != empty %}
+				{% assign projects = site.project | sort: "date" | reverse %}
+				{% for item in projects %}
+				{% include card.html item=item %}
+				{% endfor %}
+				{% else %}
+				<p>No projects yet.</p>
+				{% endif %}
+			</div><!--/wrapper-card-->
+		</div><!--/wrapper-projects-->
+		<div class="wrapper-insights">
+			<h2 class="section-title">Insights</h2>
+			<div class="wrapper-section-paragraph">
+				<p>Notes, findings, and reflections — the why and how behind our
+					builds.
+				</p>
+			</div><!--/wrapper-section-paragraph-->
+			<div class="wrapper-card">
+				{% if site.insight and site.insight != empty %}
+				{% assign insights = site.insight | sort: "date" | reverse %}
+				{% for item in insights %}
+				{% include card.html item=item %}
+				{% endfor %}
+				{% else %}
+				<p>No insights yet.</p>
+				{% endif %}
+			</div><!--/wrapper-card-->
+		</div><!--/wrapper-insights-->
+		<div class="wrapper-contact-cta">
+			<h2>Have a project in mind?</h2>
+			<p>Seen something here that sparks an idea? Let's discuss how we can help bring
+				it to life.</p>
+			<a href="{{ '/contact/' | relative_url }}" class="button button-projects">Get in Touch</a>
+		</div><!--/wrapper-contact-cta-->
+	</section>
+</div><!--/wrapper-page-->

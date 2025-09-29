@@ -1,0 +1,48 @@
+@use "../settings" as s;
+
+.projects-and-insights {
+	padding-top: 3rem;
+
+	.wrapper-hero-paragraph {
+		padding-top: 3rem;
+
+		p {
+			padding-bottom: 1rem;
+		}
+	}
+
+	.wrapper-projects,
+	.wrapper-insights {
+		padding-top: 3rem;
+
+		.section-title {
+			padding-bottom: 1rem;
+		}
+
+		.wrapper-section-paragraph {
+			margin-bottom: 1rem;
+		}
+	}
+
+	.wrapper-contact-cta {
+		padding: 3rem 0 3rem 0;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		h2 {
+			padding-bottom: 1rem;
+			color: s.$colour-5;
+		}
+
+		p {
+			padding-bottom: 3rem;
+		}
+	}
+}
+
+@include s.respond(lg) {
+	.projects-and-insights {
+		padding-top: 0;
+	}
+}

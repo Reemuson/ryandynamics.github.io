@@ -1,0 +1,19 @@
+@use "sass:map";
+@use "settings/breakpoints" as bps;
+
+@mixin respond($key) {
+	$val: map.get(bps.$breakpoints, $key);
+
+	@if $val ==null {
+		@error "Unknown breakpoint `#{$key}`. Valid keys: #{map.keys(bps.$breakpoints)}";
+	}
+
+	@media screen and (min-width: $val) {
+		@content;
+	}
+}
+
+@mixin focus-ring {
+	outline: 2px solid rgba(0, 0, 0, .2);
+	outline-offset: 2px;
+}

@@ -1,0 +1,117 @@
+@use "../settings" as s;
+@use "sass:color";
+
+/* Works for both mobile (stacked) and desktop (hover) */
+
+.dropdown {
+	position: relative;
+	display: inline-block;
+	width: 100%;
+	margin-top: 2rem;
+	/* mobile spacing */
+
+	.dropdown-button {
+		font-family: 'Manrope', sans-serif;
+		background-color: s.$colour-5;
+		color: s.$colour-1;
+		display: inline-block;
+		cursor: pointer;
+		font-weight: 700;
+		font-size: s.$h2;
+		text-align: center;
+		border-radius: .5rem;
+		padding: 1rem;
+		border: none;
+		width: 90%;
+		transition: background-color .3s;
+
+		&:hover {
+			background-color: color.adjust(s.$colour-5, $lightness: -10%);
+		}
+	}
+
+	.dropdown-menu {
+		display: none;
+		position: absolute;
+		background-color: s.$colour-5;
+		list-style: none;
+		padding: 0;
+		border-radius: .5rem;
+		width: 100%;
+
+		li a {
+			display: block;
+			padding: 1rem;
+			text-decoration: none;
+			color: s.$colour-1;
+			font-weight: 700;
+			text-align: center;
+			border-radius: .5rem;
+			transition: background-color .3s;
+
+			&:hover {
+				background-color: color.adjust(s.$colour-5, $lightness: -10%);
+			}
+		}
+	}
+
+	/* Reveal on hover (desktop) */
+	&:hover .dropdown-menu {
+		display: block;
+	}
+
+}
+
+/* Desktop placement tweaks */
+@include s.respond(lg) {
+	.dropdown {
+		margin-top: 0;
+		width: auto;
+		text-align: center;
+
+		.dropdown-button {
+			height: auto;
+			line-height: normal;
+			padding: .5rem 1rem;
+			background: none;
+			width: auto;
+			transition: transform .5s;
+
+			&:hover {
+				background: none;
+				transform: scale(1.1);
+			}
+		}
+
+		.dropdown-menu {
+			top: calc(100% + #{s.$dropdown-gap});
+			left: 50%;
+			transform: translateX(-50%);
+			background: s.$colour-5;
+			padding: 1rem;
+			width: fit-content;
+			min-width: 100%;
+			z-index: 1300;
+
+			li a {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				height: auto;
+				line-height: normal;
+				padding: 1rem 1.25rem;
+			}
+		}
+
+		&::after {
+			content: '';
+			position: absolute;
+			top: 100%;
+			left: 50%;
+			transform: translateX(-50%);
+			width: 100%;
+			height: s.$dropdown-gap;
+			z-index: 1299;
+		}
+	}
+}
