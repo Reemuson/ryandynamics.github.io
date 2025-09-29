@@ -1,0 +1,104 @@
+---
+layout: default
+title: Electrical and Electronics Design in Newcastle, Australia
+description: Explore our electrical and electronics design services, offering comprehensive solutions for electronic product development. From schematic design to PCB layout and prototyping, we ensure optimized circuits for performance, reliability, and cost-efficiency. Contact us today to bring your electronic ideas to life!
+permalink: /electronics/
+redirect_from: [/electronics, /electronics.html]
+images:
+- { src: "/img/drafts/draft-1.jpg",
+alt: "Wire harness for agricultural implement.",
+caption: "Wire harness for agricultural implement." }
+- { src: "/img/drafts/draft-5.jpg",
+alt: "Power generation schematic for a PCB.",
+caption: "Power generation schematic for a PCB." }
+- { src: "/img/electronics/electronic-1.jpg",
+alt: "Finalised PCB design.",
+caption: "Finalised PCB design." }
+---
+
+<div class="wrapper-page">
+	<section class="page electronics" id="electronics">
+		<div class="wrapper-hero">
+			<h1>Connect <span class="highlight-bold">designs</span> with
+				<span class="highlight-red">electronics</span><span class="highlight-bold">.</span>
+			</h1>
+			<div class="wrapper-hero-paragraph">
+				<p>
+					We design the electronics that power your products—from robust
+					circuits and PCBs to the wiring that ties it all together. Our
+					focus is performance, reliability, manufacturability, and clear
+					documentation for hand-off or production.
+				</p>
+				<p>
+					Alongside PCB/circuit design (schematics, layout, prototyping),
+					we provide full low-voltage electrical design: wiring harnesses
+					and looms, connector assemblies, pinout definitions, cable
+					schedules, and assembly drawings. We handle connector selection,
+					wire gauge and protection, shielding/EMC, strain relief,
+					labeling,
+					and test plans—suited to automotive, industrial, agriculture,
+					and robotics applications.
+				</p>
+				<p>
+					From schematic capture to PCB layout, harness drafting, and
+					prototype builds, we manage each stage with precision and
+					attention to detail. Covering DFM/DFT, BOMs, and bring-up
+					testing, so your idea moves smoothly into production.
+				</p>
+			</div><!--/wrapper-hero-paragraph-->
+		</div><!--/wrapper-hero-->
+		<div class="wrapper-benefits">
+			<h2>Why our electronics &amp; wiring make the difference</h2>
+			<ul class="benefits">
+				<li>
+					<i class="fas fa-plug benefit benefit-1" aria-hidden="true"></i>
+					<h3>Integrated PCB + Harness</h3>
+					<p>Boards, looms, and connectorised assemblies designed together
+						for reliability and EMI.</p>
+				</li>
+				<li>
+					<i class="fas fa-layer-group benefit benefit-2" aria-hidden="true"></i>
+					<h3>Prototype to Production</h3>
+					<p>One-offs to small runs with DFM/DFT, cable schedules,
+						pinouts, and build docs.</p>
+				</li>
+				<li>
+					<i class="fas fa-shield-alt benefit benefit-3" aria-hidden="true"></i>
+					<h3>Field-Ready Details</h3>
+					<p>Correct gauge &amp; protection, strain relief, labeling, and
+						test plans for harsh use.</p>
+				</li>
+			</ul>
+		</div>
+		<h2>Previous Work</h2>
+		{% include lightbox.html images=page.images id='electronics' %}
+		<div id="wrapper-contact">
+			<h2>Contact Us</h2>
+			<div class="form-area">
+				<div class="form-text">
+					<form action="https://formspree.io/f/xknzzvvz" method="POST">
+						<div class="field">
+							<input type="text" name="name" class="input" placeholder=""
+								required pattern=".*\S.*">
+							<label for="text" class="label">Name</label>
+						</div>
+						<div class="field">
+							<input type="email" name="_replyto" class="input" placeholder=""
+								required>
+							<label for="email" class="label">Email</label>
+						</div>
+						<div class="fieldtext">
+							<label for="message" class="label">Describe your
+								electronics project or
+								idea...</label>
+							<textarea name="message" cols="50" rows="10"></textarea>
+						</div>
+						<button class="button form-button-contact" type="submit">Send
+							Electronics
+							Enquiry</button>
+					</form>
+				</div>
+			</div>
+		</div><!--/wrapper-contact-->
+	</section>
+</div><!--/wrapper-page-->

@@ -1,0 +1,30 @@
+{%- comment -%}
+Usage: {% include lightbox.html images=page.images id=page.slug %}
+images: [{src:"/img/...jpg", alt:"", caption:"optional"}]
+id: a unique string to namespace the anchors (e.g., page.slug)
+{%- endcomment -%}
+
+<div class="wrapper-photos">
+	{%- for img in include.images -%}
+	{%- assign idx = forloop.index -%}
+	<a href="#{{ include.id }}-image{{ idx }}">
+		<img src="{{ img.src | relative_url }}" alt="{{ img.alt | default: '' }}" class="thumb">
+	</a>
+	<div id="{{ include.id }}-image{{ idx }}" class="lightbox">
+		{%- if forloop.first == false -%}
+		<a href="#{{ include.id }}-image{{ idx | minus: 1 }}"><i
+				class="previous fa-solid fa-arrow-left"></i></a>
+		{%- endif -%}
+		<div class="slide">
+			<a href="#_">
+				<img src="{{ img.src | relative_url }}" alt="{{ img.alt | default: '' }}">
+			</a>
+			{%- if img.caption %}<p>{{ img.caption }}</p>{% endif -%}
+		</div>
+		<a href="#_"><i class="exit fa-solid fa-xmark"></i></a>
+		{%- if forloop.last == false -%}
+		<a href="#{{ include.id }}-image{{ idx | plus: 1 }}"><i class="next fa-solid fa-arrow-right"></i></a>
+		{%- endif -%}
+	</div>
+	{%- endfor -%}
+</div>

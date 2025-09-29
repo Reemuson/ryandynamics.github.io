@@ -1,0 +1,100 @@
+@use "../settings" as s;
+
+#four-oh-four {
+	text-align: center;
+	padding-top: 3rem;
+
+	a:not(.button) {
+		color: s.$colour-5;
+		text-decoration: underline;
+	}
+
+	h1 {
+		font-size: clamp(2rem, 4vw, 3rem);
+		margin-bottom: .5rem;
+	}
+
+	p {
+		max-width: 70ch;
+		margin: 0 auto 1.25rem;
+		opacity: .9;
+	}
+
+	/* CTA buttons row */
+	.wrapper-buttons {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.75rem;
+		justify-content: center;
+		margin: 1.5rem 0 2rem;
+	}
+
+	/* divider */
+	hr {
+		max-width: 600px;
+		height: 1px;
+		border: 0;
+		margin: 2rem auto;
+		background: rgba(0, 0, 0, .12);
+	}
+
+	/* link groups */
+	.quick-links {
+		display: grid;
+		gap: 1rem;
+		grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+		max-width: 900px;
+		margin: 0 auto 2rem;
+
+		h2 {
+			font-size: s.$h2;
+			margin-bottom: .5rem;
+			color: s.$colour-5;
+		}
+
+		ul {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+
+			li+li {
+				margin-top: .25rem;
+			}
+
+			a {
+				text-decoration: none;
+				color: s.$colour-6;
+
+				&:hover,
+				&:focus-visible {
+					text-decoration: underline;
+					outline: none;
+				}
+			}
+		}
+	}
+
+	/* accessibility: make buttons clearly focusable */
+	.button:focus-visible {
+		outline: 2px solid rgba(0, 0, 0, .25);
+		outline-offset: 2px;
+	}
+
+	/* spacing tune-ups on larger screens */
+	@include s.respond(lg) {
+		padding: 4rem 0;
+
+		p {
+			margin-bottom: 1.5rem;
+		}
+
+		.wrapper-buttons {
+			gap: 1rem;
+			margin: 2rem 0 2.5rem;
+		}
+
+		.quick-links {
+			gap: 1.25rem;
+		}
+	}
+}

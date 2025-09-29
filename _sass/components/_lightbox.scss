@@ -1,0 +1,83 @@
+@use "../settings" as s;
+
+.wrapper-photos {
+	text-align: center;
+
+	img {
+		border-radius: .5rem;
+		border: .5rem solid s.$colour-4;
+		margin: .5rem;
+	}
+
+	.thumb {
+		display: inline;
+		max-width: calc(100vw - 80px);
+		transition: transform .5s;
+	}
+
+	.lightbox {
+		display: none;
+		position: fixed;
+		z-index: 999;
+		inset: 0;
+		background: rgba(34, 34, 34, .8);
+
+		.slide {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+
+			img {
+				max-width: 80vw;
+				max-height: 80vh;
+				margin: 0;
+			}
+
+			p {
+				color: s.$colour-2;
+				font-size: s.$p;
+			}
+
+			a {
+				color: s.$colour-5;
+				font-size: s.$p;
+				text-decoration: underline;
+			}
+		}
+
+		&:target {
+			display: block;
+		}
+
+		.previous,
+		.next,
+		.exit {
+			position: fixed;
+			width: s.$h1;
+			color: s.$colour-1;
+			font-size: s.$h2;
+		}
+
+		.previous {
+			left: 2.5%;
+			top: 49%;
+		}
+
+		.next {
+			right: 2.5%;
+			top: 49%;
+		}
+
+		.exit {
+			right: 2.5%;
+			top: 5%;
+		}
+	}
+}
+
+@include s.respond(lg) {
+	.wrapper-photos .thumb:hover {
+		transform: scale(1.1);
+	}
+}

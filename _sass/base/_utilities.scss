@@ -1,0 +1,11 @@
+@use "../settings" as s;
+
+.highlight-red {
+	color: s.$colour-5;
+	font-weight: 700;
+}
+
+.highlight-bold {
+	color: s.$colour-4;
+	font-weight: 700;
+}

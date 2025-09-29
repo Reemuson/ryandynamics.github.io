@@ -1,0 +1,78 @@
+---
+layout: entry
+title: "Aquilawire VS.807"
+summary: "A Voxelab Aquila conversion to CoreXZ with a Stealthburner."
+date: 2023-09-10
+author: "Ryan"
+tags: [project, 3d-printing]
+redirect_from: [ /project/project-aquilawire, /project/project-aquilawire.html, /project-aquilawire ]
+images:
+- { src: "/img/project/aquilawire/printer.jpeg",
+alt: "Aquilawire overview",
+caption: "Aquilawire VS.807." }
+- { src: "/img/project/aquilawire/screen.jpeg",
+alt: "CYD screen",
+caption: "Custom CYD screen case." }
+- { src: "/img/project/aquilawire/inside.jpeg",
+alt: "Electronics bay",
+caption: "Electronics bay with cable lacing." }
+- { src: "/img/project/aquilawire/printhead.jpeg",
+alt: "Print head",
+caption: "Stealthburner print head." }
+---
+
+<h2>Introduction</h2>
+<p>Aquilawire is a heavily modified Voxelab Aquila X2 converted to
+	CoreXZ akin to the <a href="https://www.vorondesign.com/voron_switchwire" target="_blank">VORON
+		Switchwire</a>.</p>
+<p>It was bought for cheap on a black-friday sale and worked well with
+	slight modification
+	for many months. Until I discovered and fell into the world of
+	VORON …</p>
+<p>The VORON Switchwire provides linear rails, CoreXZ motion and
+	saying goodbye to z-wobble from poorly constructed lead screws.
+	It was a big list of
+	upgrades to boost speed, precision, and overall print quality.
+</p>
+<p>I stumbled upon this gem of a project by <a href="https://github.com/boubounokefalos/Ender_SW"
+		target="_blank">boubounokefalos</a>.
+	They took the Aquila X2/Ender 3 frame and turned it into a
+	Switchwire. I
+	self-sourced all of the parts needed to build this machine and
+	printed most of the parts
+	from boubounokefalos albiet modifying a few.</p>
+<p>But, of course, the modding journey didn't stop there. Automatic
+	z-offset became the next
+	big thing. Which needed a nozzle end-stop (much like tool stops
+	found on CNC mills) and at
+	the time I wasn’t about to wait around for parts to ship. Lucky
+	I have a lathe handy and was
+	able to turn out the needed bushing and pin.</p>
+<p>I then came across the Klicky probe by <a href="https://github.com/jlas1/Klicky-Probe" target="_blank">jlas1</a> - a
+	game-changer. I opted for
+	the KlickyPCB derivation as
+	initial use of the KlickyNG seemed to be unreliable, I’ll chalk
+	that up to poor initial
+	tolerances on my printer. However, this became the key to
+	hassle-free bed-levelling and
+	nozzle swaps. With some configuration files in Klipper for
+	auto-offset calibration I can
+	switch nozzles easily, no feeler gauge required.</p>
+<p>Now this printer takes it all in stride. Cruising at 250mm/s²
+	external walls with 10k
+	acceleration - it’s a beast that can print PLA, ABS/ASA, PC,
+	PETG and TPU. Albiet with lots
+	of testing to find
+	the right printer settings for each material it’s been a very
+	enjoyable project with an
+	awesome printer to use at the end.</p>
+
+<h2>Specifications</h2>
+<ul>
+	<li>Stealthburner w/ CW2</li>
+	<li>Dragon UHF w/ CHT Volcano</li>
+	<li>BTT SKR Mini e3 V3.0</li>
+	<li>Raspberry Pi 4 8GB</li>
+	<li>CYD Screen</li>
+	<li>KlickyPCB Probe w/ servo mount</li>
+</ul>

@@ -1,0 +1,108 @@
+---
+layout: default
+title: 3D Printing Services in Newcastle, Australia
+description: Discover our 3D Printing Services, specializing in small volume projects, rapid prototyping, reverse engineering and hard-to-source parts cloning. Collaborate with us to bring your unique ideas to life. Contact us today to discuss your project!
+permalink: /3d-printing/
+redirect_from: [/3d-printing, /3d-printing.html]
+images:
+- { src: "/img/prints/print-1.jpeg",
+alt: "Physical prototype of a unique motorcycle fuel tank for fitment and reference in aluminium fabrication.",
+caption: "Physical prototype of a unique motorcycle fuel tank for fitment and reference in aluminium fabrication." }
+- { src: "/img/prints/print-2.jpeg",
+alt: "Physical prototype of a final revision product design before manufacture in steel.",
+caption: "Physical prototype of a final revision product design before manufacture in steel." }
+- { src: "/img/prints/print-3.jpeg",
+alt: "Replacement right side ear-cup for WW2 era RAAF pilot headset.",
+caption: "Replacement right side ear-cup for WW2 era RAAF pilot headset." }
+- { src: "/img/prints/print-4.jpeg",
+alt: "Stanley screwdriver mounting for pegboard storage system.",
+caption: "Stanley screwdriver mounting for pegboard storage system." }
+---
+
+<div class="wrapper-page">
+	<section class="page printing" id="printing">
+		<div class="wrapper-hero">
+			<h1>Turn <span class="highlight-bold">ideas</span> into
+				<span class="highlight-red">parts</span><span class="highlight-bold">.</span>
+			</h1>
+			<div class="wrapper-hero-paragraph">
+				<p>
+					We cater to small volume projects, rapid prototyping, reverse
+					engineering, and cloning
+					hard-to-source parts. With meticulous attention to detail and
+					personalized service, we bring
+					your ideas to life.
+				</p>
+				<p>
+					Collaboration is at the heart of what we do, and we always work
+					closely
+					with you on your most
+					unique projects.
+				</p>
+				<p>
+					Contact us today to discuss your project, and let's embark on a
+					journey
+					of transforming your
+					ideas into tangible creations.
+				</p>
+			</div><!--/wrapper-hero-->
+		</div><!--/wrapper-hero-->
+		<div class="wrapper-benefits">
+			<h2>Why our printing stands out</h2>
+			<ul>
+				<li>
+					<i class="fas fa-tachometer-alt" class="benefit benefit-1"></i>
+					<h3>Rapid Prototyping</h3>
+					<p>
+						Get parts in hand quickly to test, refine, and validate
+						your designs.
+					</p>
+				</li>
+				<li>
+					<i class="fas fa-wand-magic-sparkles" class="benefit benefit-2"></i>
+					<h3>Customized Designs</h3>
+					<p>
+						Every print is adapted to your requirements, from fit
+						checks to end-use parts.
+					</p>
+				</li>
+				<li>
+					<i class="fas fa-cogs" class="benefit benefit-3"></i>
+					<h3>Wide Material Range</h3>
+					<p>
+						High-temp, rigid, or elastic, select from a wide
+						spectrum to match your needs.
+					</p>
+				</li>
+			</ul>
+		</div><!--/wrapper-benefits-->
+		<h2>Previous Work</h2>
+		{% include lightbox.html images=page.images id='3d-printing' %}
+		<div id="wrapper-contact">
+			<h2>Contact Us</h2>
+			<div class="form-area">
+				<div class="form-text">
+					<form action="https://formspree.io/f/xknzzvvz" method="POST">
+						<div class="field">
+							<input type="text" name="name" class="input" placeholder=""
+								required pattern=".*\S.*">
+							<label for="text" class="label">Name</label>
+						</div>
+						<div class="field">
+							<input type="email" name="_replyto" class="input" placeholder=""
+								required>
+							<label for="email" class="label">Email</label>
+						</div>
+						<div class="fieldtext">
+							<label for="message" class="label">What would
+								you like us to 3D print?</label>
+							<textarea name="message" cols="50" rows="10"></textarea>
+						</div>
+						<button class="button form-button-contact" type="submit">Request a
+							Print</button>
+					</form>
+				</div>
+			</div>
+		</div><!--/wrapper-contact-->
+	</section>
+</div><!--/wrapper-page-->

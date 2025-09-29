@@ -1,1 +1,31 @@
-.DS_STORE
+# --- Jekyll build artifacts ---
+_site/
+.jekyll-cache/
+.jekyll-metadata
+
+# --- Bundler / Ruby ---
+.bundle/
+vendor/bundle/
+
+# --- Sass caches ---
+.sass-cache/
+*.map
+
+# --- Node ---
+node_modules/
+
+# --- OS cruft ---
+# macOS
+.DS_Store
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# --- Logs / temp ---
+*.log
+*.tmp
+/css
+
+# --- VS Code ---
+.vscode/

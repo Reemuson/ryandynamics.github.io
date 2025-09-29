@@ -1,0 +1,60 @@
+---
+layout: default
+title: Page not found — Ryan Dynamics
+permalink: /404.html
+sitemap: false
+robots: noindex
+---
+
+<div class="wrapper-page">
+	<section class="page" id="four-oh-four">
+		<h1>Well this is awkward…</h1>
+		
+		<p>
+			The page you’re after doesn’t exist (or moved). Let’s get you back on track.
+		</p>
+
+		<div class="wrapper-buttons">
+			<a class="button button-projects" href="{{ '/' | relative_url }}">Back to Home</a>
+		</div>
+
+		<div class="quick-links">
+			<div>
+				<h2>Services</h2>
+				<ul>
+					<li><a href="{{ '/drafting/'     | relative_url }}">Drafting</a></li>
+					<li><a href="{{ '/3d-printing/'  | relative_url }}">3D Printing</a></li>
+					<li><a href="{{ '/electronics/'  | relative_url }}">Electronics</a></li>
+					<li><a href="{{ '/programming/'  | relative_url }}">Programming</a></li>
+				</ul>
+			</div>
+
+			<div>
+				<h2>Recent Projects</h2>
+				<ul>
+					{% assign recent_projects = site.project | sort: 'date' | reverse | slice: 0, 3
+					%}
+					{% for p in recent_projects %}
+					<li><a href="{{ p.url | relative_url }}">{{ p.title }}</a></li>
+					{% endfor %}
+				</ul>
+			</div>
+
+			<div>
+				<h2>Latest Insights</h2>
+				<ul>
+					{% assign recent_insights = site.insight | sort: 'date' | reverse | slice: 0, 3
+					%}
+					{% for i in recent_insights %}
+					<li><a href="{{ i.url | relative_url }}">{{ i.title }}</a></li>
+					{% endfor %}
+				</ul>
+			</div>
+		</div>
+
+		<p>
+			If you typed the URL, double-check the spelling or trailing slash.<br>
+			Still lost? <a href="{{ '/contact/' | relative_url }}">Tell us</a> and we’ll help.
+		</p>
+	</section>
+</div>

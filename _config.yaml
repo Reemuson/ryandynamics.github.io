@@ -1,0 +1,24 @@
+title: Ryan Dynamics
+description: Industrial design, electronics & 3D printing in Newcastle, Australia
+url: https://www.ryandynamics.com
+baseurl: ""
+
+timezone: Australia/Sydney 
+
+plugins:
+  - jekyll-redirect-from
+  - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-last-modified-at
+
+permalink: pretty
+
+collections_dir: pages
+collections:
+  project:
+    output: true
+    permalink: /project/:slug/
+  insight:
+    output: true
+    permalink: /insight/:slug/
