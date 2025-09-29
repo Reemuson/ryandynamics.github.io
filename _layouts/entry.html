@@ -19,8 +19,8 @@
 						{{ content }}
 					</div>
 					<div class="box-2">
-						<h2>Images</h2>
 						{% if page.images %}
+						<h2>Images</h2>
 						{% assign lb_id = page.slug | default: page.id %}
 						{% include lightbox.html images=page.images id=lb_id %}
 						{% endif %}
