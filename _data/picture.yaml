@@ -1,0 +1,25 @@
+presets:
+  thumb:
+    formats: [webp, jpg]
+    widths: [240, 320, 480]
+    sizes: "(min-width: 1200px) 240px, (min-width: 768px) 33vw, 45vw"
+    attributes:
+      class: thumb
+      loading: lazy
+      decoding: async
+
+  full:
+    formats: [webp, jpg]
+    widths: [960, 1280, 1920]
+    sizes: "90vw"
+    attributes:
+      decoding: async
+
+  hero:
+    formats: [webp, jpg]
+    widths: [960, 1200, 1600]
+    sizes: "(min-width: 1200px) 1200px, 100vw"
+    attributes:
+      loading: eager
+      fetchpriority: high
+      decoding: async

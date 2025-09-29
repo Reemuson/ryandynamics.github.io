@@ -38,9 +38,12 @@ permalink: /
 					Projects &amp; Insights</a>
 			</div>
 			<div class="box-2">
-				<a href="{{ '/project/project-cydcase/' | relative_url }}"><img
-						src="/img/project/cydcase/IMG_0502.JPEG" alt="photograph of the month"
-						class="project-of-month"></a>
+				<a href="{{ '/project/drybox/' | relative_url }}">
+					{% assign hero_src =
+					'/assets/images-src/projects/drybox/hero/drybox-hero-01.jpg' |
+					remove_first: '/assets/images-src/' %}
+					{% picture {{ hero_src }} preset="hero" alt="photograph of the month" %}
+				</a>
 			</div>
 		</div><!--/wrapper-hero-->
 		<div class="wrapper-benefits">

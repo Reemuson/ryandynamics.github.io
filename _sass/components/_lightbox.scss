@@ -1,20 +1,49 @@
 @use "../settings" as s;
 
 .wrapper-photos {
+	/* FLEX gallery */
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: flex-start;
+	gap: 1rem;
 	text-align: center;
 
-	img {
-		border-radius: .5rem;
+	>a {
+		flex: 0 1 300px;
+		display: block;
 		border: .5rem solid s.$colour-4;
-		margin: .5rem;
-	}
-
-	.thumb {
-		display: inline;
-		max-width: calc(100vw - 80px);
+		border-radius: .5rem;
+		overflow: hidden;
 		transition: transform .5s;
 	}
 
+	a {
+		aspect-ratio: 4 / 3;
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+
+	picture,
+	img {
+		display: block;
+		width: 100%;
+		height: auto;
+	}
+
+	.lightbox .slide img {
+		max-width: 80vw;
+		max-height: 80vh;
+		margin: 0;
+		border: 0;
+		border-radius: 0;
+	}
+
+	/* LIGHTBOX (no border on full image) */
 	.lightbox {
 		display: none;
 		position: fixed;
@@ -32,9 +61,12 @@
 				max-width: 80vw;
 				max-height: 80vh;
 				margin: 0;
+				border: 0;
+				border-radius: 0;
 			}
 
 			p {
+				padding-top: 1rem;
 				color: s.$colour-2;
 				font-size: s.$p;
 			}
@@ -76,8 +108,10 @@
 	}
 }
 
+/* Desktop hover scale */
 @include s.respond(lg) {
-	.wrapper-photos .thumb:hover {
+
+	.wrapper-photos>a:hover {
 		transform: scale(1.1);
 	}
 }

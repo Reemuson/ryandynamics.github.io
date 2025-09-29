@@ -3,6 +3,10 @@
 .about {
 	padding-top: 3rem;
 
+	h2 {
+		padding-top: 1rem;
+	}
+
 	.wrapper-hero-paragraph {
 		padding-top: 3rem;
 
@@ -15,11 +19,19 @@
 		display: grid;
 		justify-items: center;
 
-		.project-of-month {
-			margin: 1rem 0 0;
-			width: 80vw;
-			border: .5rem solid s.$colour-4;
-			border-radius: .5rem;
+		a {
+			img {
+				margin-top: 3rem;
+				height: 400px;
+				display: block;
+				border: .5rem solid s.$colour-4;
+				border-radius: .5rem;
+				overflow: hidden;
+
+				@include s.respond(lg) {
+					margin-top: 0;
+				}
+			}
 		}
 
 		.link-project-of-month {

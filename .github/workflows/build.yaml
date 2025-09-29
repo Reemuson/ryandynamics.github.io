@@ -2,7 +2,7 @@ name: Build & Deploy Jekyll
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -26,8 +26,19 @@ jobs:
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.4'      # ← Ruby 3.4.x
+          ruby-version: "3.4"
           bundler-cache: true
+
+      - name: Install libvips (with AVIF support)
+        run: |
+          sudo apt-get update
+          # libvips runtime + CLI tools
+          sudo apt-get install -y libvips libvips-tools
+          # AVIF via libheif (and dependencies)
+          sudo apt-get install -y libheif1 libheif-dev
+          # (optional) JPEG XL support if your presets ever use it
+          sudo apt-get install -y libjxl-dev || true
+          vips --version
 
       - name: Install gems
         run: bundle install --path vendor/bundle
