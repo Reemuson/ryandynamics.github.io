@@ -19,4 +19,4 @@ gem "bigdecimal","~> 3.1"     # required by Liquid
 
 # Timezone (Windows needs tzinfo-data)
 gem "tzinfo", "~> 2.0"
-gem "tzinfo-data", platforms: [:mswin, :mingw, :x64_mingw, :jruby]
+gem "tzinfo-data", platforms: [:windows]
