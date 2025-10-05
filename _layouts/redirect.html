@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en-US">
+<meta charset="utf-8">
+<title>Redirecting…</title>
+
+<!-- Prevent indexing, still allow link flow -->
+<meta name="robots" content="noindex, follow">
+
+<!-- Absolute canonical to the target -->
+<link rel="canonical" href="{{ page.redirect.to | absolute_url | escape }}">
+
+<!-- Meta refresh as a fallback -->
+<meta http-equiv="refresh" content="0; url={{ page.redirect.to | absolute_url | uri_escape }}">
+
+<!-- JS redirect without confusing the linter -->
+<script>
+	(function () {
+		var target = '{{ page.redirect.to | absolute_url | escape }}';
+		if (target) location.replace(target);
+	})();
+</script>
+
+<p>If you aren’t redirected, <a href="{{ page.redirect.to | absolute_url | escape }}">click here</a>.</p>
+
+</html>
