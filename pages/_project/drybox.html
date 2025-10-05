@@ -1,11 +1,15 @@
 ---
 layout: entry
-title: "Filament Dry Box"
-summary: "A nifty dry box using K-Mart dry-food containers to fit 2 1KG spools."
+title: Filament Dry Box
+subtitle: A low-cost, dual-spool moisture box using a locally available K-Mart container
+summary: Mini case study of a dual-spool dry box built around a K-Mart 9&nbsp;L container.
+description: Case study of a dual-spool filament dry box optimised for availability, cost, printability, and usability.
 date: 2023-10-30
-author: "Ryan"
+last_modified_at: 2025-10-05
+author: Ryan H
 tags: [project, 3d-printing]
 redirect_from: [ /project/project-drybox, /project/project-drybox.html, /project-drybox ]
+images_inline: true
 images:
 - { src: "/assets/images-src/projects/drybox/gallery/drybox-front-01.jpg",
 alt: "Drybox front",
@@ -29,53 +33,187 @@ alt: "Drybox draft",
 caption: "Drybox draft." }
 ---
 
-<h2>Introduction</h2>
-<p>Ever scoured printables looking for a filament dry box solution that
-	won't make your wallet
-	weep? Many designs while absolutely awesome tend to require
-	containers that aren't available
-	in Australia or cost a lot to buy. So I scoured my local
-	shopping centre, toting an empty
-	spool and a stubborn commitment to keeping costs low. Then,
-	jackpot! the <a href="https://www.kmart.com.au/product/9l-dry-food-storage-with-scoop-42898382" target="_blank">K-Mart
-		9L Dry-Food Container</a> at just $6. It's the perfect
-	size to fit 2 1KG spools and have
-	some room spare for desiccant and some fun extras.</p>
-<p>Many filament boxes use a rod fed through the inner diameter of the
-	spool for feeding, while
-	I understand the attraction (that's why spools are designed that
-	way). I can't stand it,
-	when replacing spools or moving them around it's an extra step
-	that adds frustration. It's
-	an opinion Adam Savage holds for his wire or tape storage that
-	having it roll on something
-	lets you dispense what you need, but keeps it much more mobile
-	to move it about. The design
-	uses standard 608 bearings which can be obtained from a variety
-	of places and standard
-	PC4-M10 PTFE couplings that one probably has lying about as
-	spares from their printer.</p>
-<p>The desiccant box is designed to be printed in PETG such that when
-	filled with silica gel
-	desiccant one can place the entire container in the microwave or
-	oven at a low heat to dry
-	the silica without the tub deforming from the heat. The whole
-	tub can be slid onto the
-	mounting rail for easy removal for this purpose and to allow
-	access to add or remove spools.
-</p>
-<p>For monitoring humidity, with the ample space in the container, I
-	allowed room for a round
-	hygrometer that is quite popular on this site and can be found
-	on amazon for a reasonable
-	price. I also designed a small nifty filament ID card with some
-	basic print tests built in,
-	such as: translucency, bridge tests and line width tests.
-	Designed to use Avery L7144
-	sticker labels with an attached template to design your own. A
-	holder is included that
-	allows you to keep track of the filaments in the container at a
-	glance.</p>
+<p><strong>TL;DR:</strong> A dual-spool dry box was designed around a readily available AU container (K-Mart 9&nbsp;L). Key
+	goals were low cost, no weird parts, fast spool changes, and real moisture control. Iterations (V1 to V3.1)
+	improved printability, capacity, and hygrometer mounting. <!--more--></p>
 
-<a href="https://www.printables.com/model/664473-dual-filament-dry-box-k-mart-9l-dry-container" target="_blank"
-	class="button button-printables">Printables</a>
+<h2>Problem</h2>
+<p>Most dry box designs use containers that are hard to source in Australia or too pricey to import. Many also use a
+	through-spool rod, which slows swaps and handling. I wanted a design that anyone in Australia could build with
+	off-the-shelf parts, that stays dry, loads quickly, and doesn’t fight you during spool changes.</p>
+
+<h2>Constraints & Goals</h2>
+<ul>
+	<li><strong>Availability:</strong> container must be purchasable locally (K-Mart 9&nbsp;L Dry-Food Container).
+	</li>
+	<li><strong>Cost:</strong> common hardware only (608 bearings, PC4-M10 couplers), minimal printed mass.</li>
+	<li><strong>Usability:</strong> no central rod; spools roll on bearings, quick in/out access, feed through
+		couplers.</li>
+	<li><strong>Serviceability:</strong> desiccant tub removable and oven/microwave-dryable (PETG body + TPU lid).
+	</li>
+	<li><strong>Capacity:</strong> dual 1&nbsp;kg spools, wider spools supported in later revisions.</li>
+	<li><strong>Printability:</strong> sensible orientations, reduced waste, no exotic supports.</li>
+</ul>
+
+<h2>Solution overview</h2>
+<p>The box uses <strong>side rollers with 608 bearings</strong> so spools sit and spin freely. Two
+	<strong>PC4-M10</strong> couplers route PTFE out the front for clean filament feed. A <strong>PETG desiccant
+		tub</strong> (with a <strong>TPU snap lid</strong>) slides onto a mounting rail for quick removal and
+	re-drying. A compact <strong>hygrometer mount</strong> gives visibility without cutting the container (V3+).
+</p>
+
+<div class="table-scroll">
+	<table class="table--compact">
+		<thead>
+			<tr>
+				<th>Design element</th>
+				<th>Rationale</th>
+				<th>Material</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Side roller brackets + 608 bearings</td>
+				<td>Fast spool swaps; smooth feed; no rod alignment</td>
+				<td>PLA+/PETG (brackets), steel (608)</td>
+			</tr>
+			<tr>
+				<td>PC4-M10 couplers</td>
+				<td>Standard PTFE interfaces; easy to source</td>
+				<td>Brass/stainless</td>
+			</tr>
+			<tr>
+				<td>Desiccant tub + slide-in rail</td>
+				<td>Quick removal for re-dry; no warping when heated</td>
+				<td>PETG (tub), TPU (lid)</td>
+			</tr>
+			<tr>
+				<td>Hygrometer mount (no cut)</td>
+				<td>Container remains intact; easier build</td>
+				<td>PLA+</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<h2>Changelog</h2>
+<ul>
+	<li><strong>V1 — 2023-11-23:</strong> Initial release.</li>
+	<li><strong>V2 — 2024-05-21:</strong> Redesigned base plates to reduce filament waste and increase printability;
+		reduced roller diameter.</li>
+	<li><strong>V3 — 2025-07-08:</strong> Increased max allowable spool width to 67 mm; improved hygrometer mount,
+		removing the need to cut the tub.</li>
+	<li><strong>V3.1 — 2025-07-26:</strong> Added thread-forming holes to MOUNT; new clip-on swatch.</li>
+</ul>
+
+<h2>Bill of materials</h2>
+<ul>
+	<li>K-Mart 9&nbsp;L Dry-Food Container (AU, link below)</li>
+	<li>4 × 608 bearings (rollers)</li>
+	<li>2 × PC4-M10 PTFE couplers</li>
+	<li>Silica gel desiccant (loose or sachets)</li>
+	<li>Optional: round hygrometer</li>
+	<li>Printed parts: brackets, base plates, desiccant tub (PETG), lid (TPU), &amp; mounts</li>
+</ul>
+
+<h2>Printing & assembly notes</h2>
+<ul>
+	<li><strong>Materials:</strong> PETG for parts near heat; TPU for the desiccant lid; PLA is fine for
+		base plates, spindles, and mounts.</li>
+	<li><strong>Orientation:</strong> base plates printed to take load across layers; desiccant tub upright; no
+		supports required.</li>
+	<li><strong>Perimeters &amp; infill:</strong> 3 perimeters, 20–30% infill works well.</li>
+	<li><strong>Tolerances:</strong> press-fit for 608s; thread-forming holes (V3.1) remove the need for threaded
+		inserts.
+	</li>
+</ul>
+
+<h2>Results</h2>
+<p>With fresh desiccant, humidity drops rapidly and remains low during normal use. The roller layout makes swaps
+	trivial, and the front PTFE couplers keep feeds tidy. The V3+ changes mean the tub stays intact. No drilling, so
+	anyone can build this with basic tools.</p>
+
+<h2>Images</h2>
+{% include gallery.html %}
+
+<h2>Files & source</h2>
+<div class="wrapper-buttons">
+	<a href="https://www.printables.com/model/664473-dual-filament-dry-box-k-mart-9L-dry-container" target="_blank"
+		rel="noopener" class="button button-printables">Printables</a>
+	<a href="https://www.kmart.com.au/product/9#L-dry-food-storage-with-scoop-42898382" target="_blank"
+		rel="noopener" class="button button-learn">K-Mart container</a>
+</div>
+
+<h2>Apply this approach</h2>
+<p>
+	This is the same design method we use on client work: define constraints, iterate toward buildability, validate
+	against real-world use.
+	If you want help selecting materials or designing around moisture and handling, see our
+	<a href="/services/3d-printing/">3D Printing</a> and <a href="/services/drafting/">Design &amp;
+		Drafting</a> services, or <a href="/contact/">get in touch</a>.
+</p>
+
+<h2>FAQ</h2>
+<p><strong>Why not a central rod?</strong><br>It slows spool swaps and complicates handling. Side rollers are quicker
+	and still feed smoothly.</p>
+
+<p><strong>What materials should I print the parts from?</strong><br>PETG or ABS for the desiccant
+	tub, TPU for the snap lid, and PLA/PLA+ is fine for everything else.</p>
+
+<p><strong>How often should I dry the desiccant?</strong><br>It depends on use and ambient humidity; re-dry when the
+	hygrometer trends upward or after a spool change in humid weather.</p>
+
+<p><strong>What relative humidity should I aim for inside the box?</strong><br>Typically <em>&lt;20–30% RH</em> for
+	hygroscopic filaments (e.g., Nylon, PETG); for ABS/ASA/PC, keeping it below ambient and stable is the goal.</p>
+
+<p><strong>Do I need PTFE couplers?</strong><br>Couplers keep the filament path sealed and tidy;
+	you can opt to leave them out if you want to just use the box as a dry container.</p>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Why not a central rod?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It slows spool swaps and complicates handling. Side rollers are quicker and still feed smoothly."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What materials should I print the parts from?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "PETG or ABS for anything for the desiccant tub, TPU for the snap lid, and PLA/PLA+ is fine for everything else."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How often should I dry the desiccant?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It depends on use and ambient humidity; re-dry when the hygrometer trends upward or after a spool change in humid weather."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What relative humidity should I aim for inside the box?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Typically under 20–30% RH for hygroscopic filaments such as Nylon and PETG; for ABS, ASA, and PC, keep it below ambient and stable."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need PTFE couplers?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Couplers keep the filament path sealed and tidy; you can opt to leave them out if you want to just use the box as a dry container."
+      }
+    }
+  ]
+}
+</script>

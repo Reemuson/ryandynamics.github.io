@@ -1,0 +1,13 @@
+{% comment %}
+Reusable gallery include.
+Defaults to this page's images and an automatic id.
+Usage:
+{% include gallery.html %} -> uses page.images
+{% include gallery.html images=some_array %} -> custom set
+{% include gallery.html id="custom-id" %} -> custom id
+{% endcomment %}
+
+{% assign gallery_id = include.id | default: page.slug | default: page.id %}
+{% assign gallery_images = include.images | default: page.images %}
+
+{% include lightbox.html images=gallery_images id=gallery_id %}

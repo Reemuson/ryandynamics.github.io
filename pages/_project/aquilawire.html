@@ -1,78 +1,225 @@
 ---
 layout: entry
-title: "Aquilawire VS.807"
-summary: "A Voxelab Aquila conversion to CoreXZ with a Stealthburner."
+title: Aquilawire VS.807
+subtitle: Converting a Voxelab Aquila X2 into a CoreXZ “Switchwire-style” printer
+summary: Mini case study of turning an Aquila X2 into a CoreXZ machine.
+description: Step-by-step CoreXZ conversion of the Voxelab Aquila, including motion system changes, Stealthburner integration, probing/auto-Z, and measured results.
 date: 2023-09-10
-author: "Ryan"
+last_modified_at: 2025-10-05
+author: Ryan H
 tags: [project, 3d-printing]
-redirect_from: [ /project/project-aquilawire, /project/project-aquilawire.html, /project-aquilawire ]
+redirect_from:
+- /project/project-aquilawire
+- /project/project-aquilawire.html
+- /project-aquilawire
+images_inline: true
 images:
-- { src: "/assets/images-src/projects/aquilawire/gallery/printer-overview-01.jpg",
-alt: "Aquilawire overview",
-caption: "Aquilawire VS.807." }
-- { src: "/assets/images-src/projects/aquilawire/gallery/screen-front-01.jpg",
-alt: "CYD screen",
-caption: "Custom CYD screen case." }
-- { src: "/assets/images-src/projects/aquilawire/gallery/electronics-bay-detail-01.jpg",
-alt: "Electronics bay",
+- { src: "/assets/images-src/projects/aquilawire/gallery/printer-overview-01.jpg", alt: "Aquilawire overview", caption:
+"Aquilawire VS.807." }
+- { src: "/assets/images-src/projects/aquilawire/gallery/screen-front-01.jpg", alt: "CYD screen", caption: "Custom CYD
+screen case." }
+- { src: "/assets/images-src/projects/aquilawire/gallery/electronics-bay-detail-01.jpg", alt: "Electronics bay",
 caption: "Electronics bay with cable lacing." }
-- { src: "/assets/images-src/projects/aquilawire/gallery/printhead-front-01.jpg",
-alt: "Print head",
-caption: "Stealthburner print head." }
+- { src: "/assets/images-src/projects/aquilawire/gallery/printhead-front-01.jpg", alt: "Print head", caption:
+"Stealthburner print head." }
 ---
 
-<h2>Introduction</h2>
-<p>Aquilawire is a heavily modified Voxelab Aquila X2 converted to
-	CoreXZ akin to the <a href="https://www.vorondesign.com/voron_switchwire" target="_blank">VORON
-		Switchwire</a>.</p>
-<p>It was bought for cheap on a black-friday sale and worked well with
-	slight modification
-	for many months. Until I discovered and fell into the world of
-	VORON …</p>
-<p>The VORON Switchwire provides linear rails, CoreXZ motion and
-	saying goodbye to z-wobble from poorly constructed lead screws.
-	It was a big list of
-	upgrades to boost speed, precision, and overall print quality.
+<p><strong>TL;DR:</strong> I repurposed an Aquila X2 into a CoreXZ machine inspired by the VORON Switchwire to eliminate
+	Z-wobble, add linear rails, and enable a modern toolhead/probing stack. Result: faster, cleaner motion and
+	predictable first layers, with parts availability and serviceability in mind. <!--more--></p>
+
+<h2>Problem</h2>
+<p>The stock bed-slinger was fine for learning, but inconsistent Z mechanics and ringing limited surface quality and
+	throughput. I wanted <em>rigidity, repeatability, and serviceability</em> without binning the whole platform.
 </p>
-<p>I stumbled upon this gem of a project by <a href="https://github.com/boubounokefalos/Ender_SW"
-		target="_blank">boubounokefalos</a>.
-	They took the Aquila X2/Ender 3 frame and turned it into a
-	Switchwire. I
-	self-sourced all of the parts needed to build this machine and
-	printed most of the parts
-	from boubounokefalos albiet modifying a few.</p>
-<p>But, of course, the modding journey didn't stop there. Automatic
-	z-offset became the next
-	big thing. Which needed a nozzle end-stop (much like tool stops
-	found on CNC mills) and at
-	the time I wasn’t about to wait around for parts to ship. Lucky
-	I have a lathe handy and was
-	able to turn out the needed bushing and pin.</p>
-<p>I then came across the Klicky probe by <a href="https://github.com/jlas1/Klicky-Probe" target="_blank">jlas1</a> - a
-	game-changer. I opted for
-	the KlickyPCB derivation as
-	initial use of the KlickyNG seemed to be unreliable, I’ll chalk
-	that up to poor initial
-	tolerances on my printer. However, this became the key to
-	hassle-free bed-levelling and
-	nozzle swaps. With some configuration files in Klipper for
-	auto-offset calibration I can
-	switch nozzles easily, no feeler gauge required.</p>
-<p>Now this printer takes it all in stride. Cruising at 250mm/s²
-	external walls with 10k
-	acceleration - it’s a beast that can print PLA, ABS/ASA, PC,
-	PETG and TPU. Albiet with lots
-	of testing to find
-	the right printer settings for each material it’s been a very
-	enjoyable project with an
-	awesome printer to use at the end.</p>
+
+<h2>Constraints & goals</h2>
+<ul>
+	<li><strong>Reuse the frame where sensible:</strong> keep overall footprint and salvage value.</li>
+	<li><strong>Mechanical rigidity:</strong> linear rails, CoreXZ kinematics, tidier belt paths.</li>
+	<li><strong>Modern toolhead:</strong> Stealthburner + CW2 for clean wiring and cooling.</li>
+	<li><strong>Probing & auto Z:</strong> hardware-repeatable Z offset and reliable mesh.</li>
+	<li><strong>Parts availability:</strong> off-the-shelf fasteners/electronics here in AU.</li>
+	<li><strong>Serviceability:</strong> sane electronics layout, labelled harnesses, laced cabling.</li>
+</ul>
+
+<h2>Solution overview</h2>
+<p>I followed the excellent <a href="https://github.com/boubounokefalos/Ender_SW" target="_blank"
+		rel="noopener">Ender_SW</a> approach for CoreXZ on an Ender/Aquila frame, then adapted the toolhead and
+	probing to my needs. Linear rails handle X/Z, CoreXZ removes the typical lead-screw Z-wobble failure mode, and a
+	Stealthburner + CW2 gives consistent part cooling and plug-in hotend options. For probing, I landed on <a
+		href="https://github.com/jlas1/Klicky-Probe" target="_blank" rel="noopener">KlickyPCB</a> after testing
+	alternatives, paired with Klipper macros for automatic nozzle offset.</p>
+
+<div class="table-scroll">
+	<table class="table--compact">
+		<thead>
+			<tr>
+				<th>Subsystem</th>
+				<th>Choice</th>
+				<th>Rationale</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Kinematics</td>
+				<td>CoreXZ (Switchwire-style)</td>
+				<td>Removes Z lead-screw artefacts; compact moving mass</td>
+			</tr>
+			<tr>
+				<td>Motion</td>
+				<td>Linear rails on X/Z</td>
+				<td>Rigidity and repeatable alignment</td>
+			</tr>
+			<tr>
+				<td>Toolhead</td>
+				<td>Stealthburner + CW2</td>
+				<td>Clean wiring, strong part cooling, modularity</td>
+			</tr>
+			<tr>
+				<td>Hotend</td>
+				<td>Dragon UHF + CHT Volcano</td>
+				<td>High flow for speed with larger layers</td>
+			</tr>
+			<tr>
+				<td>Probe</td>
+				<td>KlickyPCB (servo mount)</td>
+				<td>Repeatable, serviceable, proven in community</td>
+			</tr>
+			<tr>
+				<td>Controller</td>
+				<td>BTT SKR Mini E3 V3.0</td>
+				<td>Quiet drivers, common pinout, Klipper-friendly</td>
+			</tr>
+			<tr>
+				<td>Host</td>
+				<td>Raspberry Pi 4 (8&nbsp;GB)</td>
+				<td>Klipper + Mainsail/Fluidd headroom</td>
+			</tr>
+			<tr>
+				<td>UI</td>
+				<td>CYD screen in custom case</td>
+				<td>Local controls and status at a glance</td>
+			</tr>
+			<tr>
+				<td>Wiring</td>
+				<td>Laced harnesses, labelled</td>
+				<td>Serviceability and noise control</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<h2>Build notes</h2>
+<ul>
+	<li><strong>Frame reuse:</strong> the Aquila/Ender extrusion set is a reasonable donor once squared; CoreXZ
+		brackets take care of the heavy lifting.</li>
+	<li><strong>Rails & alignment:</strong> tram the rails to the gantry carefully; backlash here shows up as
+		ripples.</li>
+	<li><strong>Probe path:</strong> KlickyPCB gave better repeatability for me than early KlickyNG prints; servo
+		mount keeps the mechanism simple.</li>
+	<li><strong>Auto-Z offset:</strong> Klipper macros measure nozzle-to-probe offset per swap—no feeler gauge
+		required.</li>
+	<li><strong>Electronics bay:</strong> give cables strain relief and route stepper pairs away from signal lines;
+		label everything.</li>
+</ul>
+
+<h2>Printer Performance</h2>
+<ul>
+	<li><strong>External walls:</strong> 300&nbsp;mm/s @ 10000&nbsp;mm/s²</li>
+	<li><strong>Travel:</strong> 400&nbsp;mm/s @ 15000&nbsp;mm/s²</li>
+	<li><strong>Resonance (input shaper):</strong> X ≈ 77.6&nbsp;Hz, Y ≈ 29.2&nbsp;Hz</li>
+	<li><strong>Materials validated:</strong> PLA, ABS/ASA, PETG, TPU (profiles tuned)</li>
+</ul>
+
+<h2>Images</h2>
+{% include gallery.html %}
 
 <h2>Specifications</h2>
 <ul>
 	<li>Stealthburner w/ CW2</li>
 	<li>Dragon UHF w/ CHT Volcano</li>
-	<li>BTT SKR Mini e3 V3.0</li>
-	<li>Raspberry Pi 4 8GB</li>
-	<li>CYD Screen</li>
-	<li>KlickyPCB Probe w/ servo mount</li>
+	<li>BTT SKR Mini E3 V3.0</li>
+	<li>Raspberry Pi 4 (8&nbsp;GB)</li>
+	<li>CYD screen (custom case)</li>
+	<li>KlickyPCB probe (servo mount)</li>
 </ul>
+
+<h2>Why not just buy a printer?</h2>
+<p>If your priority is time-to-part and vendor support, buying a ready CoreXY can make sense. This project was about
+	learning, reuse, and tuning a platform—<em>and</em> proving what can be done with a modest
+	donor and careful design and implementation.</p>
+
+<h2>Apply this approach</h2>
+<p>
+	The same method—requirements first, constrained design, repeatable measurement—is what we bring to client work.
+	If you need help selecting a machine, upgrading motion/tooling, or profiling materials, see our
+	<a href="/services/3d-printing/">3D Printing</a> and <a href="/services/drafting/">Design &amp; Drafting</a>
+	services, or <a href="/contact/">get in touch</a>.
+</p>
+
+<h2>FAQ</h2>
+<p><strong>Build or buy—what makes sense?</strong><br>If you value learning and customisation and can invest time,
+	build. If you need predictable output now with minimal tuning, buy.</p>
+
+<p><strong>Why base it on VORON Switchwire ideas?</strong><br>It’s a well-documented, rigid CoreXZ pattern with
+	community-proven parts and good serviceability.</p>
+
+<p><strong>Why convert an Aquila instead of starting from scratch?</strong><br>Lower cost, reuse of extrusions/hardware,
+	and a compact footprint already on hand.</p>
+
+<p><strong>What does CoreXZ improve over a bed-slinger?</strong><br>Better Z straightness (no lead-screw wobble), lower
+	moving mass in the print plane, and cleaner ringing characteristics when tuned.</p>
+
+<p><strong>What did the upgrade change in real numbers?</strong><br>Surface finish improved (ringing reduced),
+	first-layer yield increased, and stable speeds rose to 300/400&nbsp;mm/s with
+	input shaping.</p>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Build or buy—what makes sense?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "If you value learning and customisation and can invest time, build. If you need predictable output now with minimal tuning, buy."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why base it on VORON Switchwire ideas?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It’s a well-documented, rigid CoreXZ pattern with community-proven parts and good serviceability."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why convert an Aquila instead of starting from scratch?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Lower cost, reuse of extrusions and hardware, and a compact footprint already on hand."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does CoreXZ improve over a bed-slinger?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Better Z straightness (no lead-screw wobble), lower moving mass in the print plane, and cleaner ringing characteristics when tuned."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What did the upgrade change in real numbers?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Surface finish improved (ringing reduced), first-layer yield increased, and stable speeds rose with input shaping to the recorded values."
+      }
+    }
+  ]
+}
+</script>

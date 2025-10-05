@@ -1,8 +1,15 @@
 <div class="card">
 	<div class="card-body">
 		<h3 class="card-title">{{ item.title }}</h3>
-		{% if item.date %}<h4 class="card-date">{{ item.date | date: "%Y-%-m-%-d" }}</h4>{% endif %}
-		{% if item.summary %}<p>{{ item.summary }}</p>{% endif %}
+
+		{% assign blurb = item.summary | default: item.excerpt | default: item.description %}
+		{% if blurb %}
+		<p class="card-summary">{{ blurb | strip_html | truncate: 180 }}</p>
+		{% endif %}
+
+		{% if item.date %}
+		<p class="card-date">{{ item.date | date: "%Y-%-m-%-d" }}</p>
+		{% endif %}
 	</div>
 	<div class="button-wrapper">
 		<a href="{{ item.url | relative_url }}" class="button button-1">Read More</a>
