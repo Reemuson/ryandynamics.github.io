@@ -1,0 +1,51 @@
+{% assign b = site.business %}
+{% if b %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "{{ b.url | default: site.url | append: '#org' }}",
+  "name": "{{ b.name | escape }}",
+  {% if b.legal_name %}"legalName": "{{ b.legal_name | escape }}",{% endif %}
+  "url": "{{ b.url | default: site.url }}",
+  {% if b.logo %}"logo": "{{ b.logo | absolute_url }}",{% endif %}
+  {% if b.image %}"image": "{{ b.image | absolute_url }}",{% endif %}
+  {% if b.telephone %}"telephone": "{{ b.telephone }}",{% endif %}
+  {% if b.email %}"email": "{{ b.email }}",{% endif %}
+  {% if b.price_range %}"priceRange": "{{ b.price_range }}",{% endif %}
+  {% if b.abn %}"identifier": { "@type": "PropertyValue", "propertyID": "ABN", "value": "{{ b.abn }}" },{% endif %}
+  {% if b.same_as %}"sameAs": [{% for s in b.same_as %}"{{ s }}"{% if forloop.last == false %}, {% endif %}{% endfor %}],{% endif %}
+  {% if b.address %}
+  "address": {
+    "@type": "PostalAddress",
+    {% if b.address.street %}"streetAddress": "{{ b.address.street | escape }}",{% endif %}
+    "addressLocality": "{{ b.address.locality | escape }}",
+    "addressRegion": "{{ b.address.region | escape }}",
+    {% if b.address.postcode %}"postalCode": "{{ b.address.postcode | escape }}",{% endif %}
+    "addressCountry": "{{ b.address.country | escape }}"
+  },
+  {% endif %}
+  {% if b.geo %}
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": {{ b.geo.lat }},
+    "longitude": {{ b.geo.lon }}
+  },
+  {% endif %}
+  {% if b.service_area %}"areaServed": [{% for a in b.service_area %}"{{ a | escape }}"{% if forloop.last == false %}, {% endif %}{% endfor %}],{% endif %}
+  {% if b.has_map %}"hasMap": "{{ b.has_map }}",{% endif %}
+  {% if b.opening_hours %}
+  "openingHoursSpecification": [
+    {% for o in b.opening_hours %}
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [{% for d in o.dayOfWeek %}"https://schema.org/{{ d }}"{% if forloop.last == false %}, {% endif %}{% endfor %}],
+      "opens": "{{ o.opens }}",
+      "closes": "{{ o.closes }}"
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ]
+  {% endif %}
+}
+</script>
+{% endif %}

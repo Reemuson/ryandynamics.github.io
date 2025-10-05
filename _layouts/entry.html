@@ -11,19 +11,25 @@
 				<div class="wrapper-hero">
 					<div class="box-1">
 						<h1>{{ page.title }}</h1>
-						<h3>
+						{% if page.subtitle %}
+						<p class="page-deck">{{ page.subtitle }}</p>
+						{% endif %}
+						<p class="page-meta">
 							{% if page.date %}{{ page.date | date: "%Y-%-m-%-d" }}{% endif
 							%}
-							{% if page.author %} • {{ page.author }}{% endif %}
-						</h3>
+							{% if page.author %}{% if page.date %} • {% endif %}{{
+							page.author }}{% endif %}
+						</p>
 						{{ content }}
 					</div>
 					<div class="box-2">
+						{% unless page.images_inline %}
 						{% if page.images %}
 						<h2>Images</h2>
 						{% assign lb_id = page.slug | default: page.id %}
 						{% include lightbox.html images=page.images id=lb_id %}
 						{% endif %}
+						{% endunless %}
 					</div>
 				</div>
 			</section>

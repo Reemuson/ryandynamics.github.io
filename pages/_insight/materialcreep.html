@@ -1,102 +1,149 @@
 ---
 layout: entry
-title: "Material Creep"
-summary: "Dimensional stability, scientifically tested and the findings."
+title: Material Creep
+subtitle: Dimensional stability of common 3D-printing plastics under load and heat
+summary: What “creep” is, why it matters for functional prints, and practical takeaways.
+description: Test methodology and results for creep and dimensional drift across common 3D-printing materials, with actionable design takeaways for functional parts.
 date: 2024-04-20
-author: "Ryan"
+last_modified_at: 2025-10-05
+author: Ryan H
 tags: [insight, 3d-printing]
 redirect_from: [ /insight/insight-materialcreep, /insight/insight-materialcreep.html, /insight-materialcreep ]
 ---
 
-<h2>Introduction</h2>
-<p>
-	<strong>Material creep</strong> refers to a materials tendency
-	to deform or stretch in
-	dimension over time, whether with a force applied or under
-	heightened temperatures or both.
-	Material creep is typically measured as <em>elongation</em>
-	(<strong>ε</strong>) which is
-	the difference in a specified dimension measurement from the
-	measurement at rest. Material
-	creep is very relevant in 3D printing when producing functional
-	parts that require a certain
-	structural stiffness or dimensional stability under load.
-</p>
-<p>
-	Understanding material properties is very important, as material
-	properties
-	quickly dictate design decisions. Recently, a study published in
-	the
-	<em>Strojniški vestnik - Journal of Mechanical Engineering</em>
-	shed light on the property
-	of material creep for 3D printed parts. Let's take a closer look
-	at the findings and what
-	they mean.
-</p>
+<p><strong>TL;DR:</strong> For functional parts exposed to load and warmth, <em>PC</em> showed the best creep resistance
+	in the cited study, <em>ABS/ASA</em> were usable for moderate conditions, <em>Nylon</em> elongated significantly
+	but didn’t rupture within the test window, and <em>PLA</em> fared worst for creep. Choose materials based on
+	expected load and temperature, not just printability. <!--more--></p>
 
-<p>
-	The study, led by <em>Oguz Dogan</em> and his team, examined
-	material creep of various
-	plastics commonly used in 3D printing, such as; PLA, ABS, TPLA,
-	CPE, Nylon,
-	and PC — to different thermal and loading conditions. They used
-	the <em>ASTM D2990-17</em>
-	standard for producing the test specimens and results.
-</p>
+<h2>What is “creep” and why it matters</h2>
+<p><strong>Material creep</strong> is the tendency of a material to deform gradually under sustained stress, often
+	accelerated by temperature. It’s typically discussed in terms of <em>strain</em> (elongation) over time. For
+	3D-printed functional parts—hinges, clips, fixtures, brackets—creep shows up as parts that “relax,” sag, or
+	drift out of tolerance under a constant load or in a warm environment.</p>
 
-<h2>Key Findings</h2>
+<h2>The study (in plain English)</h2>
+<p>A recent paper by <em>Oguz Doğan</em> et&nbsp;al. examined creep behaviour of common FFF materials (PLA, ABS,
+	ASA/TPLA/CPE/Nylon/PC) under different loads and temperatures, using <em>ASTM&nbsp;D2990-17</em> procedures for
+	specimen prep and measurement. The headline trends:</p>
+
 <ul>
-	<li>Material elongation increased when the temperature or load
-		increased for all plastics.
+	<li>Higher <em>load</em> and/or higher <em>temperature</em> increased elongation (strain) for all tested
+		plastics.</li>
+	<li><strong>Load</strong> was generally a stronger driver of elongation than temperature.</li>
+	<li><strong>PLA</strong> had the poorest creep resistance → best reserved for room-temp, lightly loaded
+		applications.</li>
+	<li><strong>ABS/ASA</strong> were reasonable choices for moderate loads/temperatures, but not for severe
+		conditions.</li>
+	<li><strong>Nylon</strong> elongated substantially with load/heat yet did not rupture under the test conditions.
 	</li>
-	<li>Load has a more significant impact on elongation than
-		temperature.</li>
-	<li>PLA exhibits the worst creep resistance, suggesting parts
-		made from PLA should be
-		used at room temperature with minimal loading.</li>
-	<li>ABS and ASA are suitable for moderate loads and temperatures
-		but not recommended for
-		high loads and temperatures.</li>
-	<li>Nylon experiences significant elongation at temperature or
-		load but does not rupture
-		(yield)
-		under the tested conditions.
-	</li>
-	<li>PC demonstrates the highest resistance to creep among the
-		tested materials, making it
-		suitable for high loads and temperatures.</li>
+	<li><strong>PC</strong> showed the highest resistance to creep among those tested → suitable for higher
+		loads/temperatures.</li>
 </ul>
 
-<h2>Implications and Recommendations</h2>
+<div class="table-scroll">
+	<table class="table--compact">
+		<thead>
+			<tr>
+				<th>Material (FFF)</th>
+				<th>Relative creep resistance (study summary)</th>
+				<th>Typical use guidance</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>PLA</td>
+				<td>Low</td>
+				<td>Models, jigs away from heat, light duty</td>
+			</tr>
+			<tr>
+				<td>ABS / ASA</td>
+				<td>Medium</td>
+				<td>Moderate load, moderate temp; ASA for outdoor UV</td>
+			</tr>
+			<tr>
+				<td>Nylon</td>
+				<td>Medium–low (high elongation, no rupture)</td>
+				<td>Tough parts where some drift is acceptable</td>
+			</tr>
+			<tr>
+				<td>PC</td>
+				<td>High</td>
+				<td>Functional parts in warm/service-load environments</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<h2>Design implications & recommendations</h2>
+<ul>
+	<li><strong>Match material to service conditions:</strong> choose PC (or PC-blend) for warm, loaded parts;
+		ABS/ASA for general fixtures; keep PLA for display or low-load room-temp parts.</li>
+	<li><strong>Reduce sustained stress:</strong> shorten unsupported spans, use ribs/fillets, and spread load over
+		larger contact area (lower stress = less creep).</li>
+	<li><strong>Mind temperature:</strong> keep functional parts away from heat sources; enclosures can trap warmth
+		and accelerate creep.</li>
+	<li><strong>Orient for strength:</strong> align layer lines with the principal load where possible to reduce
+		through-layer deformation.</li>
+	<li><strong>Test a coupon:</strong> for critical uses, print a small test bar and hang a representative load for
+		24–72 h; measure drift before committing.</li>
+</ul>
+
+<h2>Applying this in real projects</h2>
 <p>
-	What do these findings mean? PC is clearly undisputed among PLA,
-	ABS/ASA and Nylon when it
-	comes to dimensional stability under high load or temperature.
-	Nylon evidently is not a
-	suitable material for applications that require dimensional
-	stability. ABS/ASA is a good
-	middle-ground choice when it comes to chosing a material for
-	most medium to high load
-	applications. PLA while very printable still remains the choice
-	for display only models or
-	prototypes.
-</p>
-<p>
-	As we continue to push the boundaries of 3D printing technology,
-	studies like these are
-	incredibly valuable, informing best practices and driving
-	innovation. By incorporating the
-	insights gleaned from Dogan's research into our design, we can
-	elevate the quality and
-	performance of our prints.
-</p>
-<p>
-	If you'd like to read more directly from the article itself.
-	<strong>Click below</strong>.
+	Understanding creep helps you choose the right material <em>and</em> geometry before you print.
+	At <a href="/services/3d-printing/">Ryan Dynamics</a>, we apply these findings when producing functional parts
+	in ASA, ABS, and PC — balancing strength, temperature resistance, and dimensional accuracy.
+	If you need help selecting materials or designing around creep, our
+	<a href="/services/drafting/">Design and Drafting</a> service can refine your model for stability
+	and fit, or <a href="/contact/">get in touch</a>.
 </p>
 
-<div class="wrapper-buttons">
+<h2>Source</h2>
+<p>
+	Full text (open access):
 	<a href="https://www.sv-jme.eu/?ns_articles_pdf=/ns_articles/files/ojs30/191/63073da9a438a.pdf&id=6869"
-		class="button button-learn" target="_blank">Read
-		More</a>
-</div>
+		target="_blank" rel="noopener">
+		Strojniški vestnik – Journal of Mechanical Engineering</a>.
+</p>
+
+<h2>FAQ</h2>
+<p><strong>Which filament resists creep best?</strong><br>In the cited study, PC showed the highest resistance to creep
+	under load and temperature.</p>
+<p><strong>Is PLA good for functional parts in warm environments?</strong><br>PLA exhibited poor creep resistance; keep
+	it for light-load, room-temperature uses.</p>
+<p><strong>Does Nylon fail under creep?</strong><br>Nylon elongated significantly but did not rupture within the test
+	window—it can drift dimensionally under sustained load/heat.</p>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Which filament resists creep best?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In the cited study, PC showed the highest resistance to creep under load and temperature."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is PLA good for functional parts in warm environments?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "PLA exhibited poor creep resistance; keep it for light-load, room-temperature uses."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Nylon fail under creep?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nylon elongated significantly but did not rupture within the test window—it can drift dimensionally under sustained load/heat."
+      }
+    }
+  ]
+}
+</script>

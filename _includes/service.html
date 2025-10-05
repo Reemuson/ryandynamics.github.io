@@ -1,0 +1,19 @@
+{% comment %} Expects page vars:
+page.service_type, page.service_description (fallback to page.description)
+{% endcomment %}
+{% assign b = site.business %}
+{% if b and page.permalink %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "{{ page.service_type | default: page.title | escape }}",
+  "url": "{{ page.url | absolute_url }}",
+  {% if page.description or page.service_description %}
+  "description": "{{ page.service_description | default: page.description | strip_newlines | escape }}",
+  {% endif %}
+  {% if b.service_area %}"areaServed": [{% for a in b.service_area %}"{{ a | escape }}"{% if forloop.last == false %}, {% endif %}{% endfor %}],{% endif %}
+  "provider": { "@id": "{{ b.url | default: site.url | append: '#org' }}" }
+}
+</script>
+{% endif %}
