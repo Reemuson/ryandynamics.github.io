@@ -1,199 +1,94 @@
 ---
 layout: entry
 title: CYD Screen Case
-subtitle: A compact, Switchwire-mountable enclosure for the ESP32 Cheap Yellow Display
-summary: Mini case study of a CYD (ESP32) screen case tailored for a VORON Switchwire.
+subtitle: Switchwire-mountable enclosure for an ESP32 Cheap Yellow Display
+summary: CYD screen enclosure covering mounting constraints, power routing, printability, and Klipper integration.
 description: A compact, printable case for the CYD display with Switchwire-friendly mounting, wiring notes, and STL links.
 date: 2023-03-27
 last_modified_at: 2025-10-06
 author: Ryan H
-tags: [project, 3d-printing]
+tags: [3d-printing, enclosure-design, klipper]
 redirect_from:
 - /project/project-cydcase
 - /project/project-cydcase.html
 - /project-cydcase
 images_inline: true
 images:
-- { src: "/assets/images-src/projects/cydcase/gallery/screen-iso-01.jpg", alt: "CYD screen showing print files",
-caption: "CYD screen with case showing print files." }
-- { src: "/assets/images-src/projects/cydcase/gallery/screen-iso-02.jpg", alt: "CYD screen showing heater status",
-caption: "CYD screen with case showing heater status." }
-- { src: "/assets/images-src/projects/cydcase/gallery/screen-exploded-01.gif", alt: "CYD screen case parts exploded",
-caption: "Exploded view of the printable parts and fasteners." }
+- { src: "/assets/images-src/projects/cydcase/gallery/screen-iso-01.jpg", alt: "CYD screen showing print files", caption: "CYD screen with case showing print files." }
+- { src: "/assets/images-src/projects/cydcase/gallery/screen-iso-02.jpg", alt: "CYD screen showing heater status", caption: "CYD screen with case showing heater status." }
+- { src: "/assets/images-src/projects/cydcase/gallery/screen-exploded-01.gif", alt: "CYD screen case parts exploded", caption: "Exploded view of the printable parts and fasteners." }
+tldr: >-
+  A compact wireless status/control screen was added to the Switchwire conversion without
+  the extra display, HDMI, and USB cabling of KlipperScreen. Using
+  <a href="https://github.com/suchmememanyskill/CYD-Klipper" target="_blank" rel="noopener">CYD-Klipper</a>
+  on the <a href="https://github.com/witnessmenow/ESP32-Cheap-Yellow-Display" target="_blank" rel="noopener">ESP32 Cheap Yellow Display</a>,
+  the enclosure mounts directly to the frame, keeps the wiring minimal, and remains serviceable.
+sections:
+- title: Problem
+  body: >-
+    KlipperScreen provides a capable local interface, but it adds a display, cables, and a
+    Pi/HDMI stack to mount and power. The Mini 12864 is compact but limited. The requirement
+    was a readable wireless interface with one clean power feed and minimal frame intrusion.
+- title: Constraints &amp; requirements
+  items:
+  - { label: Minimal wiring, text: "one clean power feed, Wi-Fi for comms." }
+  - { label: Mounting, text: "drop-in bracket for a VORON Switchwire extrusion (no drilling)." }
+  - { label: Printability, text: "no exotic supports; short prints; sensible tolerances." }
+  - { label: Serviceability, text: "easy screen removal." }
+  - { label: Durability, text: "enclosure that will not buzz or crack if I bump into it." }
+- title: Solution overview
+  body: >-
+    The case holds the CYD board with standoffs and a front bezel, and the
+    rear bracket keys into a Switchwire extrusion. Power is routed via a micro USB
+    feed, and Wi-Fi handles communication to Klipper/Moonraker through CYD-Klipper.
+  table:
+    compact: true
+    headers: [Element, Choice, Why]
+    rows:
+    - [Display/control, ESP32 Cheap Yellow Display (CYD), "All-in-one touch display, Wi-Fi, tiny footprint"]
+    - [Firmware, CYD-Klipper, "Simple, fast setup; talks to Moonraker/Klipper"]
+    - [Case, Two-part shell + bezel, Serviceable and easy to print]
+    - [Mount, Switchwire extrusion bracket, Clean install; maintains printer footprint]
+    - [Power, Micro USB, One cable; no HDMI ribbon]
+    - [Material, ABS, Stiff enough and durable]
+- title: Build notes
+  items:
+  - { label: Tolerances, text: "standoffs are sized for a snug board fit." }
+  - { label: Orientation, text: "print the bezel face-down for a crisp edge; the back shell upright." }
+  - { label: Fasteners, text: "2 x M3x20 for the bracket; 4 x M3x12 for the bezel." }
+  - { label: Power, text: "feed a stable 5 V supply; avoid long flimsy USB leads. If drawing from the printer PSU, use a buck converter with headroom." }
+- type: gallery
+  title: Images
+  body: "Assembly, mount, and UI snapshots:"
+- title: Results
+  items:
+  - { label: Setup time, text: "seconds from print to on-printer." }
+  - { label: Readability, text: "clear view at a glance; screen is stable to the touch." }
+  - { label: Everyday use, text: "heaters, jobs, and speed changes at a glance; no extra HDMI/USB spaghetti." }
+- type: links
+  title: Files &amp; source
+  links:
+  - { label: Printables, url: "https://www.printables.com/model/814999-voron-switchwire-cyd-screen-case", class: button-printables }
+  - { label: VORON Mods, url: "https://mods.vorondesign.com/details/yLcKywqT5rDwnl3ThcxZLA", class: button-voron }
+  - { label: CYD-Klipper, url: "https://github.com/suchmememanyskill/CYD-Klipper", class: button-learn }
+- title: Apply this approach
+  body: >-
+    This is how I approach add-ons for clients: define constraints, design for
+    manufacture, and wire cleanly for service. If you want help integrating
+    accessories or designing custom enclosures, start a project discussion below.
+- type: links
+  title: Need something similar?
+  links:
+  - { label: Start a project, url: /contact/, class: button-projects }
+faqs:
+- question: Why not use KlipperScreen?
+  answer: It works, but adds a display/HDMI/cables to mount and power. CYD is smaller, wireless, and needs just 5 V.
+- question: Why a dedicated case instead of a generic box?
+  answer: Proper standoffs, access to buttons, and a bracket that fits the Switchwire frame make it sturdier and easier to use.
+- question: PLA, PETG or ABS?
+  answer: PLA is likely suitable, but as all other printer parts are in ABS I stuck with that choice.
+- question: How do I power it?
+  answer: Either a clean 5 V line from your electronics bay via a buck converter or a short, good-quality USB supply.
+- question: Does it talk to Klipper reliably over Wi-Fi?
+  answer: Yes, CYD-Klipper talks to Moonraker. Keep Wi-Fi signal decent and it is reliable for status and basic control.
 ---
-
-<p><strong>TL;DR:</strong> I wanted a simple, wireless status/control screen for my Switchwire (Aquilawire) without the
-	wiring sprawl of KlipperScreen. Using <a href="https://github.com/suchmememanyskill/CYD-Klipper" target="_blank"
-		rel="noopener">CYD-Klipper</a> on the <a
-		href="https://github.com/witnessmenow/ESP32-Cheap-Yellow-Display" target="_blank" rel="noopener">ESP32
-		Cheap Yellow Display</a>, I designed a small case and mount that bolts right onto the frame, routes
-	power neatly, and just works. <!--more--></p>
-
-<h2>Problem</h2>
-<p>KlipperScreen is great, but it introduces a screen, cables, and a Pi/HDMI stack I didn’t want to mount or power. The
-	Mini 12864 is tidy but limited. I needed a <em>compact, readable, wireless</em> screen I could check at a glance
-	without cluttering the printer with more wiring.</p>
-
-<h2>Constraints & requirements</h2>
-<ul>
-	<li><strong>Minimal wiring:</strong> one clean power feed, Wi-Fi for comms.</li>
-	<li><strong>Mounting:</strong> drop-in bracket for a VORON Switchwire extrusion (no drilling).</li>
-	<li><strong>Printability:</strong> no exotic supports; short prints; sensible tolerances.</li>
-	<li><strong>Serviceability:</strong> easy screen removal.</li>
-	<li><strong>Durability:</strong> enclosure that won’t buzz or crack if I bump into it.</li>
-</ul>
-
-<h2>Solution overview</h2>
-<p>The case holds the CYD board snugly with standoffs and a front bezel, and the rear bracket keys into a Switchwire
-	extrusion. Power is routed via a micro USB feed, and Wi-Fi
-	handles communication to Klipper/Moonraker through CYD-Klipper.</p>
-
-<div class="table-scroll">
-	<table class="table--compact">
-		<thead>
-			<tr>
-				<th>Element</th>
-				<th>Choice</th>
-				<th>Why</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<td>Display/control</td>
-				<td>ESP32 Cheap Yellow Display (CYD)</td>
-				<td>All-in-one touch display, Wi-Fi, tiny footprint</td>
-			</tr>
-			<tr>
-				<td>Firmware</td>
-				<td>CYD-Klipper</td>
-				<td>Simple, fast setup; talks to Moonraker/Klipper</td>
-			</tr>
-			<tr>
-				<td>Case</td>
-				<td>Two-part shell + bezel</td>
-				<td>Serviceable and easy to print</td>
-			</tr>
-			<tr>
-				<td>Mount</td>
-				<td>Switchwire extrusion bracket</td>
-				<td>Clean install; maintains printer footprint</td>
-			</tr>
-			<tr>
-				<td>Power</td>
-				<td>Micro USB</td>
-				<td>One cable; no HDMI ribbon</td>
-			</tr>
-			<tr>
-				<td>Material</td>
-				<td>ABS</td>
-				<td>Stiff enough and durable</td>
-			</tr>
-		</tbody>
-	</table>
-</div>
-
-<h2>Build notes</h2>
-<ul>
-	<li><strong>Tolerances:</strong> standoffs are sized for a snug board fit.
-	</li>
-	<li><strong>Orientation:</strong> print the bezel face-down for a crisp edge; the back shell upright.</li>
-	<li><strong>Fasteners:</strong> 2 × M3×20 for the bracket; 4 × M3×12 for the bezel.</li>
-	<li><strong>Power:</strong> feed a stable 5&nbsp;V supply; avoid long flimsy USB leads. If drawing from the
-		printer PSU, use a buck converter with headroom.</li>
-</ul>
-
-<h2>Images</h2>
-<p>Assembly, mount, and UI snapshots:</p>
-{% include gallery.html %}
-
-<h2>Results</h2>
-<ul>
-	<li><strong>Setup time:</strong> seconds from print to on-printer.</li>
-	<li><strong>Readability:</strong> Clear view at a glance; screen is stable to the touch.</li>
-	<li><strong>Everyday use:</strong> Heaters, jobs, and speed changes at a glance; no extra HDMI/USB spaghetti.</li>
-</ul>
-
-<h2>Files & source</h2>
-<div class="wrapper-buttons">
-	<a href="https://www.printables.com/model/814999-voron-switchwire-cyd-screen-case"
-		class="button button-printables" target="_blank" rel="noopener">Printables</a>
-	<a href="https://mods.vorondesign.com/details/yLcKywqT5rDwnl3ThcxZLA" class="button button-voron"
-		target="_blank" rel="noopener">VORON Mods</a>
-	<a href="https://github.com/suchmememanyskill/CYD-Klipper" class="button button-learn" target="_blank"
-		rel="noopener">CYD-Klipper</a>
-</div>
-
-<h2>Apply this approach</h2>
-<p>
-	This is how I approach add-ons for clients: define constraints, design for manufacture, and wire cleanly for
-	service.
-	If you want help integrating accessories or designing custom enclosures, see my <a
-		href="{{ '/services/3d-printing/' | relative_url }}">3D Printing</a> and <a
-		href="{{ '/services/drafting/' | relative_url }}">Design &amp;
-		Drafting</a> services, or <a href="{{ '/contact/' | relative_url }}">get in touch</a>.
-</p>
-
-<h2>FAQ</h2>
-<p><strong>Why not use KlipperScreen?</strong><br>It works, but adds a display/HDMI/cables to mount and power. CYD is
-	smaller, wireless, and needs just 5&nbsp;V.</p>
-
-<p><strong>Why a dedicated case instead of a generic box?</strong><br>Proper standoffs, access to buttons, and a bracket
-	that fits the Switchwire frame make it sturdier and easier to use.</p>
-
-<p><strong>PLA, PETG or ABS?</strong><br>PLA is likely suitable, but as all other printer parts are in ABS I stuck with that choice.
-</p>
-
-<p><strong>How do I power it?</strong><br>Either a clean 5&nbsp;V line from your electronics bay (via a buck converter)
-	or a short, good-quality USB supply.</p>
-
-<p><strong>Does it talk to Klipper reliably over Wi-Fi?</strong><br>Yes, CYD-Klipper talks to Moonraker. Keep Wi-Fi
-	signal decent and it’s rock solid for status/control.</p>
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Why not use KlipperScreen?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "It works, but adds a display/HDMI/cables to mount and power. CYD is smaller, wireless, and needs just 5 V."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Why a dedicated case instead of a generic box?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Proper standoffs, access to buttons, and a bracket that fits the Switchwire frame make it sturdier and easier to use."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "PLA, PETG or ABS?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "PLA is likely suitable, but as all other printer parts are in ABS I stuck with that choice."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How do I power it?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Either a clean 5 V line from your electronics bay via a buck converter or a short, good-quality USB supply."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Does it talk to Klipper reliably over Wi-Fi?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes—CYD-Klipper talks to Moonraker. Keep Wi-Fi signal decent and it’s reliable for status and basic control."
-      }
-    }
-  ]
-}
-</script>

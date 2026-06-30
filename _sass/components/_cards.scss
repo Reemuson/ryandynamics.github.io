@@ -3,10 +3,12 @@
 @use "../settings" as s;
 
 .wrapper-card {
-	display: flex;
-	flex-direction: column;
+	display: grid;
+	grid-template-columns: minmax(0, 1fr);
 	gap: 1.5rem;
+	justify-items: stretch;
 	align-items: stretch;
+	width: 100%;
 
 	.card {
 		background: s.$colour_surface;
@@ -14,7 +16,6 @@
 		border: 1px solid rgba(0, 0, 0, 0.10);
 		border-radius: 0.75rem;
 		width: 100%;
-		max-width: 420px;
 		display: flex;
 		flex-direction: column;
 		padding: 1.75rem;
@@ -27,6 +28,7 @@
 		.card-body {
 			display: flex;
 			flex-direction: column;
+			flex: 1;
 			gap: 0.6rem;
 		}
 
@@ -46,6 +48,7 @@
 		}
 
 		.card-summary {
+			flex: 1;
 			margin: 0.25rem 0 0 0;
 			font-size: 0.95rem;
 			line-height: 1.5;
@@ -53,7 +56,7 @@
 		}
 
 		.card-date {
-			margin: 0.6rem 0 0 0;
+			margin: auto 0 0 0;
 			font-size: 0.85rem;
 			letter-spacing: 0.02em;
 			font-variant-numeric: tabular-nums;
@@ -78,15 +81,8 @@
 
 @include s.respond(lg) {
 	.wrapper-card {
-		flex-direction: row;
-		flex-wrap: wrap;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
 		justify-content: center;
-		align-items: stretch;
 		gap: 1.75rem;
-
-		.card {
-			max-width: 360px;
-			flex: 1 1 320px;
-		}
 	}
 }

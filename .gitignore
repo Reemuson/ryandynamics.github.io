@@ -31,7 +31,7 @@ Desktop.ini
 /css
 
 # --- Local content planning notes ---
-/content-notes/
+.docs/
 
 # --- VS Code ---
 .vscode/

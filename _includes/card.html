@@ -25,7 +25,7 @@
 
 	<div class="button-wrapper">
 		<a href="{{ item.url | relative_url }}" class="button button-learn">
-			Read More
+			{% if item.collection == 'project' %}View Case Study{% else %}Read Note{% endif %}
 		</a>
 	</div>
 </div>

@@ -1,0 +1,79 @@
+---
+layout: entry
+title: Bringing Up Prototype Hardware Without Letting the Smoke Out
+subtitle: A practical first-power checklist for new electronics.
+summary: A structured approach to powering, checking, and debugging prototype electronics safely.
+description: A practical electronics bring-up checklist covering inspection, current limiting, power rails, firmware, inputs, outputs, and early fault finding.
+date: 2026-06-30
+last_modified_at: 2026-06-30
+author: Ryan H
+tags: [electronics, embedded, hardware-testing]
+tldr: >-
+  Prototype hardware should be powered methodically. Inspect first, limit current, check rails,
+  confirm reset and clocks, then bring up firmware and peripherals one section at a time.
+sections:
+- title: Why bring-up matters
+  body: >-
+    A new PCB or prototype assembly should not be treated as proven hardware. Even simple boards can have assembly faults,
+    footprint mistakes, incorrect parts, shorted rails, missing pull-ups, reversed connectors, or firmware assumptions that do not match the real circuit.
+- title: Start before power is applied
+  items:
+  - { label: Visual inspection, text: "Check orientation, solder bridges, missing parts, polarity marks, and connector pinouts." }
+  - { label: Continuity checks, text: "Look for shorts between power rails and ground before connecting a supply." }
+  - { label: Schematic review, text: "Confirm expected rail voltages, regulator enable pins, boot modes, and programming connections." }
+  - { label: Known-risk parts, text: "Check MOSFETs, regulators, IC orientation, connectors, and anything connected to external wiring." }
+- title: First power should be controlled
+  body: >-
+    The first power-up is usually done with current limiting. The goal is not to run the entire design immediately.
+    The goal is to see whether the power input and rails behave as expected without damaging the board.
+  table:
+    compact: true
+    headers: [Step, What to check, Why]
+    rows:
+    - cells: [Set current limit, Start with a conservative limit, Reduces damage from shorts or wrong parts]
+    - cells: [Apply input power, Watch supply current, Unexpected current is often the first fault sign]
+    - cells: [Measure rails, Check each voltage rail, Confirms regulators and power sequencing]
+    - cells: [Check heat, Carefully identify warming parts, Finds overloaded or misassembled components]
+    - cells: [Power cycle, Confirm repeatable behaviour, Separates one-off startup events from real faults]
+- title: Bring up one function at a time
+  body: >-
+    Once the power rails are correct, the next step is controlled functional testing. It is better to prove each block separately
+    than to run full firmware and try to debug everything at once.
+  items:
+  - { label: MCU basics, text: "Confirm programming access, reset behaviour, boot configuration, and clock setup." }
+  - { label: GPIO, text: "Toggle known pins and verify they reach the expected connector or circuit node." }
+  - { label: Inputs, text: "Check switches, analogue inputs, sensor rails, pull-ups, and filtering." }
+  - { label: Communications, text: "Bring up UART, SPI, I2C, CAN, RS-485, or wireless interfaces one at a time." }
+  - { label: Outputs, text: "Test LEDs, relays, MOSFETs, motors, and other loads with safe limits first." }
+- title: Typical faults found during bring-up
+  table:
+    compact: true
+    headers: [Symptom, Possible causes]
+    rows:
+    - cells: [Supply current too high, "Shorted rail, wrong component, reversed IC, solder bridge"]
+    - cells: [No firmware connection, "SWD/JTAG wiring issue, reset held low, wrong boot mode, no MCU power"]
+    - cells: [Sensor not responding, "Address conflict, missing pull-ups, wrong voltage, bad footprint, bus held low"]
+    - cells: [Output does not switch, "Gate/base drive issue, wrong pin mapping, missing flyback path, firmware configuration"]
+    - cells: [Unstable readings, "Grounding, noise, ADC scaling, filtering, cable pickup, reference voltage issue"]
+- title: Good notes save time
+  body: >-
+    Bring-up is much easier when each test is recorded. Expected voltage, measured voltage, current draw,
+    firmware version, jumper settings, and observed faults all help separate design issues from assembly or configuration mistakes.
+- title: The useful mindset
+  body: >-
+    The aim is to reduce unknowns. A prototype does not have to work perfectly on the first power-up,
+    but each test should make the next fault smaller and more specific.
+- type: links
+  title: Related services
+  links:
+  - { label: Electronics Design, url: /services/electronics/, class: button-learn }
+  - { label: Embedded & Control, url: /services/programming/, class: button-learn }
+  - { label: Get in touch, url: /contact/, class: button-projects }
+faqs:
+- question: Should a prototype PCB be powered from a normal plug pack first?
+  answer: Usually no. A current-limited bench supply is safer for first power-up because it can reduce damage if a fault exists.
+- question: Is hardware bring-up only a firmware task?
+  answer: No. Bring-up sits between electronics, firmware, measurement, assembly, and fault finding.
+- question: What is the main goal of bring-up?
+  answer: The goal is to prove the hardware safely and isolate faults methodically before relying on the prototype.
+---

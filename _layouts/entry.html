@@ -11,29 +11,55 @@
 		<main>
 			<div class="wrapper-page">
 				<section class="page {{ page.collection | default: 'page' }}" id="entry">
-					<div class="wrapper-hero">
-						<div class="box-1">
+					{% assign hero_image = page.hero_image | default: page.images.first %}
+					<header class="entry-header">
+						<div class="entry-header-copy">
 							<h1>{{ page.title }}</h1>
 							{% if page.subtitle %}
 							<p class="page-deck">{{ page.subtitle }}</p>
 							{% endif %}
-							<p class="page-meta">
-								{% if page.date %}{{ page.date | date: "%Y-%-m-%-d" }}{%
-								endif %}
-								{% if page.author %}{% if page.date %} • {% endif %}{{
-								page.author }}{% endif %}
-							</p>
-							{{ content }}
+							<div class="page-meta">
+								{% if page.author %}<span>{{ page.author }}</span>{% endif %}
+								{% if page.date %}<span>{{ page.date | date: "%Y-%-m-%-d" }}</span>{% endif %}
+								{% if page.tags %}
+								{% for tag in page.tags %}
+								<span>{% include tag_label.html tag=tag %}</span>
+								{% endfor %}
+								{% endif %}
+							</div>
 						</div>
-						<div class="box-2">
-							{% unless page.images_inline %}
-							{% if page.images %}
-							<h2>Images</h2>
-							{% assign lb_id = page.slug | default: page.id %}
-							{% include lightbox.html images=page.images id=lb_id %}
+						{% if hero_image %}
+						<figure class="entry-hero-media"{% if hero_image.position %} style="--entry-hero-position: {{ hero_image.position }};"{% endif %}>
+							{% assign hero_src = hero_image.src | remove_first: '/assets/images-src/' %}
+							{% assign hero_alt = hero_image.alt | default: page.title | escape %}
+							{% assign hero_ext = hero_src | split: '.' | last | downcase %}
+							{% if hero_ext == 'gif' %}
+							<img src="{{ hero_image.src | relative_url }}" alt="{{ hero_alt }}" loading="eager" decoding="async">
+							{% else %}
+							{% picture {{ hero_src }} preset="hero" alt="{{ hero_alt }}" %}
 							{% endif %}
-							{% endunless %}
-						</div>
+							{% if hero_image.caption %}
+							<figcaption>{{ hero_image.caption }}</figcaption>
+							{% endif %}
+						</figure>
+						{% endif %}
+					</header>
+
+					<div class="entry-body">
+						{% if page.tldr %}
+						<p class="entry-tldr">
+							<strong>TL;DR:</strong> {{ page.tldr }}
+						</p>
+						{% endif %}
+						{% if page.sections %}
+						{% for section in page.sections %}
+						{% include entry_section.html section=section %}
+						{% endfor %}
+						{% endif %}
+						{{ content }}
+						{% if page.faqs %}
+						{% include faq.html faqs=page.faqs %}
+						{% endif %}
 					</div>
 				</section>
 			</div>

@@ -1,0 +1,78 @@
+---
+layout: entry
+title: Custom PCB vs Off-the-Shelf Module
+subtitle: Choosing the right level of hardware for a prototype or small product.
+summary: A practical comparison of modules, dev boards, wiring, and custom PCBs for real hardware projects.
+description: When to use off-the-shelf modules, when to design a custom PCB, and how to choose the right approach for prototype electronics.
+date: 2026-06-30
+last_modified_at: 2026-06-30
+author: Ryan H
+tags: [electronics, pcb-design, prototyping]
+tldr: >-
+  Off-the-shelf modules are excellent for proving an idea quickly. Custom PCBs start to make sense when reliability,
+  size, wiring, mounting, repeatability, protection, or production consistency become important.
+sections:
+- title: There is no single right answer
+  body: >-
+    A custom PCB is not automatically better than an off-the-shelf module. The right choice depends on what stage the project is at,
+    what needs to be proven, how the hardware will be used, and whether the design needs to be repeated.
+- title: When modules make sense
+  body: >-
+    Modules and development boards are often the fastest way to test an idea. They reduce early design effort and let you focus
+    on the unknown parts of the problem.
+  items:
+  - { label: Early prototypes, text: "Useful when the goal is to test whether the idea works at all." }
+  - { label: One-off tools, text: "Good for internal rigs, test fixtures, and temporary equipment." }
+  - { label: Unknown requirements, text: "Helpful when sensors, firmware, or user behaviour are still changing." }
+  - { label: Lower upfront cost, text: "Less engineering time is needed before the first functional test." }
+- title: Where modules start to struggle
+  table:
+    compact: true
+    headers: [Issue, Why it matters]
+    rows:
+    - cells: [Loose wiring, "Harder to make reliable in vibration, transport, or field use"]
+    - cells: [Poor mounting, Dev boards are not always shaped for real enclosures]
+    - cells: [Exposed connections, Easier to damage or miswire]
+    - cells: [Inconsistent assembly, Hand wiring is harder to repeat across multiple units]
+    - cells: [Limited protection, "Modules may not handle real power faults, load spikes, or noisy supplies"]
+    - cells: [Awkward size, Stacked boards and jumper wires often waste enclosure space]
+- title: When a custom PCB starts to make sense
+  body: >-
+    A custom PCB becomes more attractive when the design needs to be robust, repeatable, compact, serviceable, or easier to assemble.
+    It can also reduce wiring complexity and make the system clearer to test and document.
+  items:
+  - { label: Repeat builds, text: "The same circuit needs to be made more than once." }
+  - { label: Field equipment, text: "The hardware must survive vibration, heat, dust, moisture, or rough handling." }
+  - { label: Tight enclosure, text: "The electronics need to fit a specific space or mounting pattern." }
+  - { label: Cleaner wiring, text: "Connectors, protection, and cable routing need to be designed properly." }
+  - { label: Integrated functions, text: "Power, sensing, control, indicators, and communications need to work as one system." }
+- title: A staged approach often works best
+  body: >-
+    Many projects do not need to jump straight to a custom board. A sensible path is to prove the risky parts with modules,
+    then design a PCB once the requirements are clearer.
+  table:
+    compact: true
+    headers: [Stage, Hardware style, Purpose]
+    rows:
+    - cells: [Concept test, Dev board and modules, Prove the basic function]
+    - cells: [Prototype, Mixed modules and custom wiring, Test the system in a realistic form]
+    - cells: [Refined prototype, Custom PCB, "Improve reliability, fit, and repeatability"]
+    - cells: [Small batch, Revised PCB and enclosure, Make assembly and support more consistent]
+- title: The trade-off
+  body: >-
+    Modules usually reduce early cost and time. Custom PCBs usually improve repeatability, integration, reliability, and fit.
+    The decision is less about which is technically superior and more about which risk matters most at the current stage.
+- type: links
+  title: Related services
+  links:
+  - { label: Electronics Design, url: /services/electronics/, class: button-learn }
+  - { label: Embedded & Control, url: /services/programming/, class: button-learn }
+  - { label: Get in touch, url: /contact/, class: button-projects }
+faqs:
+- question: Do I always need a custom PCB for a prototype?
+  answer: No. Off-the-shelf modules are often the right choice for early testing.
+- question: When does a custom PCB become worthwhile?
+  answer: It becomes worthwhile when reliability, size, repeatability, wiring, protection, or assembly quality matter enough to justify the design effort.
+- question: Can a project start with modules and move to a PCB later?
+  answer: Yes. That is often the most sensible path because the early prototype helps clarify what the custom PCB actually needs to do.
+---

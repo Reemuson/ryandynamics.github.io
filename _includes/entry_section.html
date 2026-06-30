@@ -1,0 +1,74 @@
+<!-- _includes/entry_section.html -->
+
+{% assign section = include.section %}
+{% assign section_type = section.type | default: 'standard' %}
+
+{% if section_type == 'gallery' %}
+<h2>{{ section.title | default: 'Images' }}</h2>
+{% if section.body %}
+{{ section.body | markdownify }}
+{% endif %}
+{% include gallery.html %}
+
+{% elsif section_type == 'links' %}
+<h2>{{ section.title }}</h2>
+{% if section.body %}
+{{ section.body | markdownify }}
+{% endif %}
+<div class="wrapper-buttons">
+	{% for link in section.links %}
+	{% assign link_class = link.class | default: 'button-learn' %}
+	{% assign is_external = link.url contains '://' %}
+	<a href="{% if is_external %}{{ link.url }}{% else %}{{ link.url | relative_url }}{% endif %}"
+		class="button {{ link_class }}" {% if is_external %}target="_blank" rel="noopener"{% endif %}>
+		{{ link.label }}
+	</a>
+	{% endfor %}
+</div>
+
+{% else %}
+<h2>{{ section.title }}</h2>
+{% if section.body %}
+{{ section.body | markdownify }}
+{% endif %}
+
+{% if section.items %}
+{% if section.ordered %}
+<ol>
+	{% for item in section.items %}
+	<li>{% if item.label %}<strong>{{ item.label }}:</strong> {% endif %}{{ item.text }}</li>
+	{% endfor %}
+</ol>
+{% else %}
+<ul>
+	{% for item in section.items %}
+	<li>{% if item.label %}<strong>{{ item.label }}:</strong> {% endif %}{{ item.text }}</li>
+	{% endfor %}
+</ul>
+{% endif %}
+{% endif %}
+
+{% if section.table %}
+<div class="table-scroll">
+	<table {% if section.table.compact %}class="table--compact"{% endif %}>
+		<thead>
+			<tr>
+				{% for header in section.table.headers %}
+				<th>{{ header }}</th>
+				{% endfor %}
+			</tr>
+		</thead>
+		<tbody>
+			{% for row in section.table.rows %}
+			<tr>
+				{% assign cells = row.cells | default: row %}
+				{% for cell in cells %}
+				<td>{{ cell }}</td>
+				{% endfor %}
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+</div>
+{% endif %}
+{% endif %}

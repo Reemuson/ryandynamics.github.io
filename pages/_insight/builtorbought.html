@@ -1,172 +1,88 @@
 ---
 layout: entry
 title: Built or Bought?
-subtitle: Choosing between DIY and commercial 3D printers
-summary: A practical comparison of cost, reliability, support, and when each choice makes sense.
+subtitle: Technical tradeoffs between DIY and commercial 3D printers
+summary: Comparison of build time, reliability, support, tuning effort, and control when choosing between DIY and commercial printers.
 date: 2024-04-16
 last_modified_at: 2025-10-05
 author: Ryan H
-tags: [insight, 3d-printing]
+tags: [3d-printing, printer-selection]
+hero_image:
+  src: "/assets/images-src/projects/aquilawire/gallery/printer-overview-01.jpg"
+  alt: "A converted CoreXZ 3D printer on a workbench"
+  caption: "A custom printer build is worth it when the learning and control matter."
 redirect_from:
 - /insight/insight-builtorbought
 - /insight/insight-builtorbought.html
 - /insight-builtorbought
+tldr: >-
+  If the priority is <em>time-to-part, consistency, and support</em>, buy a ready printer.
+  If the priority is <em>learning, customisation, and repairability</em>, and you can invest
+  the time, build. The right answer is the one that ships your parts reliably within
+  your own constraints of budget, time, and tolerance.
+sections:
+- title: Why this question keeps coming up
+  body: >-
+    Before the i3 boom and the "appliance-like" generation of machines, many makers
+    built printers from kits or plans. Projects like
+    <a href="https://www.reprap.org/wiki/RepRap" target="_blank" rel="noopener">RepRap</a>
+    made home-built printers accessible. Later, companies like Prusa, Creality and
+    Ultimaker brought 3D printing to the masses with ready-to-use machines. Enthusiast
+    communities such as <a href="https://vorondesign.com/" target="_blank" rel="noopener">VORON</a>,
+    <a href="https://docs.vzbot.org/" target="_blank" rel="noopener">VzBot</a>, and
+    <a href="https://docs.zerog.one/" target="_blank" rel="noopener">ZeroG</a> pushed
+    CoreXY design so far that a well-built DIY printer can rival many retail models,
+    if you build and tune it properly.
+- title: "DIY vs Commercial: quick comparison"
+  table:
+    headers: [Factor, DIY / Kit, Commercial / Ready-to-run]
+    rows:
+    - cells: [Up-front cost, Lower for hardware; tools/extras add up, "Higher, but bundled and supported"]
+    - cells: [Time investment, "<strong>High</strong> (build, tune, maintain)", "<strong>Low</strong> (setup and profiles included)"]
+    - cells: [Learning &amp; control, "<strong>Maximum</strong>", Limited; trade control for convenience]
+    - cells: [Reliability, As good as your build quality, Predictable and repeatable]
+    - cells: [Speed to first part, Slow (days-weeks), Fast (hours)]
+    - cells: [Support, Community-driven, Vendor support and warranty]
+    - cells: [Expandability, Excellent; open ecosystem, Limited to vendor options]
+    - cells: [Total cost of ownership, "Cheap parts, but high time cost", "Higher buy-in, lower upkeep time"]
+- title: When building makes sense
+  items:
+  - text: You enjoy the process and want full control; firmware, kinematics, materials, mods.
+  - text: Your parts demand features only possible through customisation, such as enclosure, toolheads, or high-temp paths.
+  - text: You are happy to spend weekends assembling, calibrating and troubleshooting.
+- title: When buying makes sense
+  items:
+  - text: You need parts <em>now</em> and value your time more than the cost difference.
+  - text: You want consistent, reliable production for client work.
+  - text: You prefer tuned defaults such as bed levelling, reliable first layer, and vendor support.
+- title: Hidden costs people forget
+  items:
+  - { label: Time, text: "build (10-30 h), tuning, maintenance, failed prints." }
+  - { label: Tools &amp; spares, text: "servos/motors, electronics, belts, nozzles, fasteners." }
+  - { label: Environment, text: "enclosure, ventilation." }
+  - { label: Profiles, text: "slicer tuning for each material/nozzle combo." }
+- title: So which should you pick?
+  body: >-
+    Choose the route that reliably produces usable parts on your timeline.
+    If you need repeatable output quickly, buy. If you need control, repairability, and
+    learning value, and can afford the build time, DIY.
+- title: What I run &amp; how I help
+  body: >-
+    At Ryan Dynamics, I run enclosed printers tuned
+    for engineering materials (ASA, ABS, PC) and help clients who:
+  items:
+  - text: need <strong>functional parts</strong> with predictable tolerances,
+  - text: want <strong>design-for-print</strong> guidance, or
+  - text: have a DIY printer and need help <strong>calibrating</strong> or <strong>profiling</strong>.
+- type: links
+  title: Need practical parts?
+  links:
+  - { label: Start a project, url: /contact/, class: button-projects }
+faqs:
+- question: Is a DIY printer always cheaper?
+  answer: Often on hardware, not on time. If your time is valuable, a commercial printer can be cheaper overall.
+- question: Which is more reliable?
+  answer: A well-built DIY can be rock solid, but a commercial printer reaches predictable results faster.
+- question: Can I start with a commercial printer and mod later?
+  answer: Yes, many people do. Start producing, then mod within the vendor ecosystem as you grow.
 ---
-
-<p><strong>TL;DR:</strong> If you value <em>time-to-part, consistency, and support</em>, buy a ready printer.
-	If you value <em>learning, customisation, and repairability</em>—and you can invest the time—build.
-	The right answer is the one that ships your parts reliably within your own constraints of budget, time, and
-	tolerance.</p>
-
-<h2>Why this question keeps coming up</h2>
-<p>
-	Before the i3 boom and the “appliance-like” generation of machines, many makers built printers from kits or
-	plans. Projects like
-	<a href="https://www.reprap.org/wiki/RepRap" target="_blank" rel="noopener">RepRap</a> made home-built printers
-	accessible. Later, companies
-	like Prusa, Creality and Ultimaker brought 3D printing to the masses with ready-to-use machines. Enthusiast
-	communities such as
-	<a href="https://vorondesign.com/" target="_blank" rel="noopener">VORON</a>, <a href="https://docs.vzbot.org/"
-		target="_blank" rel="noopener">VzBot</a>,
-	and <a href="https://docs.zerog.one/" target="_blank" rel="noopener">ZeroG</a> pushed CoreXY design so far that
-	a well-built DIY printer can rival
-	many retail models, if you build and tune it properly.
-</p>
-
-<h2>DIY vs Commercial: quick comparison</h2>
-<div class="table-scroll">
-	<table>
-		<thead>
-			<tr>
-				<th>Factor</th>
-				<th>DIY / Kit</th>
-				<th>Commercial / Ready-to-run</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<td>Up-front cost</td>
-				<td>Lower for hardware; tools/extras add up</td>
-				<td>Higher, but bundled and supported</td>
-			</tr>
-			<tr>
-				<td>Time investment</td>
-				<td><strong>High</strong> (build, tune, maintain)</td>
-				<td><strong>Low</strong> (setup and profiles included)</td>
-			</tr>
-			<tr>
-				<td>Learning &amp; control</td>
-				<td><strong>Maximum</strong></td>
-				<td>Limited — trade control for convenience</td>
-			</tr>
-			<tr>
-				<td>Reliability</td>
-				<td>As good as your build quality</td>
-				<td>Predictable and repeatable</td>
-			</tr>
-			<tr>
-				<td>Speed to first part</td>
-				<td>Slow (days-weeks)</td>
-				<td>Fast (hours)</td>
-			</tr>
-			<tr>
-				<td>Support</td>
-				<td>Community-driven</td>
-				<td>Vendor support and warranty</td>
-			</tr>
-			<tr>
-				<td>Expandability</td>
-				<td>Excellent; open ecosystem</td>
-				<td>Limited to vendor options</td>
-			</tr>
-			<tr>
-				<td>Total cost of ownership</td>
-				<td>Cheap parts, but high time cost</td>
-				<td>Higher buy-in, lower upkeep time</td>
-			</tr>
-		</tbody>
-	</table>
-</div>
-
-<h2>When building makes sense</h2>
-<ul>
-	<li>You enjoy the process and want full control—firmware, kinematics, materials, mods.</li>
-	<li>Your parts demand features only possible through customisation (enclosure, toolheads, high-temp paths).</li>
-	<li>You’re happy to spend weekends assembling, calibrating and troubleshooting.</li>
-</ul>
-
-<h2>When buying makes sense</h2>
-<ul>
-	<li>You need parts <em>now</em> and value your time more than the cost difference.</li>
-	<li>You want consistent, reliable production for client work.</li>
-	<li>You prefer tuned defaults: bed levelling, reliable first layer, vendor support.</li>
-</ul>
-
-<h2>Hidden costs people forget</h2>
-<ul>
-	<li><strong>Time:</strong> build (10–30 h), tuning, maintenance, failed prints.</li>
-	<li><strong>Tools &amp; spares:</strong> servos/motors, electronics, belts, nozzles, fasteners.</li>
-	<li><strong>Environment:</strong> enclosure, ventilation.</li>
-	<li><strong>Profiles:</strong> slicer tuning for each material/nozzle combo.</li>
-</ul>
-
-<h2>So… which should you pick?</h2>
-<p>
-	Choose the route that reliably produces usable parts on your timeline.
-	If you need results fast and consistent, buy.
-	If you crave learning and flexibility—and you can afford the build time—DIY.
-</p>
-
-<h2>What I run &amp; how I help</h2>
-<p>
-	At <a href="{{ '/services/3d-printing/' | relative_url }}">Ryan Dynamics</a>, I run enclosed printers tuned for engineering materials
-	(ASA, ABS, PC)
-	and help clients who:
-</p>
-<ul>
-	<li>need <strong>functional parts</strong> with predictable tolerances,</li>
-	<li>want <strong>design-for-print</strong> guidance, or</li>
-	<li>have a DIY printer and need help <strong>calibrating</strong> or <strong>profiling</strong>.</li>
-</ul>
-<p><a href="{{ '/contact/' | relative_url }}">Get a quote</a> or ask a question about your design.</p>
-
-<h2>FAQ</h2>
-<p><strong>Is a DIY printer always cheaper?</strong><br>
-	Often on hardware, not on time. If your time is valuable, a commercial printer can be cheaper overall.</p>
-<p><strong>Which is more reliable?</strong><br>
-	A well-built DIY can be rock solid, but a commercial printer reaches predictable results faster.</p>
-<p><strong>Can I start with a commercial printer and mod later?</strong><br>
-	Yes, many people do. Start producing, then mod within the vendor ecosystem as you grow.</p>
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Is a DIY printer always cheaper?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Often on hardware, not on time. If your time is valuable, a commercial printer can be cheaper overall."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Which is more reliable?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "A well-built DIY can be rock solid, but a commercial printer reaches predictable results faster."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can I start with a commercial printer and mod later?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes, many people do. Start producing, then mod within the vendor ecosystem as you grow."
-      }
-    }
-  ]
-}
-</script>

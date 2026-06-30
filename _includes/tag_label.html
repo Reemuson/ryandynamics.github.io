@@ -1,0 +1,26 @@
+{% assign tag = include.tag | downcase %}
+{% case tag %}
+{% when '3d-printing' %}3D Printing
+{% when 'pcb-design' %}PCB Design
+{% when 'field-equipment' %}Field Equipment
+{% when 'printer-modification' %}Printer Modification
+{% when 'corexz' %}CoreXZ
+{% when 'klipper' %}Klipper
+{% when 'enclosure-design' %}Enclosure Design
+{% when 'filament-storage' %}Filament Storage
+{% when 'cable-harnesses' %}Cable Harnesses
+{% when 'printer-selection' %}Printer Selection
+{% when 'material-selection' %}Material Selection
+{% when 'functional-parts' %}Functional Parts
+{% when 'hardware-design' %}Hardware Design
+{% when 'prototyping' %}Prototyping
+{% when 'hardware-testing' %}Hardware Testing
+{% when 'electronics' %}Electronics
+{% when 'embedded' %}Embedded
+{% when 'wiring' %}Wiring
+{% when 'cad' %}CAD
+{% when 'cnc' %}CNC
+{% when 'ui' %}UI
+{% when 'ux' %}UX
+{% else %}{{ tag | replace: '-', ' ' | capitalize }}
+{% endcase %}

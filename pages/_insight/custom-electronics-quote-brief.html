@@ -1,0 +1,79 @@
+---
+layout: entry
+title: What to Prepare Before Asking for a Custom Electronics Quote
+subtitle: A practical checklist for turning a rough hardware idea into a quoteable brief.
+summary: The key information that makes a custom electronics job easier to quote, design, and de-risk.
+description: A practical guide to preparing a custom electronics, PCB, wiring, or embedded control project brief before requesting a quote.
+date: 2026-06-30
+last_modified_at: 2026-06-30
+author: Ryan H
+tags: [electronics, hardware-design, pcb-design]
+tldr: >-
+  A useful electronics brief does not need to be perfect, but it should explain what the device must do,
+  where it will be used, how it is powered, what it connects to, and what outcome is needed.
+sections:
+- title: The short version
+  body: >-
+    You do not need a finished specification before asking for help with custom electronics.
+    What is useful is a clear description of the problem, the environment, the signals or loads involved,
+    the power source, and what a successful result looks like.
+- title: Start with the problem, not the solution
+  body: >-
+    A good brief explains what needs to happen in the real world. That might be measuring something,
+    switching a load, controlling a motor, replacing a failed module, logging data, or making existing
+    equipment easier to use.
+  items:
+  - { label: Useful, text: "This pump needs to turn on when the tank level is low and report a fault if it does not run." }
+  - { label: Less useful, text: "I need an Arduino board with Wi-Fi and a relay." }
+- title: Information that helps
+  items:
+  - { label: Function, text: "What the device needs to sense, control, display, log, or communicate." }
+  - { label: Power, text: "Battery, plug pack, vehicle supply, solar, mains-derived supply, or existing equipment rail." }
+  - { label: Loads, text: "Motors, solenoids, relays, LEDs, heaters, pumps, or other outputs, including voltage and current if known." }
+  - { label: Signals, text: "Sensors, switches, encoders, serial data, analogue voltages, CAN, RS-485, Wi-Fi, Bluetooth, or other interfaces." }
+  - { label: Environment, text: "Indoor, outdoor, vehicle, workshop, enclosure, vibration, heat, moisture, dust, or chemical exposure." }
+  - { label: Quantity, text: "One-off repair, prototype, small batch, or something intended for repeat production." }
+  - { label: Outcome, text: "What must be demonstrated, fixed, measured, or delivered for the job to be considered successful." }
+- title: Photos and sketches are valuable
+  body: >-
+    Clear photos, rough sketches, measurements, connector details, and notes from failed attempts are often more useful
+    than a polished document. They help identify physical constraints early, before time is spent designing around the wrong assumptions.
+- title: Common missing details
+  table:
+    compact: true
+    headers: [Missing detail, Why it matters]
+    rows:
+    - cells: [Supply voltage range, Real equipment supplies are often noisy or poorly regulated]
+    - cells: [Load current, "Output drivers, connectors, fuses, and copper widths depend on current"]
+    - cells: [Cable length, "Long wiring can change voltage drop, noise pickup, and protection needs"]
+    - cells: [Mounting space, Board and enclosure choices depend on available volume]
+    - cells: [Environment, "Heat, moisture, vibration, and dust affect nearly every design choice"]
+    - cells: [Quantity, A one-off prototype and a repeatable product are designed differently]
+- title: What I usually look for first
+  body: >-
+    The first pass is usually about risk. Power input, load switching, connectors, protection, enclosure space,
+    and firmware complexity can change the shape of the job quickly. Finding those constraints early makes the project easier to quote honestly.
+- title: A simple brief format
+  ordered: true
+  items:
+  - { text: "What are you trying to make, fix, or improve?" }
+  - { text: "What does it connect to?" }
+  - { text: "How is it powered?" }
+  - { text: "Where will it be used?" }
+  - { text: "What must it survive?" }
+  - { text: "How many do you need?" }
+  - { text: "What would a successful result look like?" }
+- type: links
+  title: Related services
+  links:
+  - { label: Electronics Design, url: /services/electronics/, class: button-learn }
+  - { label: Embedded & Control, url: /services/programming/, class: button-learn }
+  - { label: Get in touch, url: /contact/, class: button-projects }
+faqs:
+- question: Do I need a complete specification before contacting Ryan Dynamics?
+  answer: No. A rough brief, photos, sketches, measurements, and a clear explanation of the desired outcome are enough to start a useful discussion.
+- question: Can you work from an existing broken device or prototype?
+  answer: Often, yes. Existing hardware, photos, measurements, and notes about what failed can be useful starting points.
+- question: Is this only for PCB design?
+  answer: No. The same information helps with custom PCBs, wiring, embedded firmware, control systems, enclosures, and prototype hardware.
+---
