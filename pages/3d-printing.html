@@ -1,10 +1,17 @@
 ---
 layout: default
 title: 3D Printing Services in Newcastle NSW
-description: Local 3D printing for prototypes, small-batch production, and reverse-engineered parts. Fast turnaround in ASA, ABS, and PC for functional engineering components.
+description: Local 3D printing for prototypes, small-batch production, and reverse-engineered parts in Newcastle NSW.
 service_type: 3D Printing
 permalink: /services/3d-printing/
 redirect_from: [/3d-printing/, /3d-printing, /3d-printing.html]
+
+lead_source: 3D Printing Service Page
+site_section: printing
+contact_form_title: Start a 3D printing project
+contact_form_intro: Tell me what you are building, what is failing and what outcome you need.
+contact_project_type: Additive Manufacturing
+
 images:
 - { src: "/assets/images-src/services/3d-printing/gallery/print-motorbike-tank-01.jpg",
 alt: "Physical prototype of a unique motorcycle fuel tank for fitment and reference in aluminium fabrication.",
@@ -28,82 +35,49 @@ caption: "Stanley screwdriver mounting for pegboard storage system." }
 			</h1>
 			<div class="wrapper-hero-paragraph">
 				<p>
-					We cater to small volume projects, rapid prototyping, reverse
-					engineering, and cloning
-					hard-to-source parts. With meticulous attention to detail and
-					personalized service, we bring
-					your ideas to life.
+					Additive manufacturing for rapid prototyping, fit testing and
+					small-volume functional parts.
 				</p>
 				<p>
-					Collaboration is at the heart of what we do, and we always work
-					closely
-					with you on your most
-					unique projects.
-				</p>
-				<p>
-					Contact us today to discuss your project, and let's embark on a
-					journey
-					of transforming your
-					ideas into tangible creations.
+					Work includes reproducing hard-to-source components and producing
+					parts for development, testing and short-run use.
 				</p>
 			</div><!--/wrapper-hero-->
 		</div><!--/wrapper-hero-->
 		<div class="wrapper-benefits">
-			<h2>Why our printing stands out</h2>
-			<ul>
+			<h2>Why this printing approach works</h2>
+			<ul class="benefits">
 				<li>
-					<i class="fas fa-tachometer-alt" class="benefit benefit-1"></i>
+					<i class="fas fa-tachometer-alt"></i>
 					<h3>Rapid Prototyping</h3>
 					<p>
-						Get parts in hand quickly to test, refine, and validate
-						your designs.
+						Parts produced quickly for testing, iteration and validation.
 					</p>
 				</li>
+
 				<li>
-					<i class="fas fa-wand-magic-sparkles" class="benefit benefit-2"></i>
-					<h3>Customized Designs</h3>
+					<i class="fas fa-wand-magic-sparkles"></i>
+					<h3>Fit and Functional Parts</h3>
 					<p>
-						Every print is adapted to your requirements, from fit
-						checks to end-use parts.
+						Suitable for fit checks, assemblies and low-volume functional use.
 					</p>
 				</li>
+
 				<li>
-					<i class="fas fa-cogs" class="benefit benefit-3"></i>
-					<h3>Wide Material Range</h3>
+					<i class="fas fa-cogs"></i>
+					<h3>Material Selection</h3>
 					<p>
-						High-temp, rigid, or elastic, select from a wide
-						spectrum to match your needs.
+						Materials selected based on strength, temperature and application.
 					</p>
 				</li>
 			</ul>
 		</div><!--/wrapper-benefits-->
-		<h2>Previous Work</h2>
+		<h2>Example Work</h2>
 		{% include lightbox.html images=page.images id='3d-printing' %}
 		<div id="wrapper-contact">
-			<h2>Contact Us</h2>
-			<div class="form-area">
-				<div class="form-text">
-					<form action="https://formspree.io/f/xknzzvvz" method="POST">
-						<div class="field">
-							<input type="text" name="name" class="input" placeholder=""
-								required pattern=".*\S.*">
-							<label for="text" class="label">Name</label>
-						</div>
-						<div class="field">
-							<input type="email" name="_replyto" class="input" placeholder=""
-								required>
-							<label for="email" class="label">Email</label>
-						</div>
-						<div class="fieldtext">
-							<label for="message" class="label">What would
-								you like us to 3D print?</label>
-							<textarea name="message" cols="50" rows="10"></textarea>
-						</div>
-						<button class="button form-button-contact" type="submit">Request a
-							Print</button>
-					</form>
-				</div>
-			</div>
+			<h2>Start a Project</h2>
+
+			{% include contact_form.html %}
 		</div><!--/wrapper-contact-->
 	</section>
 </div><!--/wrapper-page-->

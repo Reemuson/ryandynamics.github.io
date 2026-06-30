@@ -1,11 +1,13 @@
+// _sass/base/_highlight.scss
+
 @use "../settings" as s;
 
 .highlight-red {
-	color: s.$colour-5;
+	color: s.$colour_accent_brand;
 	font-weight: 700;
 }
 
 .highlight-bold {
-	color: s.$colour-4;
+	color: s.$colour_text_muted;
 	font-weight: 700;
 }

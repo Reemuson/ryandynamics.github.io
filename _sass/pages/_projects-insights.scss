@@ -1,42 +1,68 @@
+// _sass/pages/_projects-insights.scss
+
 @use "../settings" as s;
 
 .projects-and-insights {
 	padding-top: 3rem;
 
+	.wrapper-hero {
+		padding-bottom: 2.5rem;
+		border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+	}
+
 	.wrapper-hero-paragraph {
-		padding-top: 3rem;
+		padding-top: 1.5rem;
 
 		p {
-			padding-bottom: 1rem;
+			padding-bottom: 0.75rem;
+			max-width: 70ch;
 		}
 	}
 
 	.wrapper-projects,
 	.wrapper-insights {
-		padding-top: 3rem;
+		padding-top: 2.5rem;
 
 		.section-title {
-			padding-bottom: 1rem;
+			padding-bottom: 0.75rem;
 		}
 
 		.wrapper-section-paragraph {
-			margin-bottom: 1rem;
+			margin-bottom: 1.25rem;
+
+			p {
+				max-width: 70ch;
+			}
 		}
 	}
 
+	.wrapper-card {
+		align-items: stretch;
+	}
+
 	.wrapper-contact-cta {
-		padding: 3rem 0 3rem 0;
+		margin-top: 3rem;
+		margin-bottom: 3rem;
+		padding: 2.25rem 2rem;
+		border: 1px solid rgba(0, 0, 0, 0.12);
+		border-radius: 0.75rem;
 		display: flex;
 		flex-direction: column;
-		align-items: center;
+		gap: 0.75rem;
+		align-items: flex-start;
 
 		h2 {
-			padding-bottom: 1rem;
-			color: s.$colour-5;
+			margin: 0;
+			color: s.$colour_text;
 		}
 
 		p {
-			padding-bottom: 3rem;
+			margin: 0;
+			max-width: 70ch;
+		}
+
+		.button {
+			margin-top: 0.5rem;
 		}
 	}
 }
@@ -44,5 +70,9 @@
 @include s.respond(lg) {
 	.projects-and-insights {
 		padding-top: 0;
+
+		.wrapper-contact-cta {
+			padding: 2.5rem 2.5rem;
+		}
 	}
 }

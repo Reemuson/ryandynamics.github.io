@@ -1,3 +1,5 @@
+// _sass/pages/_service.scss
+
 @use "../settings" as s;
 
 .printing,
@@ -36,18 +38,18 @@
 
 				i {
 					padding: 1rem 0;
-					font-size: s.$h1;
+					font-size: s.$type_h1;
 
 					.benefit-1 {
-						color: s.$colour-2;
+						color: s.$colour_surface;
 					}
 
 					.benefit-2 {
-						color: s.$colour-3;
+						color: s.$colour_text;
 					}
 
 					.benefit-3 {
-						color: s.$colour-6;
+						color: s.$colour_accent_tech;
 					}
 				}
 			}
@@ -61,6 +63,12 @@
 
 	.wrapper-photos .thumb {
 		max-height: 300px;
+	}
+
+	#wrapper-contact {
+		h2 {
+			padding-bottom: 1rem;
+		}
 	}
 }
 

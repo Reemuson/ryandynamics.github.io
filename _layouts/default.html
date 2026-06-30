@@ -1,11 +1,17 @@
+<!-- _layouts/default.html -->
+
 <!doctype html>
 <html lang="en">
 
 <head>{% include head.html %}</head>
 
-<body>
+<body class="site-bg">
 	{% include nav.html %}
-	<main id="content">{{ content }}</main>
+	<div class="site-container">
+		<main id="content">
+			{{ content }}
+		</main>
+	</div>
 	{% include footer.html %}
 </body>
 

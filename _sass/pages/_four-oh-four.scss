@@ -1,3 +1,5 @@
+// _sass/pages/_four-oh-four.scss
+
 @use "../settings" as s;
 
 #four-oh-four {
@@ -5,7 +7,7 @@
 	padding-top: 3rem;
 
 	a:not(.button) {
-		color: s.$colour-5;
+		color: s.$colour_accent_brand;
 		text-decoration: underline;
 	}
 
@@ -47,9 +49,9 @@
 		margin: 0 auto 2rem;
 
 		h2 {
-			font-size: s.$h2;
+			font-size: s.$type_h2;
 			margin-bottom: .5rem;
-			color: s.$colour-5;
+			color: s.$colour_accent_brand;
 		}
 
 		ul {
@@ -63,7 +65,7 @@
 
 			a {
 				text-decoration: none;
-				color: s.$colour-6;
+				color: s.$colour_accent_tech;
 
 				&:hover,
 				&:focus-visible {

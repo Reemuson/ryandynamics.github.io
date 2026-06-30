@@ -1,3 +1,5 @@
+// _sass/base/_typography.scss
+
 @use "../settings" as s;
 
 html {
@@ -6,32 +8,35 @@ html {
 }
 
 body {
-	font-family: 'Manrope', sans-serif;
+	font-family: "Inter", sans-serif;
+	font-optical-sizing: auto;
+	font-style: normal;
 	font-weight: 400;
-	font-size: s.$p;
-	background-color: s.$colour-2;
+	font-size: s.$type_p;
+	background-color: s.$colour_background;
+	margin: 0;
 }
 
 h1 {
-	font-size: s.$h1;
+	font-size: s.$type_h1;
 	font-weight: 500;
 }
 
 h2 {
-	font-size: s.$h2;
+	font-size: s.$type_h2;
 	font-weight: 500;
 }
 
 h3 {
-	font-size: s.$h3;
+	font-size: s.$type_h3;
 	font-weight: 500;
 }
 
 p {
-	font-size: s.$p;
+	font-size: s.$type_p;
 }
 
 a {
-	font-size: s.$p;
+	font-size: s.$type_p;
 	text-decoration: none;
 }

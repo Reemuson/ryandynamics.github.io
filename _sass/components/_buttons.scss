@@ -1,22 +1,24 @@
+// _sass/components/_buttons.scss
+
 @use "../settings" as s;
+@use "sass:color";
 
 .button {
-	display: block;
+	display: inline-block;
 	cursor: pointer;
-	font-weight: 700;
-	font-size: s.$p;
+	font-weight: 600;
+	font-size: s.$type_p;
+	line-height: 1.1;
 	text-align: center;
-	border-radius: .5rem;
-	width: fit-content;
-	max-width: 15rem;
-	padding: 1rem;
+	border-radius: 2px;
+	padding: 0.9rem 1.2rem;
 	text-decoration: none;
-
-	&:hover,
-	&:focus {
-		filter: brightness(1.2);
-		transition: .5s;
-	}
+	border: 1px solid transparent;
+	transition:
+		background 0.15s ease,
+		color 0.15s ease,
+		border-color 0.15s ease,
+		box-shadow 0.15s ease;
 }
 
 a.button,
@@ -28,34 +30,62 @@ a.button:focus {
 }
 
 .button:focus-visible {
-	outline: 2px solid rgba(0, 0, 0, .3);
+	outline: 2px solid rgba(0, 0, 0, 0.35);
 	outline-offset: 2px;
 }
 
-.button-printables {
-	color: s.$colour-1;
-	background: s.$colour-printables;
-	margin: 2rem auto;
-	padding: 1rem;
-}
-
-.button-voron {
-	color: s.$colour-1;
-	background: s.$colour-voron;
-	margin: 2rem auto;
-	padding: 1rem;
-}
-
 .button-projects {
-	color: s.$colour-1;
-	background: s.$colour-5;
-	margin: 0 auto;
-	padding: 1rem;
+	color: s.$colour_surface;
+	background: s.$colour_accent_brand;
+	border-color: s.$colour_accent_brand;
+}
+
+.button-projects:hover,
+.button-projects:focus {
+	background: color.adjust(s.$colour_accent_brand, $lightness: -8%);
 }
 
 .button-learn {
-	color: s.$colour-1;
-	background: s.$colour-6;
-	margin: 0 auto;
-	padding: 1rem;
+	color: s.$colour_surface;
+	background: s.$colour_accent_tech;
+	border-color: s.$colour_accent_tech;
+}
+
+.button-learn:hover,
+.button-learn:focus {
+	background: color.adjust(s.$colour_accent_tech, $lightness: -8%);
+}
+
+.button-secondary {
+	color: s.$colour_text;
+	background: transparent;
+	border-color: rgba(0, 0, 0, 0.35);
+}
+
+.button-secondary:hover,
+.button-secondary:focus {
+	background: rgba(0, 0, 0, 0.04);
+	border-color: rgba(0, 0, 0, 0.45);
+}
+
+.button-printables {
+	color: s.$colour_surface;
+	background: s.$colour_accent_printables;
+	border-color: s.$colour_accent_printables;
+}
+
+.button-printables:hover,
+.button-printables:focus {
+	background: color.adjust(s.$colour_accent_printables, $lightness: -8%);
+}
+
+.button-voron {
+	color: s.$colour_surface;
+	background: s.$colour_accent_voron;
+	border-color: s.$colour_accent_voron;
+}
+
+.button-voron:hover,
+.button-voron:focus {
+	background: color.adjust(s.$colour_accent_voron, $lightness: -8%);
 }

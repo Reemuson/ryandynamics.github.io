@@ -1,0 +1,136 @@
+<!-- _includes/contact_form.html -->
+
+<div class="form-area">
+	<div class="form-text">
+		<form action="https://formspree.io/f/xknzzvvz" method="POST">
+
+			<input type="hidden" name="_subject" value="Ryan Dynamics — New Project Enquiry">
+
+			<input type="hidden" name="Enquiry Context"
+				value="{{ page.lead_source | default: page.title }} — {{ page.url }}">
+
+			<div class="hp-field" aria-hidden="true">
+				<label for="company_name_field">Leave this field empty</label>
+				<input type="text" id="company_name_field" name="_gotcha" tabindex="-1"
+					autocomplete="off">
+			</div>
+
+			<div class="field">
+				<label for="contact_name" class="label">
+					Name <span class="required-mark">*</span>
+				</label>
+				<input type="text" id="contact_name" name="name" class="input input-required" required
+					pattern=".*\S.*">
+			</div>
+
+			<div class="field">
+				<label for="contact_email" class="label">
+					Email <span class="required-mark">*</span>
+				</label>
+				<input type="email" id="contact_email" name="_replyto" class="input input-required"
+					required>
+			</div>
+
+			<div class="form-row">
+				<div class="field">
+					<label for="contact_project_type" class="label">
+						Project Type <span class="required-mark">*</span>
+					</label>
+
+					<select id="contact_project_type" name="project_type"
+						class="input input-required" required>
+
+						<option value="" {% unless page.contact_project_type %}selected{%
+							endunless %}>
+							Select project type
+						</option>
+
+						<option value="Electronics Design" {% if
+							page.contact_project_type=="Electronics Design" %}selected{%
+							endif %}>
+							Electronics Design
+						</option>
+
+						<option value="Embedded & Control" {% if
+							page.contact_project_type=="Embedded & Control" %}selected{%
+							endif %}>
+							Embedded & Control
+						</option>
+
+						<option value="Industrial Design" {% if
+							page.contact_project_type=="Industrial Design" %}selected{%
+							endif %}>
+							Industrial Design
+						</option>
+
+						<option value="Additive Manufacturing" {% if
+							page.contact_project_type=="Additive Manufacturing" %}selected{%
+							endif %}>
+							Additive Manufacturing
+						</option>
+
+						<option value="Multi-disciplinary" {% if
+							page.contact_project_type=="Multi-disciplinary" %}selected{%
+							endif %}>
+							Multi-disciplinary
+						</option>
+
+						<option value="Not Sure" {% if page.contact_project_type=="Not Sure"
+							%}selected{% endif %}>
+							Not Sure
+						</option>
+
+					</select>
+				</div>
+
+				<div class="field">
+					<label for="contact_project_stage" class="label">
+						Project Stage
+						<span class="optional-mark">(optional)</span>
+					</label>
+
+					<select id="contact_project_stage" name="project_stage"
+						class="input input-optional">
+
+						<option value="" selected>
+							Select project stage
+						</option>
+
+						<option value="Idea / Concept">
+							Idea / Concept
+						</option>
+
+						<option value="Existing problem to solve">
+							Existing problem to solve
+						</option>
+
+						<option value="Early Prototype">
+							Early Prototype
+						</option>
+
+						<option value="Refinement for manufacture">
+							Refinement for manufacture
+						</option>
+
+					</select>
+				</div>
+			</div>
+
+			<div class="fieldtext">
+				<label for="contact_message" class="label">
+					Project Summary <span class="required-mark">*</span>
+				</label>
+
+				<textarea id="contact_message" name="message" class="input-required" rows="10" required
+					placeholder="What are you building, what is failing and what outcome do you need?
+
+Include any relevant information or constraints if known."></textarea>
+			</div>
+
+			<button class="button form-button-contact" type="submit">
+				Send Enquiry
+			</button>
+
+		</form>
+	</div>
+</div>

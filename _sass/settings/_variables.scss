@@ -1,22 +1,30 @@
-/* Colors */
-$colour-1: #FAFAFA !default;
-$colour-2: #F5F5F5 !default;
-$colour-3: #63707E !default;
-$colour-4: #222222 !default;
-$colour-5: #CE2231 !default;
-$colour-6: #1C5D99 !default;
-$colour-printables: #FA6831 !default;
-$colour-voron: #FF2300 !default;
+// _sass/settings/_variables.scss
+
+/* Brand palette */
+$colour_surface: #FAFAFA !default; // content panel
+$colour_background: #F5F5F5 !default; // page background
+$colour_text: #1E1A1D !default; // primary text
+$colour_text_muted: #222222 !default; // secondary text
+
+$colour_accent_brand: #CE2231 !default; // brand accent (sparingly)
+$colour_accent_tech: #1C5D99 !default; // technical/link accent
+
+$colour_border: $colour_text_muted !default;
+$colour_nav: $colour_accent_brand !default;
+
+/* Legacy accents (keep if needed) */
+$colour_accent_printables: #FA6831 !default;
+$colour_accent_voron: #FF2300 !default;
 
 /* Type scale */
-$h1: 2.5rem !default;
-$h2: 1.5rem !default;
-$h3: 1.25rem !default;
-$h4: 1.125rem !default;
-$p: 1rem !default;
+$type_h1: 2.5rem !default;
+$type_h2: 1.5rem !default;
+$type_h3: 1.25rem !default;
+$type_h4: 1.125rem !default;
+$type_p: 1rem !default;
 
 /* Layout */
-$nav: 4rem !default;
-$max-width: 1200px !default;
-$gutter: 20px !default;
-$dropdown-gap: 1rem !default;
+$layout_nav_height: 5rem !default;
+$layout_max_width: 1440px !default;
+$layout_gutter: 20px !default;
+$layout_dropdown_gap: 1rem !default;

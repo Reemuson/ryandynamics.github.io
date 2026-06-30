@@ -1,10 +1,17 @@
 ---
 layout: default
 title: Electronics Design & PCB Prototyping — Newcastle NSW
-description: Electronics and PCB design for prototypes and production in Newcastle NSW. From schematics to layout and testing, we build reliable, efficient electronic systems.
+description: Electronics and PCB design in Newcastle NSW.
 service_type: Electronics Design
 permalink: /services/electronics/
 redirect_from: [/electronics/, /electronics, /electronics.html]
+
+lead_source: Electronics Service Page
+site_section: electronics
+contact_form_title: Start an electronics project
+contact_form_intro: Tell me what you are building, what is failing and what outcome you need.
+contact_project_type: Electronics Design
+
 images:
 - { src: "/assets/images-src/services/electronics/gallery/draft-harness-01.jpg",
 alt: "Wire harness for agricultural implement.",
@@ -25,81 +32,56 @@ caption: "Finalised PCB design." }
 			</h1>
 			<div class="wrapper-hero-paragraph">
 				<p>
-					We design the electronics that power your products—from robust
-					circuits and PCBs to the wiring that ties it all together. Our
-					focus is performance, reliability, manufacturability, and clear
-					documentation for hand-off or production.
+					Electronics and PCB design for prototypes, control systems, and
+					field equipment.
 				</p>
 				<p>
-					Alongside PCB/circuit design (schematics, layout, prototyping),
-					we provide full low-voltage electrical design: wiring harnesses
-					and looms, connector assemblies, pinout definitions, cable
-					schedules, and assembly drawings. We handle connector selection,
-					wire gauge and protection, shielding/EMC, strain relief,
-					labeling,
-					and test plans—suited to automotive, industrial, agriculture,
-					and robotics applications.
+					Work includes schematic capture, PCB layout, and wiring harness
+					design, with outputs suited to build, test, and integration.
 				</p>
 				<p>
-					From schematic capture to PCB layout, harness drafting, and
-					prototype builds, we manage each stage with precision and
-					attention to detail. Covering DFM/DFT, BOMs, and bring-up
-					testing, so your idea moves smoothly into production.
+					Projects are developed with a focus on reliability,
+					manufacturability, and practical use in real-world environments.
 				</p>
 			</div><!--/wrapper-hero-paragraph-->
 		</div><!--/wrapper-hero-->
 		<div class="wrapper-benefits">
-			<h2>Why our electronics &amp; wiring make the difference</h2>
+			<h2>Why this electronics approach works</h2>
 			<ul class="benefits">
 				<li>
 					<i class="fas fa-plug benefit benefit-1" aria-hidden="true"></i>
-					<h3>Integrated PCB + Harness</h3>
-					<p>Boards, looms, and connectorised assemblies designed together
-						for reliability and EMI.</p>
+					<h3>PCB and Harness Integration</h3>
+					<p>
+						Boards, wiring and connectors designed together for reliable
+						system integration.
+					</p>
 				</li>
+
 				<li>
 					<i class="fas fa-layer-group benefit benefit-2" aria-hidden="true"></i>
-					<h3>Prototype to Production</h3>
-					<p>One-offs to small runs with DFM/DFT, cable schedules,
-						pinouts, and build docs.</p>
+					<h3>Prototype to Build</h3>
+					<p>
+						From initial design through to build-ready documentation and
+						testable prototypes.
+					</p>
 				</li>
+
 				<li>
 					<i class="fas fa-shield-alt benefit benefit-3" aria-hidden="true"></i>
-					<h3>Field-Ready Details</h3>
-					<p>Correct gauge &amp; protection, strain relief, labeling, and
-						test plans for harsh use.</p>
+					<h3>Field-Ready Design</h3>
+					<p>
+						Protection, wiring and layout suited to industrial and
+						outdoor environments.
+					</p>
 				</li>
 			</ul>
 		</div>
-		<h2>Previous Work</h2>
+		<h2>Example work</h2>
 		{% include lightbox.html images=page.images id='electronics' %}
 		<div id="wrapper-contact">
-			<h2>Contact Us</h2>
-			<div class="form-area">
-				<div class="form-text">
-					<form action="https://formspree.io/f/xknzzvvz" method="POST">
-						<div class="field">
-							<input type="text" name="name" class="input" placeholder=""
-								required pattern=".*\S.*">
-							<label for="text" class="label">Name</label>
-						</div>
-						<div class="field">
-							<input type="email" name="_replyto" class="input" placeholder=""
-								required>
-							<label for="email" class="label">Email</label>
-						</div>
-						<div class="fieldtext">
-							<label for="message" class="label">Describe your
-								electronics project or
-								idea...</label>
-							<textarea name="message" cols="50" rows="10"></textarea>
-						</div>
-						<button class="button form-button-contact" type="submit">Send
-							Electronics
-							Enquiry</button>
-					</form>
-				</div>
-			</div>
+			<h2>Start a project</h2>
+
+			{% include contact_form.html %}
 		</div><!--/wrapper-contact-->
 	</section>
 </div><!--/wrapper-page-->

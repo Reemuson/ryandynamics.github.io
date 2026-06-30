@@ -1,3 +1,5 @@
+// _sass/pages/_project.scss
+
 @use "../settings" as s;
 
 .project,
@@ -5,7 +7,7 @@
 	padding-top: 3rem;
 
 	a:not(.button) {
-		color: s.$colour-5;
+		color: s.$colour_accent_brand;
 		text-decoration: underline;
 	}
 

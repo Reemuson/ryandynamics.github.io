@@ -1,9 +1,15 @@
 ---
 layout: default
 title: Contact — Industrial Design & 3D Printing in Newcastle NSW
-description: Get in touch for 3D printing, electronics, and product design projects in Newcastle NSW. Request a quote or start your next prototype today.
+description: Get in touch for 3D printing, electronics, and product design projects in Newcastle NSW.
 permalink: /contact/
 redirect_from: [/contact, /contact.html]
+
+lead_source: Contact Page
+site_section: contact
+contact_form_title: Start a project discussion
+contact_form_intro: What you are building, what is failing, and what outcome you need?
+contact_project_type: Not Sure
 ---
 
 <div class="wrapper-page">
@@ -16,35 +22,13 @@ redirect_from: [/contact, /contact.html]
 				<div class="wrapper-hero-paragraph">
 					<p>Every great project starts with a conversation. Whether it's
 						prototyping,
-						electronics, or design, we'll work side-by-side to bring
+						electronics, or design, I'll work with you to bring
 						your ideas into reality.</p>
-					<p>Share your vision, we'll make it tangible.</p>
+					<p>Share your vision, and I'll help make it tangible.</p>
 				</div><!--/wrapper-hero-paragraph-->
 			</div><!--/wrapper-hero-->
-			<div class="form-area">
-				<div class="form-text">
-					<form action="https://formspree.io/f/xknzzvvz" method="POST">
-						<div class="field">
-							<input type="text" name="name" class="input" placeholder=""
-								required pattern=".*\S.*">
-							<label for="text" class="label">Name</label>
-						</div>
-						<div class="field">
-							<input type="email" name="_replyto" class="input" placeholder=""
-								required>
-							<label for="email" class="label">Email</label>
-						</div>
-						<div class="fieldtext">
-							<label for="message" class="label">Tell us about
-								your project...</label>
-							<textarea name="message" cols="50" rows="10"></textarea>
-						</div>
-						<button class="button form-button-contact" type="submit">Start a
-							Project</button>
-					</form>
-				</div>
-			</div><!--/form-area-->
+
+			{% include contact_form.html %}
 		</div><!--/wrapper-contact-->
 	</section>
-	<!-- {% include clients.html %} -->
 </div>

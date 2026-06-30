@@ -30,5 +30,8 @@ Desktop.ini
 *.tmp
 /css
 
+# --- Local content planning notes ---
+/content-notes/
+
 # --- VS Code ---
 .vscode/

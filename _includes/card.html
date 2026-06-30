@@ -1,17 +1,31 @@
+<!-- _includes/card.html -->
+
 <div class="card">
 	<div class="card-body">
 		<h3 class="card-title">{{ item.title }}</h3>
 
-		{% assign blurb = item.summary | default: item.excerpt | default: item.description %}
-		{% if blurb %}
-		<p class="card-summary">{{ blurb | strip_html | truncate: 180 }}</p>
-		{% endif %}
+		{%- assign subtitle = item.subtitle
+		| default: item.deck
+		| default: item.tagline -%}
+		{%- if subtitle -%}
+		<p class="card-subtitle">{{ subtitle | strip_html }}</p>
+		{%- endif -%}
 
-		{% if item.date %}
+		{%- assign blurb = item.summary
+		| default: item.excerpt
+		| default: item.description -%}
+		{%- if blurb -%}
+		<p class="card-summary">{{ blurb | strip_html | truncate: 180 }}</p>
+		{%- endif -%}
+
+		{%- if item.date -%}
 		<p class="card-date">{{ item.date | date: "%Y-%-m-%-d" }}</p>
-		{% endif %}
+		{%- endif -%}
 	</div>
+
 	<div class="button-wrapper">
-		<a href="{{ item.url | relative_url }}" class="button button-1">Read More</a>
+		<a href="{{ item.url | relative_url }}" class="button button-learn">
+			Read More
+		</a>
 	</div>
 </div>

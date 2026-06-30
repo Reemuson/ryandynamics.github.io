@@ -1,3 +1,5 @@
+// _sass/components/_lightbox.scss
+
 @use "../settings" as s;
 
 .wrapper-photos {
@@ -12,7 +14,7 @@
 	>a {
 		flex: 0 1 300px;
 		display: block;
-		border: .5rem solid s.$colour-4;
+		border: .5rem solid s.$colour_text_muted;
 		border-radius: .5rem;
 		overflow: hidden;
 		transition: transform .5s;
@@ -67,13 +69,13 @@
 
 			p {
 				padding-top: 1rem;
-				color: s.$colour-2;
-				font-size: s.$p;
+				color: s.$colour_surface;
+				font-size: s.$type_p;
 			}
 
 			a {
-				color: s.$colour-5;
-				font-size: s.$p;
+				color: s.$colour_accent_brand;
+				font-size: s.$type_p;
 				text-decoration: underline;
 			}
 		}
@@ -86,9 +88,9 @@
 		.next,
 		.exit {
 			position: fixed;
-			width: s.$h1;
-			color: s.$colour-1;
-			font-size: s.$h2;
+			width: s.$type_h1;
+			color: s.$colour_surface;
+			font-size: s.$type_h2;
 		}
 
 		.previous {

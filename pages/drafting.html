@@ -1,10 +1,17 @@
 ---
 layout: default
 title: Design & Drafting — Newcastle NSW
-description: CAD drafting and 3D reverse-engineering in Newcastle NSW. Detailed drawings, product design, and electronic schematics.
+description: CAD and 3D reverse-engineering in Newcastle NSW.
 service_type: Design & Drafting
 permalink: /services/drafting/
 redirect_from: [/drafting/, /drafting, /drafting.html]
+
+lead_source: Drafting Service Page
+site_section: drafting
+contact_form_title: Start a design project
+contact_form_intro: Tell me what you are building, what is failing and what outcome you need.
+contact_project_type: Industrial Design
+
 images:
 - { src: "/assets/images-src/services/drafting/gallery/draft-sheetmetal-02.jpg",
 alt: "Draft of a sheet metal flat pattern.",
@@ -31,74 +38,53 @@ caption: "Draft of a leg flat pattern in a weldment" }
 			</h1>
 			<div class="wrapper-hero-paragraph">
 				<p>
-					We deliver clean, standards-compliant CAD models and
-					manufacturing drawings
-					you can trust. Clear views, correct callouts, and
-					documentation that
-					moves smoothly from design to fabrication.
+					CAD modelling and manufacturing drawings for fabrication,
+					assembly, and integration.
 				</p>
 				<p>
-					From reverse-engineering existing assemblies to new product
-					concepts, we
-					create robust, parametric models and drawings ready for change.
+					Includes reverse-engineering existing components and developing
+					parametric models for new designs.
 				</p>
 				<p>
-					Deliverables include GD&amp;T drawings, DFM/DFT notes,
-					sheet-metal flat
-					patterns with bend tables, and weldment cut lists with weld
-					callouts.
+					Outputs include drawings, flat patterns, and build-ready detail
+					suited to real-world use.
 				</p>
 			</div><!--/wrapper-hero-paragraph-->
 		</div><!--/wrapper-hero-->
 		<div class="wrapper-benefits">
-			<h2>Why our drafting works for you</h2>
+			<h2>Why this drafting approach works</h2>
 			<ul class="benefits">
 				<li>
 					<i class="fas fa-tools benefit benefit-1" aria-hidden="true"></i>
-					<h3>Reverse-Engineer to CAD</h3>
-					<p>Measure/scan, rebuild as parametric models, and issue
-						drawings.</p>
+					<h3>Reverse Engineering</h3>
+					<p>
+						Existing parts rebuilt as CAD models and drawings.
+					</p>
 				</li>
+
 				<li>
 					<i class="fas fa-industry benefit benefit-2" aria-hidden="true"></i>
-					<h3>Manufacturing-Ready</h3>
-					<p>GD&amp;T, DFM/DFT, BOMs, and title blocks that meet your needs.</p>
+					<h3>Manufacturing Drawings</h3>
+					<p>
+						Drawings and documentation suited to fabrication and assembly.
+					</p>
 				</li>
+
 				<li>
 					<i class="fas fa-layer-group benefit benefit-3" aria-hidden="true"></i>
-					<h3>Sheet Metal &amp; Weldments</h3>
-					<p>Flat patterns &amp; bend tables, cut lists &amp; weld callouts.</p>
+					<h3>Sheet Metal and Weldments</h3>
+					<p>
+						Flat patterns, bend tables, and weldment detail for builds.
+					</p>
 				</li>
 			</ul>
 		</div><!--/wrapper-benefits-->
-		<h2>Previous Work</h2>
+		<h2>Example Work</h2>
 		{% include lightbox.html images=page.images id='drafting' %}
 		<div id="wrapper-contact">
-			<h2>Contact Us</h2>
-			<div class="form-area">
-				<div class="form-text">
-					<form action="https://formspree.io/f/xknzzvvz" method="POST">
-						<div class="field">
-							<input type="text" name="name" class="input" placeholder=""
-								required pattern=".*\S.*">
-							<label for="text" class="label">Name</label>
-						</div>
-						<div class="field">
-							<input type="email" name="_replyto" class="input" placeholder=""
-								required>
-							<label for="email" class="label">Email</label>
-						</div>
-						<div class="fieldtext">
-							<label for="message" class="label">Tell
-								us about your drafting or CAD
-								needs...</label>
-							<textarea name="message" cols="50" rows="10"></textarea>
-						</div>
-						<button class="button form-button-contact" type="submit">Send Drafting
-							Enquiry</button>
-					</form>
-				</div>
-			</div>
+			<h2>Start a Project</h2>
+
+			{% include contact_form.html %}
 		</div><!--/wrapper-contact-->
 	</section>
 </div><!--/wrapper-page-->

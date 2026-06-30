@@ -1,126 +1,162 @@
 ---
 layout: default
-title: Industrial Design, Electronics & 3D Printing — Newcastle NSW
-description: 3D printing, electronics, and product design in Newcastle NSW. From prototype to production, we deliver local design and manufacturing solutions.
+title: Electronics & Control Systems for Real-World Hardware — Newcastle NSW
+description: Embedded electronics, control systems, and hardware development in Newcastle NSW.
 permalink: /
+
+lead_source: Home Page
+site_section: home
+contact_form_title: Start a project discussion
+contact_form_intro: Typical projects include electronics, embedded control, product design and prototyping.
+contact_project_type: Select Project Type
 ---
 
 <div class="wrapper-page">
 	<section class="page about" id="about">
 		<div class="wrapper-hero">
 			<div class="box-1">
-				<h1>
-					Where <span class="highlight-red">ideas</span></h1>
-				<h1>
-					<span class="highlight-red">switch</span>
-					into <span class="highlight-bold">action.</span>
+				<h1 class="hero-title">
+					Where <span class="highlight-red">ideas</span>
+					<span class="hero-title-line">
+						<span class="highlight-red">switch</span>
+						into <span class="highlight-bold">action.</span>
+					</span>
 				</h1>
+
+				<p class="hero-tags">
+					Newcastle, NSW • Electronics • Sensing • Firmware • Integration
+				</p>
+
 				<div class="wrapper-hero-paragraph">
 					<p>
-						At Ryan Dynamics we specialise in industrial design,
-						electronics,
-						programming, and additive manufacturing.
-					</p>
-					<p>
-						We combine practical experience with a drive for
-						innovation to deliver
-						solutions that are both reliable and forward-thinking.
-					</p>
-					<p>
-						Want to see how ideas move from concept to reality?
-						Explore our
-						projects and insights to learn more about the work
-						behind the results.
+						Embedded electronics and control systems built for real-world equipment.
 					</p>
 				</div>
-				<a href="{{ '/projects-and-insights/' | relative_url }}"
-					class="button button-projects">Explore
-					Projects &amp; Insights</a>
+
+				<div class="hero-cta">
+					<a href="{{ '/projects-and-insights/' | relative_url }}"
+						class="button button-projects">
+						View Projects
+					</a>
+					<a href="#wrapper-contact" class="button button-secondary">
+						Start a Project
+					</a>
+				</div>
 			</div>
+
 			<div class="box-2">
-				<a href="{{ '/project/drybox/' | relative_url }}">
-					{% assign hero_src =
-					'/assets/images-src/projects/drybox/hero/drybox-hero-01.jpg' |
-					remove_first: '/assets/images-src/' %}
-					{% picture {{ hero_src }} preset="hero" alt="photograph of the month" %}
-				</a>
+				<figure class="hero-figure">
+					<a href="{{ '/electronics/' | relative_url }}">
+						{% assign hero_src =
+						'/assets/images-src/services/electronics/hero/render-pcb-02.png' |
+						remove_first: '/assets/images-src/' %}
+						{% picture {{ hero_src }} preset="hero"
+						alt="annotated PCB render showing labelled test points, connectors and
+						protection circuitry" %}
+					</a>
+					<figcaption class="hero-caption">
+						Infrared to USB interface.
+					</figcaption>
+				</figure>
 			</div>
 		</div><!--/wrapper-hero-->
-		<div class="wrapper-benefits">
-			<h2>Services</h2>
+
+		<div class="wrapper-benefits" id="capabilities">
+			<h2>Capabilities</h2>
+
 			<ul class="service-list">
 				<li class="service-card">
-					<i class="fas fa-drafting-compass benefit"></i>
-					<ul class="service-points">
-						<li>2D/3D CAD modelling</li>
-						<li>Technical drawing sets</li>
-						<li>Fabrication-ready designs</li>
-					</ul>
-					<a href="{{ '/drafting/' | relative_url }}" class="button button-learn">
-						Explore Design Work
-					</a>
-				</li>
-				<li class="service-card">
-					<i class="fas fa-cubes benefit"></i>
-					<ul class="service-points">
-						<li>Small, large &amp; multipart</li>
-						<li>Prototyping</li>
-						<li>ABS, ASA, PA &amp; more</li>
-					</ul>
-					<a href="{{ '/3d-printing/' | relative_url }}" class="button button-learn">
-						Explore 3D Printing
-					</a>
-				</li>
-				<li class="service-card">
-					<i class="fas fa-bolt benefit"></i>
+					<div class="service-head">
+						<i class="fas fa-bolt service-icon" aria-hidden="true"></i>
+						<h3>Electronics</h3>
+					</div>
 					<ul class="service-points">
 						<li>Custom PCB design</li>
-						<li>Wiring harnesses</li>
-						<li>Embedded electronics</li>
+						<li>Power, sensing and protection</li>
+						<li>Harness design and integration</li>
 					</ul>
 					<a href="{{ '/electronics/' | relative_url }}" class="button button-learn">
-						Explore Electronics
+						View Electronics Work
 					</a>
 				</li>
+
 				<li class="service-card">
-					<i class="fas fa-code benefit"></i>
+					<div class="service-head">
+						<i class="fas fa-microchip service-icon" aria-hidden="true"></i>
+						<h3>Embedded &amp; Control</h3>
+					</div>
 					<ul class="service-points">
-						<li>Embedded C</li>
-						<li>Control integration</li>
-						<li>Automation scripting</li>
+						<li>Embedded C firmware</li>
+						<li>Control integration and bring-up</li>
+						<li>Automation and tooling</li>
 					</ul>
 					<a href="{{ '/programming/' | relative_url }}" class="button button-learn">
-						Explore Programming
+						View Control Work
+					</a>
+				</li>
+
+				<li class="service-card">
+					<div class="service-head">
+						<i class="fas fa-drafting-compass service-icon" aria-hidden="true"></i>
+						<h3>Industrial Design</h3>
+					</div>
+					<ul class="service-points">
+						<li>Manufacture-focused CAD</li>
+						<li>Technical drawing packages</li>
+						<li>Assembly-aware design</li>
+					</ul>
+					<a href="{{ '/drafting/' | relative_url }}" class="button button-learn">
+						View Design Work
+					</a>
+				</li>
+
+				<li class="service-card">
+					<div class="service-head">
+						<i class="fas fa-cube service-icon" aria-hidden="true"></i>
+						<h3>Additive Manufacturing</h3>
+					</div>
+					<ul class="service-points">
+						<li>Functional prototypes</li>
+						<li>Small-batch parts</li>
+						<li>Material-driven iteration</li>
+					</ul>
+					<a href="{{ '/3d-printing/' | relative_url }}" class="button button-learn">
+						View Manufacturing Work
 					</a>
 				</li>
 			</ul>
 		</div><!--/wrapper-benefits-->
-		<!-- {% include clients.html %} -->
-		<div id="wrapper-contact">
-			<h2>Contact Us</h2>
-			<div class="form-area">
-				<div class="form-text">
-					<form action="https://formspree.io/f/xknzzvvz" method="POST">
-						<div class="field">
-							<input type="text" name="name" class="input" placeholder=""
-								required pattern=".*\S.*">
-							<label for="text" class="label">Name</label>
-						</div>
-						<div class="field">
-							<input type="email" name="_replyto" class="input" placeholder=""
-								required>
-							<label for="email" class="label">Email</label>
-						</div>
-						<div class="fieldtext">
-							<label for="message" class="label">Tell
-								us about your project...</label>
-							<textarea name="message" cols="50" rows="10"></textarea>
-						</div>
-						<button class="button form-button-contact" type="submit">Start a
-							Project</button>
-					</form>
+
+		<div class="wrapper-proof" id="typical-projects">
+			<div class="proof-panel">
+				<div class="proof-head">
+					<h2>Typical projects</h2>
+					<p class="proof-lede">
+						Ryan Dynamics supports practical hardware work from one-off
+						prototypes through to refined technical builds.
+					</p>
 				</div>
+
+				<ul class="proof-list">
+					<li>Custom control and protection electronics</li>
+					<li>Embedded firmware for sensing and automation</li>
+					<li>CAD, drafting and build-ready technical packages</li>
+					<li>Functional prototypes and short-run printed parts</li>
+				</ul>
+
+				<p class="proof-note">
+					Common applications include industrial equipment, field systems,
+					test fixtures, and prototype hardware.
+				</p>
 			</div>
+		</div>
+
+		{% include clients.html %}
+
+		<div id="wrapper-contact">
+			<h2>Start a discussion</h2>
+
+			{% include contact_form.html %}
 		</div><!--/wrapper-contact-->
 	</section>
 </div><!--/wrapper-page-->
