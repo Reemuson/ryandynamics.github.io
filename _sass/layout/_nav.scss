@@ -1,15 +1,16 @@
+// _sass/layout/_nav.scss
+
 @use "../settings" as s;
 @use "sass:color";
 
-/* Top nav, hamburger, mobile menu */
 nav {
-	background: s.$colour-5;
+	background: s.$colour_nav;
 	top: 2.5vh;
-	height: s.$nav;
+	height: s.$layout_nav_height;
 	width: calc(100vw - 40px);
 	z-index: 10;
 	position: fixed;
-	border-radius: .5rem;
+	border-radius: 2px;
 	padding: 0 20px;
 	margin: 0 20px;
 	display: flex;
@@ -22,7 +23,7 @@ nav {
 		flex: 1;
 		align-items: center;
 		width: calc(100vw - 100px);
-		max-width: 1200px;
+		max-width: s.$layout_max_width;
 		margin: 0 auto;
 	}
 
@@ -31,57 +32,61 @@ nav {
 		text-decoration: none;
 
 		.logo {
-			height: 4rem;
+			height: calc(s.$layout_nav_height * 1.5);
 			z-index: 11;
-		}
-
-		h1 {
-			color: s.$colour-1;
-			font-size: s.$h2;
-			margin: 0 auto;
-			font-weight: 700;
 		}
 	}
 
-	/* Mobile/overlay nav list */
 	.nav-links {
-		background-color: s.$colour-5;
-		top: calc(2.5vh + #{s.$nav} - 0.5rem);
+		background-color: s.$colour_nav;
+		top: calc(2.5vh + #{s.$layout_nav_height} + 0.5rem);
 		left: 0;
 		width: calc(100vw - 40px);
 		z-index: 11;
 		position: fixed;
-		margin: 20px 20px;
+		margin: 0 20px;
+		padding: 0.75rem;
 		text-align: center;
 		list-style: none;
-		transition: all .5s ease-in-out;
-		border-radius: .5rem;
-
+		border-radius: 2px;
 		transform: translateY(-150%);
+		visibility: hidden;
+		pointer-events: none;
 		transition: transform .35s ease;
 
-		li a {
-			background-color: s.$colour-5;
-			color: s.$colour-1;
+		li {
+			margin: 0;
+		}
+
+		li a,
+		.dropdown-button {
+			background-color: transparent;
+			color: s.$colour_surface;
 			display: block;
-			margin: 2rem auto;
+			margin: 0;
 			cursor: pointer;
-			font-weight: 700;
-			font-size: s.$h2;
+			font-family: "Inter", sans-serif;
+			font-weight: 600;
+			font-size: s.$type_h3;
+			line-height: 1.1;
 			text-decoration: none;
 			text-align: center;
-			border-radius: .5rem;
-			width: 90%;
-			padding: 1rem;
-			transition: background-color .3s;
+			border-radius: 2px;
+			width: 100%;
+			padding: 1rem 0.75rem;
+			border: 1px solid transparent;
+			transition:
+				background-color .15s ease,
+				border-color .15s ease;
 
-			&:hover {
-				background-color: color.adjust(s.$colour-5, $lightness: -10%);
+			&:hover,
+			&:focus-visible {
+				background-color: color.adjust(s.$colour_nav, $lightness: -10%);
+				border-color: rgba(255, 255, 255, 0.24);
 			}
 		}
 	}
 
-	/* Hamburger */
 	#hamburger {
 		position: absolute !important;
 		width: 1px;
@@ -98,7 +103,7 @@ nav {
 		position: relative;
 		z-index: 1200;
 		cursor: pointer;
-		color: s.$colour-1;
+		color: s.$colour_surface;
 		font-size: 2rem;
 		margin-left: auto;
 	}
@@ -113,10 +118,11 @@ nav {
 
 	#hamburger:checked~.nav-links {
 		transform: translateY(0);
+		visibility: visible;
+		pointer-events: auto;
 	}
 }
 
-/* Desktop overrides */
 @include s.respond(lg) {
 	nav {
 		position: static;
@@ -134,28 +140,35 @@ nav {
 		}
 
 		.nav-links {
+			display: flex;
+			align-items: center;
+			gap: 0.25rem;
 			position: static;
 			margin: 0;
+			padding: 0;
 			width: auto;
 			background: none;
 			transform: none;
+			visibility: visible;
+			pointer-events: auto;
 
 			li {
-				display: inline-block;
-				margin: 0 .5em;
+				display: block;
+			}
 
-				a {
-					margin: 0;
-					padding: 0.5rem 1rem;
-					/* vertical padding for centering */
-					width: auto;
-					background: none;
-					transition: transform .2s;
+			li a,
+			.dropdown-button {
+				margin: 0;
+				padding: 0.7rem 0.85rem;
+				width: auto;
+				background: none;
+				font-size: s.$type_p;
+				border: 1px solid transparent;
 
-					&:hover {
-						background: none;
-						transform: scale(1.05);
-					}
+				&:hover,
+				&:focus-visible {
+					background: rgba(255, 255, 255, 0.10);
+					border-color: rgba(255, 255, 255, 0.18);
 				}
 			}
 		}
