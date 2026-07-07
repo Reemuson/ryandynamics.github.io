@@ -79,7 +79,8 @@ $entry-surface-table-hover: rgba(0, 0, 0, 0.05);
 		padding: 0;
 		list-style: none;
 
-		span {
+		span,
+		a {
 			display: inline-flex;
 			align-items: center;
 			max-width: 100%;
@@ -91,6 +92,13 @@ $entry-surface-table-hover: rgba(0, 0, 0, 0.05);
 			background: $entry-surface-soft;
 			font-size: 0.85rem;
 			line-height: 1;
+			text-decoration: none;
+		}
+
+		a:hover,
+		a:focus-visible {
+			border-color: s.$colour_accent_brand;
+			color: s.$colour_accent_brand;
 		}
 	}
 

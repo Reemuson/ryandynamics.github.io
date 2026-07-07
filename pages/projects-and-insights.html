@@ -19,7 +19,20 @@ redirect_from: [/projects-and-insights, /projects-and-insights.html]
 				</p>
 			</div><!--/wrapper-hero-paragraph-->
 		</div><!--/wrapper-hero-->
-		<div class="wrapper-projects">
+
+		<details class="project-filters" data-filter-controls hidden>
+			<summary>
+				<span>Filter and sort</span>
+				<span data-filter-count></span>
+			</summary>
+			<div class="filter-groups">
+				<div class="filter-group" data-filter-kinds aria-label="Filter by content type"></div>
+				<div class="filter-group" data-filter-tags aria-label="Filter by topic"></div>
+				<div class="filter-group" data-filter-sort aria-label="Sort by date"></div>
+			</div>
+		</details>
+
+		<div class="wrapper-projects" data-filter-section>
 			<h2 class="section-title">Projects</h2>
 			<div class="wrapper-section-paragraph">
 				<p>
@@ -38,7 +51,7 @@ redirect_from: [/projects-and-insights, /projects-and-insights.html]
 				{% endif %}
 			</div><!--/wrapper-card-->
 		</div><!--/wrapper-projects-->
-		<div class="wrapper-insights">
+		<div class="wrapper-insights" data-filter-section>
 			<h2 class="section-title">Insights</h2>
 			<div class="wrapper-section-paragraph">
 				<p>Practical notes on materials, process choices, tradeoffs, and hardware development decisions.</p>
@@ -54,6 +67,9 @@ redirect_from: [/projects-and-insights, /projects-and-insights.html]
 				{% endif %}
 			</div><!--/wrapper-card-->
 		</div><!--/wrapper-insights-->
+
+		<p class="filter-empty" data-filter-empty hidden>No matching projects or insights.</p>
+
 		<div class="wrapper-contact-cta">
 			<h2>Need help with a hardware problem?</h2>
 			<p>Send through the project context, current constraints, and the outcome you need.</p>

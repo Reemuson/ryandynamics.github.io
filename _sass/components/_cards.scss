@@ -64,6 +64,24 @@
 			opacity: 0.8;
 		}
 
+		.card-tags {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 0.35rem;
+			margin: 0.35rem 0 0;
+			padding: 0;
+
+			li {
+				padding: 0.2rem 0.45rem;
+				border: 1px solid rgba(0, 0, 0, 0.12);
+				border-radius: 999px;
+				font-size: 0.78rem;
+				line-height: 1.2;
+				color: s.$colour_text_muted;
+				background: rgba(0, 0, 0, 0.03);
+			}
+		}
+
 		.button-wrapper {
 			margin-top: auto;
 			display: flex;
@@ -75,6 +93,10 @@
 			transform: translateY(-2px);
 			box-shadow: 0 8px 22px rgba(0, 0, 0, 0.10);
 			border-color: rgba(0, 0, 0, 0.18);
+		}
+
+		&[hidden] {
+			display: none;
 		}
 	}
 }

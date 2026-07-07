@@ -1,6 +1,8 @@
 <!-- _includes/card.html -->
 
-<div class="card">
+<div class="card" data-filter-item data-filter-kind="{{ item.collection | escape }}"
+	data-filter-tags="{% if item.tags %}{{ item.tags | join: ',' | escape }}{% endif %}"
+	data-filter-date="{% if item.date %}{{ item.date | date: '%Y-%m-%d' }}{% endif %}">
 	<div class="card-body">
 		<h3 class="card-title">{{ item.title }}</h3>
 
@@ -20,6 +22,14 @@
 
 		{%- if item.date -%}
 		<p class="card-date">{{ item.date | date: "%Y-%-m-%-d" }}</p>
+		{%- endif -%}
+
+		{%- if item.tags -%}
+		<ul class="card-tags" aria-label="Tags">
+			{%- for tag in item.tags limit: 4 -%}
+			<li>{% include tag_label.html tag=tag %}</li>
+			{%- endfor -%}
+		</ul>
 		{%- endif -%}
 	</div>
 

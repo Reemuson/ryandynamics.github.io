@@ -23,7 +23,7 @@
 								{% if page.date %}<span>{{ page.date | date: "%Y-%-m-%-d" }}</span>{% endif %}
 								{% if page.tags %}
 								{% for tag in page.tags %}
-								<span>{% include tag_label.html tag=tag %}</span>
+								<a href="{{ '/projects-and-insights/' | relative_url }}?tag={{ tag | uri_escape }}">{% include tag_label.html tag=tag %}</a>
 								{% endfor %}
 								{% endif %}
 							</div>
