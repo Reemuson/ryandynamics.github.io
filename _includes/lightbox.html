@@ -20,7 +20,7 @@ Usage: {% include lightbox.html images=page.images id=page.slug %}
 			<img src="{{ img.src | relative_url }}" alt="{{ alt_txt }}" class="thumb" loading="lazy"
 				decoding="async">
 			{%- else -%}
-			{% picture {{ src_rel }} preset="thumb" alt="{{ alt_txt }}" %}
+			{% picture thumb {{ src_rel }} --alt {{ alt_txt }} %}
 			{%- endif -%}
 		</a>
 		{%- endfor -%}
@@ -54,7 +54,7 @@ Usage: {% include lightbox.html images=page.images id=page.slug %}
 					{%- if ext == 'gif' -%}
 					<img src="{{ img.src | relative_url }}" alt="{{ alt_txt }}" decoding="async">
 					{%- else -%}
-					{% picture {{ src_rel }} preset="full" alt="{{ alt_txt }}" %}
+					{% picture full {{ src_rel }} --alt {{ alt_txt }} %}
 					{%- endif -%}
 					{%- if img.caption -%}
 					<figcaption>{{ img.caption }}</figcaption>
@@ -83,7 +83,7 @@ Usage: {% include lightbox.html images=page.images id=page.slug %}
 						<img src="{{ img.src | relative_url }}" alt="{{ alt_txt }}" loading="lazy"
 							decoding="async">
 						{%- else -%}
-						{% picture {{ src_rel }} preset="thumb" alt="{{ alt_txt }}" %}
+						{% picture thumb {{ src_rel }} --alt {{ alt_txt }} %}
 						{%- endif -%}
 					</button>
 					{%- endfor -%}

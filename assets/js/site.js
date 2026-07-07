@@ -763,8 +763,23 @@
 		});
 	};
 
+	var setupImageLoading = function () {
+		Array.prototype.forEach.call(document.querySelectorAll('img[loading="lazy"]'), function (image) {
+			var markLoaded = function () {
+				image.classList.add('is-loaded');
+			};
+
+			if (image.complete) {
+				markLoaded();
+			} else {
+				image.addEventListener('load', markLoaded, { once: true });
+			}
+		});
+	};
+
 	setupNav();
 	setupGalleries();
 	setupProjectFilters();
 	setupContactForms();
+	setupImageLoading();
 }());

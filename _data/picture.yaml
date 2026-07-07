@@ -1,8 +1,12 @@
 presets:
   thumb:
     formats: [webp, jpg]
-    widths: [240, 320, 480]
-    sizes: "(min-width: 1200px) 240px, (min-width: 768px) 33vw, 45vw"
+    widths: [360, 540, 720, 960]
+    size: "(min-width: 1200px) 360px, (min-width: 768px) 45vw, 92vw"
+    dimension_attributes: true
+    format_quality:
+      webp: 78
+      jpg: 82
     attributes:
       class: thumb
       loading: lazy
@@ -11,14 +15,22 @@ presets:
   full:
     formats: [webp, jpg]
     widths: [960, 1280, 1920]
-    sizes: "90vw"
+    size: "90vw"
+    dimension_attributes: true
+    format_quality:
+      webp: 82
+      jpg: 86
     attributes:
       decoding: async
 
   hero:
     formats: [webp, jpg]
-    widths: [960, 1200, 1600]
-    sizes: "(min-width: 1200px) 1200px, 100vw"
+    widths: [640, 960, 1200, 1600]
+    size: "(min-width: 1200px) 560px, (min-width: 900px) 45vw, 96vw"
+    dimension_attributes: true
+    format_quality:
+      webp: 82
+      jpg: 86
     attributes:
       loading: eager
       fetchpriority: high

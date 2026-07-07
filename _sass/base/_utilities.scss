@@ -23,3 +23,12 @@
 	white-space: nowrap !important;
 	border: 0 !important;
 }
+
+html:not(.no-js) img[loading="lazy"] {
+	opacity: 0;
+	transition: opacity 0.22s ease;
+}
+
+html:not(.no-js) img[loading="lazy"].is-loaded {
+	opacity: 1;
+}

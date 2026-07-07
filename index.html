@@ -50,9 +50,7 @@ contact_project_type: Select Project Type
 						{% assign hero_src =
 						'/assets/images-src/services/electronics/hero/render-pcb-02.png' |
 						remove_first: '/assets/images-src/' %}
-						{% picture {{ hero_src }} preset="hero"
-						alt="annotated PCB render showing labelled test points, connectors and
-						protection circuitry" %}
+						{% picture hero {{ hero_src }} --alt annotated PCB render showing labelled test points, connectors and protection circuitry %}
 					</a>
 					<figcaption class="hero-caption">
 						Infrared to USB interface.
@@ -67,7 +65,7 @@ contact_project_type: Select Project Type
 			<ul class="service-list">
 				<li class="service-card">
 					<div class="service-head">
-						<i class="fas fa-bolt service-icon" aria-hidden="true"></i>
+						<i class="fa-solid fa-bolt service-icon" aria-hidden="true"></i>
 						<h3>Electronics</h3>
 					</div>
 					<ul class="service-points">
@@ -82,7 +80,7 @@ contact_project_type: Select Project Type
 
 				<li class="service-card">
 					<div class="service-head">
-						<i class="fas fa-microchip service-icon" aria-hidden="true"></i>
+						<i class="fa-solid fa-microchip service-icon" aria-hidden="true"></i>
 						<h3>Embedded &amp; Control</h3>
 					</div>
 					<ul class="service-points">
@@ -97,7 +95,7 @@ contact_project_type: Select Project Type
 
 				<li class="service-card">
 					<div class="service-head">
-						<i class="fas fa-drafting-compass service-icon" aria-hidden="true"></i>
+						<i class="fa-solid fa-drafting-compass service-icon" aria-hidden="true"></i>
 						<h3>Industrial Design</h3>
 					</div>
 					<ul class="service-points">
@@ -112,7 +110,7 @@ contact_project_type: Select Project Type
 
 				<li class="service-card">
 					<div class="service-head">
-						<i class="fas fa-cube service-icon" aria-hidden="true"></i>
+						<i class="fa-solid fa-cube service-icon" aria-hidden="true"></i>
 						<h3>Additive Manufacturing</h3>
 					</div>
 					<ul class="service-points">

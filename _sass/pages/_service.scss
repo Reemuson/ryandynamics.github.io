@@ -36,21 +36,10 @@
 					display: none;
 				}
 
-				i {
+				.benefit {
+					color: s.$colour_text_muted;
 					padding: 1rem 0;
 					font-size: s.$type_h1;
-
-					.benefit-1 {
-						color: s.$colour_surface;
-					}
-
-					.benefit-2 {
-						color: s.$colour_text;
-					}
-
-					.benefit-3 {
-						color: s.$colour_accent_tech;
-					}
 				}
 			}
 		}

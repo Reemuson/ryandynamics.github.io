@@ -17,6 +17,10 @@ node_modules/
 # --- Generated image assets ---
 /assets/images
 
+# --- Local vendor source bundles ---
+/.fontawesome*/
+/.fontawesome-free-*-web/
+
 # --- OS cruft ---
 # macOS
 .DS_Store

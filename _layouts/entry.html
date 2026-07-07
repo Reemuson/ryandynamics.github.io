@@ -36,7 +36,7 @@
 							{% if hero_ext == 'gif' %}
 							<img src="{{ hero_image.src | relative_url }}" alt="{{ hero_alt }}" loading="eager" decoding="async">
 							{% else %}
-							{% picture {{ hero_src }} preset="hero" alt="{{ hero_alt }}" %}
+							{% picture hero {{ hero_src }} --alt {{ hero_alt }} %}
 							{% endif %}
 							{% if hero_image.caption %}
 							<figcaption>{{ hero_image.caption }}</figcaption>

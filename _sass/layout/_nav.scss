@@ -28,11 +28,15 @@ nav {
 	}
 
 	.logo-wrapper {
-		display: contents;
+		display: flex;
+		align-items: center;
+		flex: 0 0 auto;
 		text-decoration: none;
 
 		.logo {
+			display: block;
 			height: calc(s.$layout_nav_height * 1.5);
+			width: auto;
 			z-index: 11;
 		}
 	}
@@ -161,12 +165,7 @@ nav {
 		width: 100%;
 
 		.logo-wrapper {
-			display: flex;
-			align-items: center;
-
-			.logo {
-				padding-right: 1rem;
-			}
+			padding-right: 1rem;
 		}
 
 		.nav-links {
