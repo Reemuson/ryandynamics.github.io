@@ -2,7 +2,7 @@
 
 <div class="form-area">
 	<div class="form-text">
-		<form action="https://formspree.io/f/xknzzvvz" method="POST">
+		<form action="https://formspree.io/f/xknzzvvz" method="POST" data-enhanced-form>
 
 			<input type="hidden" name="_subject" value="Ryan Dynamics - New Project Enquiry">
 
@@ -20,7 +20,9 @@
 					Name <span class="required-mark">*</span>
 				</label>
 				<input type="text" id="contact_name" name="name" class="input input-required" required
-					pattern=".*\S.*">
+					pattern=".*\S.*" autocomplete="name" data-save-field
+					aria-describedby="contact_name_error">
+				<p class="field-error" id="contact_name_error" data-field-error></p>
 			</div>
 
 			<div class="field">
@@ -28,7 +30,9 @@
 					Email <span class="required-mark">*</span>
 				</label>
 				<input type="email" id="contact_email" name="_replyto" class="input input-required"
-					required>
+					required autocomplete="email" inputmode="email" data-save-field
+					aria-describedby="contact_email_error">
+				<p class="field-error" id="contact_email_error" data-field-error></p>
 			</div>
 
 			<div class="form-row">
@@ -38,7 +42,8 @@
 					</label>
 
 					<select id="contact_project_type" name="project_type"
-						class="input input-required" required>
+						class="input input-required" required data-save-field
+						aria-describedby="contact_project_type_error">
 
 						<option value="" {% unless page.contact_project_type %}selected{%
 							endunless %}>
@@ -81,6 +86,7 @@
 						</option>
 
 					</select>
+					<p class="field-error" id="contact_project_type_error" data-field-error></p>
 				</div>
 
 				<div class="field">
@@ -90,7 +96,7 @@
 					</label>
 
 					<select id="contact_project_stage" name="project_stage"
-						class="input input-optional">
+						class="input input-optional" data-save-field>
 
 						<option value="" selected>
 							Select project stage
@@ -122,14 +128,21 @@
 				</label>
 
 				<textarea id="contact_message" name="message" class="input-required" rows="10" required
+					minlength="20" data-save-field aria-describedby="contact_message_error contact_message_count"
 					placeholder="What are you building, what is failing and what outcome do you need?
 
 Useful details can include photos, measurements, part numbers, power, signals, materials, quantity, environment, or deadline constraints."></textarea>
+				<div class="field-meta">
+					<p class="field-error" id="contact_message_error" data-field-error></p>
+					<p class="field-count" id="contact_message_count" data-character-count="contact_message"></p>
+				</div>
 			</div>
 
-			<button class="button form-button-contact" type="submit">
+			<button class="button form-button-contact" type="submit" data-submit-label="Send Enquiry">
 				Send Enquiry
 			</button>
+
+			<p class="form-status" data-form-status aria-live="polite"></p>
 
 		</form>
 	</div>
