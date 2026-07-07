@@ -12,6 +12,25 @@
 
 {% seo %}
 
+{% if page.robots %}
+<meta name="robots" content="{{ page.robots | escape }}">
+{% endif %}
+
+{% assign social_image = page.image %}
+{% unless social_image %}
+{% if page.hero_image and page.hero_image.src %}
+{% assign social_image = page.hero_image.src %}
+{% elsif page.images and page.images.first %}
+{% assign social_image = page.images.first.src %}
+{% elsif site.business.logo %}
+{% assign social_image = site.business.logo %}
+{% endif %}
+{% endunless %}
+{% if social_image %}
+<meta property="og:image" content="{{ social_image | absolute_url }}">
+<meta name="twitter:image" content="{{ social_image | absolute_url }}">
+{% endif %}
+
 <link rel="stylesheet" href="{{ 'assets/css/main.css' | relative_url }}">
 
 <script src="https://kit.fontawesome.com/1f41a79a4e.js" crossorigin="anonymous"></script>
@@ -19,3 +38,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
+<script>
+	document.documentElement.classList.remove('no-js');
+</script>
+<script src="{{ '/assets/js/site.js' | relative_url }}" defer></script>

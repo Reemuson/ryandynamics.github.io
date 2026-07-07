@@ -16,12 +16,14 @@
   {% if b.abn %}"identifier": { "@type": "PropertyValue", "propertyID": "ABN", "value": "{{ b.abn }}" },{% endif %}
   {% if b.same_as %}"sameAs": [{% for s in b.same_as %}"{{ s }}"{% if forloop.last == false %}, {% endif %}{% endfor %}],{% endif %}
   {% if b.address %}
+  {% assign street = b.address.street | default: '' | strip %}
+  {% assign postcode = b.address.postcode | default: '' | strip %}
   "address": {
     "@type": "PostalAddress",
-    {% if b.address.street %}"streetAddress": "{{ b.address.street | escape }}",{% endif %}
+    {% if street != '' %}"streetAddress": "{{ street | escape }}",{% endif %}
     "addressLocality": "{{ b.address.locality | escape }}",
     "addressRegion": "{{ b.address.region | escape }}",
-    {% if b.address.postcode %}"postalCode": "{{ b.address.postcode | escape }}",{% endif %}
+    {% if postcode != '' %}"postalCode": "{{ postcode | escape }}",{% endif %}
     "addressCountry": "{{ b.address.country | escape }}"
   },
   {% endif %}

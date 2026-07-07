@@ -9,7 +9,7 @@ Usage: {% include lightbox.html images=page.images id=page.slug %}
 	{%- assign alt_txt = img.alt | default: '' | escape -%}
 	{%- assign ext = src_rel | split: '.' | last | downcase -%}
 
-	<a href="#{{ include.id }}-image{{ idx }}">
+	<a href="#{{ include.id }}-image{{ idx }}" aria-label="Open image {{ idx }}">
 		{%- if ext == 'gif' -%}
 		<img src="{{ img.src | relative_url }}" alt="{{ alt_txt }}" class="thumb" loading="lazy"
 			decoding="async">
@@ -18,9 +18,9 @@ Usage: {% include lightbox.html images=page.images id=page.slug %}
 		{%- endif -%}
 	</a>
 
-	<div id="{{ include.id }}-image{{ idx }}" class="lightbox">
+	<div id="{{ include.id }}-image{{ idx }}" class="lightbox" role="dialog" aria-modal="true" aria-label="Image {{ idx }}">
 		{%- unless forloop.first -%}
-		<a href="#{{ include.id }}-image{{ idx | minus: 1 }}"><i
+		<a href="#{{ include.id }}-image{{ idx | minus: 1 }}" aria-label="Previous image"><i
 				class="previous fa-solid fa-arrow-left"></i></a>
 		{%- endunless -%}
 
@@ -35,10 +35,10 @@ Usage: {% include lightbox.html images=page.images id=page.slug %}
 			{%- if img.caption %}<p>{{ img.caption }}</p>{% endif -%}
 		</div>
 
-		<a href="#_"><i class="exit fa-solid fa-xmark"></i></a>
+		<a href="#_" aria-label="Close image"><i class="exit fa-solid fa-xmark"></i></a>
 
 		{%- unless forloop.last -%}
-		<a href="#{{ include.id }}-image{{ idx | plus: 1 }}"><i class="next fa-solid fa-arrow-right"></i></a>
+		<a href="#{{ include.id }}-image{{ idx | plus: 1 }}" aria-label="Next image"><i class="next fa-solid fa-arrow-right"></i></a>
 		{%- endunless -%}
 	</div>
 	{%- endfor -%}
