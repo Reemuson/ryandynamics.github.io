@@ -2,44 +2,93 @@
 Usage: {% include lightbox.html images=page.images id=page.slug %}
 {%- endcomment -%}
 
-<div class="wrapper-photos">
-	{%- for img in include.images -%}
-	{%- assign idx = forloop.index -%}
-	{%- assign src_rel = img.src | remove_first: '/assets/images-src/' -%}
-	{%- assign alt_txt = img.alt | default: '' | escape -%}
-	{%- assign ext = src_rel | split: '.' | last | downcase -%}
+{%- assign gallery_id = include.id | default: page.slug | default: page.id -%}
+{%- assign gallery_label = gallery_id | replace: '-', ' ' | append: ' image gallery' -%}
 
-	<a href="#{{ include.id }}-image{{ idx }}" aria-label="Open image {{ idx }}">
-		{%- if ext == 'gif' -%}
-		<img src="{{ img.src | relative_url }}" alt="{{ alt_txt }}" class="thumb" loading="lazy"
-			decoding="async">
-		{%- else -%}
-		{% picture {{ src_rel }} preset="thumb" alt="{{ alt_txt }}" %}
-		{%- endif -%}
-	</a>
+<div class="wrapper-photos" data-gallery="{{ gallery_id | escape }}">
+	<div class="gallery-grid">
+		{%- for img in include.images -%}
+		{%- assign idx = forloop.index -%}
+		{%- assign idx0 = forloop.index0 -%}
+		{%- assign src_rel = img.src | remove_first: '/assets/images-src/' -%}
+		{%- assign alt_txt = img.alt | default: img.caption | default: 'Gallery image' | escape -%}
+		{%- assign ext = src_rel | split: '.' | last | downcase -%}
 
-	<div id="{{ include.id }}-image{{ idx }}" class="lightbox" role="dialog" aria-modal="true" aria-label="Image {{ idx }}">
-		{%- unless forloop.first -%}
-		<a href="#{{ include.id }}-image{{ idx | minus: 1 }}" aria-label="Previous image"><i
-				class="previous fa-solid fa-arrow-left"></i></a>
-		{%- endunless -%}
-
-		<div class="slide">
-			<a href="#_">
-				{%- if ext == 'gif' -%}
-				<img src="{{ img.src | relative_url }}" alt="{{ alt_txt }}" decoding="async">
-				{%- else -%}
-				{% picture {{ src_rel }} preset="full" alt="{{ alt_txt }}" %}
-				{%- endif -%}
-			</a>
-			{%- if img.caption %}<p>{{ img.caption }}</p>{% endif -%}
-		</div>
-
-		<a href="#_" aria-label="Close image"><i class="exit fa-solid fa-xmark"></i></a>
-
-		{%- unless forloop.last -%}
-		<a href="#{{ include.id }}-image{{ idx | plus: 1 }}" aria-label="Next image"><i class="next fa-solid fa-arrow-right"></i></a>
-		{%- endunless -%}
+		<a href="{{ img.src | relative_url }}" class="gallery-thumb" data-gallery-trigger
+			data-gallery-index="{{ idx0 }}" aria-label="Open image {{ idx }}">
+			{%- if ext == 'gif' -%}
+			<img src="{{ img.src | relative_url }}" alt="{{ alt_txt }}" class="thumb" loading="lazy"
+				decoding="async">
+			{%- else -%}
+			{% picture {{ src_rel }} preset="thumb" alt="{{ alt_txt }}" %}
+			{%- endif -%}
+		</a>
+		{%- endfor -%}
 	</div>
-	{%- endfor -%}
+
+	<div class="lightbox" data-gallery-modal role="dialog" aria-modal="true"
+		aria-label="{{ gallery_label | escape }}" hidden>
+		<div class="lightbox-backdrop" data-gallery-close></div>
+
+		<div class="lightbox-shell" tabindex="-1">
+			<div class="lightbox-topbar">
+				<p class="lightbox-counter" data-gallery-counter aria-live="polite"></p>
+				<button class="lightbox-control lightbox-close" type="button" data-gallery-close
+					aria-label="Close image viewer">
+					<i class="fa-solid fa-xmark" aria-hidden="true"></i>
+				</button>
+			</div>
+
+			<button class="lightbox-control lightbox-previous" type="button" data-gallery-prev
+				aria-label="Previous image">
+				<i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+			</button>
+
+			<div class="lightbox-stage" data-gallery-stage>
+				{%- for img in include.images -%}
+				{%- assign idx0 = forloop.index0 -%}
+				{%- assign src_rel = img.src | remove_first: '/assets/images-src/' -%}
+				{%- assign alt_txt = img.alt | default: img.caption | default: 'Gallery image' | escape -%}
+				{%- assign ext = src_rel | split: '.' | last | downcase -%}
+				<figure class="lightbox-slide" data-gallery-slide data-gallery-index="{{ idx0 }}" hidden>
+					{%- if ext == 'gif' -%}
+					<img src="{{ img.src | relative_url }}" alt="{{ alt_txt }}" decoding="async">
+					{%- else -%}
+					{% picture {{ src_rel }} preset="full" alt="{{ alt_txt }}" %}
+					{%- endif -%}
+					{%- if img.caption -%}
+					<figcaption>{{ img.caption }}</figcaption>
+					{%- endif -%}
+				</figure>
+				{%- endfor -%}
+			</div>
+
+			<button class="lightbox-control lightbox-next" type="button" data-gallery-next
+				aria-label="Next image">
+				<i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+			</button>
+
+			<div class="lightbox-footer">
+				<p class="lightbox-caption" data-gallery-caption></p>
+				<div class="lightbox-thumbs" aria-label="Image thumbnails">
+					{%- for img in include.images -%}
+					{%- assign idx = forloop.index -%}
+					{%- assign idx0 = forloop.index0 -%}
+					{%- assign src_rel = img.src | remove_first: '/assets/images-src/' -%}
+					{%- assign alt_txt = img.alt | default: img.caption | default: 'Gallery image' | escape -%}
+					{%- assign ext = src_rel | split: '.' | last | downcase -%}
+					<button class="lightbox-thumb" type="button" data-gallery-thumb
+						data-gallery-index="{{ idx0 }}" aria-label="Show image {{ idx }}">
+						{%- if ext == 'gif' -%}
+						<img src="{{ img.src | relative_url }}" alt="{{ alt_txt }}" loading="lazy"
+							decoding="async">
+						{%- else -%}
+						{% picture {{ src_rel }} preset="thumb" alt="{{ alt_txt }}" %}
+						{%- endif -%}
+					</button>
+					{%- endfor -%}
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
