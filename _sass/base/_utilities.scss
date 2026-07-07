@@ -24,6 +24,20 @@
 	border: 0 !important;
 }
 
+.fa-icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	line-height: 1;
+}
+
+.fa-icon svg {
+	display: block;
+	width: 1em;
+	height: 1em;
+	flex: 0 0 auto;
+}
+
 html:not(.no-js) img[loading="lazy"] {
 	opacity: 0;
 	transition: opacity 0.22s ease;

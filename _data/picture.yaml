@@ -25,7 +25,7 @@ presets:
 
   hero:
     formats: [webp, jpg]
-    widths: [640, 960, 1200, 1600]
+    widths: [400, 640, 960, 1200, 1600]
     size: "(min-width: 1200px) 560px, (min-width: 900px) 45vw, 96vw"
     dimension_attributes: true
     format_quality:
