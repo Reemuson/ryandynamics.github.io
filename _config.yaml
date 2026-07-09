@@ -4,6 +4,7 @@ url: https://www.ryandynamics.com
 baseurl: ""
 
 timezone: Australia/Sydney
+recaptcha_site_key: "6Lf_MkstAAAAAPo44WcvGzZePeO-UaArZMl2BX_h"
 
 business:
   name: "Ryan Dynamics"

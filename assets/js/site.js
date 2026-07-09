@@ -594,12 +594,17 @@
 	};
 
 	var setupContactForms = function () {
-		Array.prototype.forEach.call(document.querySelectorAll('[data-enhanced-form]'), function (form) {
+		Array.prototype.forEach.call(document.querySelectorAll('[data-contact-form]'), function (form) {
 			var button = form.querySelector('[type="submit"]');
 			var status = form.querySelector('[data-form-status]');
 			var defaultLabel = button ? button.getAttribute('data-submit-label') || button.textContent : '';
 			var fields = Array.prototype.slice.call(form.querySelectorAll('input, select, textarea'));
 			var savedFields = Array.prototype.slice.call(form.querySelectorAll('[data-save-field]'));
+			var recaptchaField = form.querySelector('[data-recaptcha-token]');
+			var recaptchaSiteKey = form.getAttribute('data-recaptcha-sitekey');
+			var recaptchaAction = form.getAttribute('data-recaptcha-action') || 'submit';
+			var successRedirect = form.getAttribute('data-success-redirect') || '';
+			var debugConsole = /^(localhost|127\.0\.0\.1)$/.test(window.location.hostname);
 			var storageKey = 'contact-form:' + window.location.pathname;
 
 			var getSavedDraft = function () {
@@ -623,14 +628,6 @@
 					window.sessionStorage.setItem(storageKey, JSON.stringify(draft));
 				} catch (error) {
 					// Ignore storage failures; the form still submits normally.
-				}
-			};
-
-			var clearDraft = function () {
-				try {
-					window.sessionStorage.removeItem(storageKey);
-				} catch (error) {
-					// Ignore storage failures; successful submission is already complete.
 				}
 			};
 
@@ -686,8 +683,70 @@
 				});
 			};
 
+			var resetSubmitButton = function () {
+				if (button) {
+					button.disabled = false;
+					button.textContent = defaultLabel;
+				}
+			};
+
+			var debugLog = function (level, message, details) {
+				if (!debugConsole || !window.console) {
+					return;
+				}
+
+				var logger = window.console[level] || window.console.log;
+
+				if (details !== undefined) {
+					logger.call(window.console, '[contact form] ' + message, details);
+					return;
+				}
+
+				logger.call(window.console, '[contact form] ' + message);
+			};
+
+			var waitForRecaptcha = function () {
+				return new Promise(function (resolve, reject) {
+					var startedAt = Date.now();
+					var timeoutMs = 10000;
+
+					var tick = function () {
+						if (window.grecaptcha &&
+							typeof window.grecaptcha.ready === 'function' &&
+							typeof window.grecaptcha.execute === 'function') {
+							resolve(window.grecaptcha);
+							return;
+						}
+
+						if (Date.now() - startedAt >= timeoutMs) {
+							reject(new Error('reCAPTCHA timed out'));
+							return;
+						}
+
+						window.setTimeout(tick, 100);
+					};
+
+					tick();
+				});
+			};
+
+			var submitFormData = function () {
+				return window.fetch(form.action, {
+					method: form.method || 'POST',
+					body: new window.FormData(form),
+					headers: {
+						Accept: 'application/json'
+					}
+				});
+			};
+
 			restoreDraft();
 			updateCharacterCounts();
+			debugLog('debug', 'initialized', {
+				recaptchaLoaded: !!(window.grecaptcha && typeof window.grecaptcha.ready === 'function' && typeof window.grecaptcha.execute === 'function'),
+				recaptchaAction: recaptchaAction,
+				hasSiteKey: !!recaptchaSiteKey
+			});
 
 			fields.forEach(function (field) {
 				field.addEventListener('blur', function () {
@@ -702,6 +761,7 @@
 					event.preventDefault();
 					fields.forEach(setFieldError);
 					setStatus('Please check the highlighted fields.', 'error');
+					debugLog('warn', 'blocked by HTML validation', firstInvalid ? firstInvalid.name || firstInvalid.id || firstInvalid.tagName : 'unknown field');
 
 					if (firstInvalid) {
 						firstInvalid.focus();
@@ -710,42 +770,61 @@
 					return;
 				}
 
-				if (!window.fetch) {
-					return;
-				}
-
 				event.preventDefault();
-				setStatus('Sending enquiry...', '');
+				setStatus('Verifying enquiry...', '');
+				debugLog('debug', 'submit started');
 
 				if (button) {
 					button.disabled = true;
-					button.textContent = 'Sending...';
+					button.textContent = 'Verifying...';
 				}
 
-				window.fetch(form.action, {
-					method: form.method || 'POST',
-					body: new FormData(form),
-					headers: {
-						Accept: 'application/json'
-					}
-				}).then(function (response) {
-					if (!response.ok) {
-						throw new Error('Form submission failed');
-					}
+				// Grab a fresh v3 token right before submit because tokens expire quickly.
+				waitForRecaptcha()
+					.then(function (grecaptcha) {
+						if (!recaptchaSiteKey) {
+							throw new Error('Missing reCAPTCHA site key');
+						}
 
-					form.reset();
-					clearDraft();
-					fields.forEach(setFieldError);
-					updateCharacterCounts();
-					setStatus('Thanks, your enquiry has been sent.', 'success');
-				}).catch(function () {
-					setStatus('Something went wrong. Please try again, or email Ryan Dynamics directly.', 'error');
-				}).finally(function () {
-					if (button) {
-						button.disabled = false;
-						button.textContent = defaultLabel;
-					}
-				});
+						debugLog('debug', 'requesting v3 token');
+						return grecaptcha.execute(recaptchaSiteKey, { action: recaptchaAction });
+					})
+					.then(function (token) {
+						if (recaptchaField) {
+							recaptchaField.value = token;
+						}
+
+						debugLog('info', 'token received, submitting form');
+						return submitFormData();
+					})
+					.then(function (response) {
+						if (!response.ok) {
+							throw new Error('Form submission failed');
+						}
+
+						debugLog('info', 'submission accepted', {
+							status: response.status,
+							redirect: successRedirect
+						});
+
+						if (successRedirect) {
+							window.location.assign(successRedirect);
+							return;
+						}
+
+						form.reset();
+						setStatus('Thanks, your enquiry has been sent.', 'success');
+						resetSubmitButton();
+					})
+					.catch(function (error) {
+						if (recaptchaField) {
+							recaptchaField.value = '';
+						}
+
+						setStatus('Something went wrong. Please try again, or email Ryan Dynamics directly.', 'error');
+						resetSubmitButton();
+						debugLog('error', 'submission failed', error);
+					});
 			});
 
 			form.addEventListener('input', function () {

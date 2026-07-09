@@ -2,12 +2,16 @@
 
 <div class="form-area">
 	<div class="form-text">
-		<form action="https://formspree.io/f/xknzzvvz" method="POST" data-enhanced-form>
+		<form action="https://formspree.io/f/xknzzvvz" method="POST" data-contact-form
+			data-recaptcha-sitekey="{{ site.recaptcha_site_key }}" data-recaptcha-action="submit"
+			data-success-redirect="{{ '/thanks/' | relative_url }}">
 
 			<input type="hidden" name="_subject" value="Ryan Dynamics - New Project Enquiry">
 
 			<input type="hidden" name="Enquiry Context"
 				value="{{ page.lead_source | default: page.title }} - {{ page.url }}">
+
+			<input type="hidden" name="g-recaptcha-response" data-recaptcha-token>
 
 			<div class="hp-field" aria-hidden="true">
 				<label for="company_name_field">Leave this field empty</label>
@@ -147,3 +151,5 @@ Useful details can include photos, measurements, part numbers, power, signals, m
 		</form>
 	</div>
 </div>
+
+<script src="https://www.google.com/recaptcha/api.js?render={{ site.recaptcha_site_key }}" defer></script>
