@@ -1,57 +1,65 @@
-// _sass/pages/_four-oh-four.scss
-
 @use "../settings" as s;
 
-#four-oh-four {
-	text-align: center;
+.four-oh-four {
 	padding-top: 3rem;
 
 	a:not(.button) {
-		color: s.$colour_accent_brand;
+		color: s.$colour_accent_tech;
 		text-decoration: underline;
+		text-underline-offset: 0.12em;
+	}
+
+	.four-oh-four-hero {
+		max-width: 760px;
 	}
 
 	h1 {
-		font-size: clamp(2rem, 4vw, 3rem);
-		margin-bottom: .5rem;
+		margin: 0;
+		max-width: 14ch;
+		font-size: s.$type_h1;
+		line-height: 1.1;
+		font-weight: 500;
 	}
 
-	p {
-		max-width: 70ch;
-		margin: 0 auto 1.25rem;
-		opacity: .9;
+	.wrapper-hero-paragraph {
+		padding-top: 2rem;
+
+		p {
+			max-width: 62ch;
+			margin: 0;
+			color: s.$colour_text_muted;
+			line-height: 1.5;
+		}
 	}
 
-	/* CTA buttons row */
-	.wrapper-buttons {
+	.hero-cta {
 		display: flex;
 		flex-wrap: wrap;
 		gap: 0.75rem;
-		justify-content: center;
-		margin: 1.5rem 0 2rem;
+		margin-top: 1.5rem;
 	}
 
-	/* divider */
-	hr {
-		max-width: 600px;
-		height: 1px;
-		border: 0;
-		margin: 2rem auto;
-		background: rgba(0, 0, 0, .12);
-	}
-
-	/* link groups */
-	.quick-links {
+	.four-oh-four-grid {
 		display: grid;
-		gap: 1rem;
-		grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-		max-width: 900px;
-		margin: 0 auto 2rem;
+		gap: 1.25rem;
+		margin-top: 2.5rem;
+	}
+
+	.four-oh-four-card {
+		padding: 1.25rem;
+		border: 1px solid rgba(0, 0, 0, 0.12);
+		border-radius: 0.5rem;
+		background: s.$colour_surface;
 
 		h2 {
+			margin: 0 0 0.75rem 0;
 			font-size: s.$type_h2;
-			margin-bottom: .5rem;
-			color: s.$colour_accent_brand;
+		}
+
+		p {
+			margin: 0 0 0.9rem 0;
+			color: s.$colour_text_muted;
+			line-height: 1.5;
 		}
 
 		ul {
@@ -59,44 +67,31 @@
 			padding: 0;
 			margin: 0;
 
-			li+li {
-				margin-top: .25rem;
-			}
-
-			a {
-				text-decoration: none;
-				color: s.$colour_accent_tech;
-
-				&:hover,
-				&:focus-visible {
-					text-decoration: underline;
-					outline: none;
-				}
+			li + li {
+				margin-top: 0.45rem;
 			}
 		}
 	}
 
-	/* accessibility: make buttons clearly focusable */
 	.button:focus-visible {
-		outline: 2px solid rgba(0, 0, 0, .25);
+		outline: 2px solid rgba(0, 0, 0, 0.25);
 		outline-offset: 2px;
 	}
+}
 
-	/* spacing tune-ups on larger screens */
-	@include s.respond(lg) {
-		padding: 4rem 0;
+@include s.respond(lg) {
+	.four-oh-four {
+		padding-top: 0;
 
-		p {
-			margin-bottom: 1.5rem;
+		.four-oh-four-grid {
+			grid-template-columns: repeat(3, minmax(0, 1fr));
+			gap: 1.5rem;
+			align-items: start;
+			margin-top: 2.5rem;
 		}
 
-		.wrapper-buttons {
-			gap: 1rem;
-			margin: 2rem 0 2.5rem;
-		}
-
-		.quick-links {
-			gap: 1.25rem;
+		.four-oh-four-card {
+			height: 100%;
 		}
 	}
 }
