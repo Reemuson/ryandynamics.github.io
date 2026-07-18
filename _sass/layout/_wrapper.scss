@@ -19,7 +19,25 @@ main {
 	flex-direction: column;
 }
 
+.page {
+	padding-top: 3rem;
+
+	.wrapper-hero-paragraph {
+		padding-top: 2rem;
+
+		p {
+			padding-bottom: 0.75rem;
+		}
+	}
+}
+
 .page mark {
 	background: none;
 	color: s.$colour_accent_tech;
+}
+
+@include s.respond(lg) {
+	.page {
+		padding-top: 0;
+	}
 }

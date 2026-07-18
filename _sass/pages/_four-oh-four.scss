@@ -1,8 +1,6 @@
 @use "../settings" as s;
 
 .four-oh-four {
-	padding-top: 3rem;
-
 	a:not(.button) {
 		color: s.$colour_accent_tech;
 		text-decoration: underline;
@@ -22,8 +20,6 @@
 	}
 
 	.wrapper-hero-paragraph {
-		padding-top: 2rem;
-
 		p {
 			max-width: 62ch;
 			margin: 0;
@@ -81,8 +77,6 @@
 
 @include s.respond(lg) {
 	.four-oh-four {
-		padding-top: 0;
-
 		.four-oh-four-grid {
 			grid-template-columns: repeat(3, minmax(0, 1fr));
 			gap: 1.5rem;

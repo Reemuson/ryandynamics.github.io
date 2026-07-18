@@ -3,18 +3,13 @@
 @use "../settings" as s;
 
 .projects-and-insights {
-	padding-top: 3rem;
-
 	.wrapper-hero {
 		padding-bottom: 2.5rem;
 		border-bottom: 1px solid rgba(0, 0, 0, 0.06);
 	}
 
 	.wrapper-hero-paragraph {
-		padding-top: 1.5rem;
-
 		p {
-			padding-bottom: 0.75rem;
 			max-width: 70ch;
 		}
 	}
@@ -167,8 +162,6 @@
 
 @include s.respond(lg) {
 	.projects-and-insights {
-		padding-top: 0;
-
 		.wrapper-contact-cta {
 			padding: 2.5rem 2.5rem;
 		}

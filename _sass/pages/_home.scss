@@ -3,8 +3,6 @@
 @use "../settings" as s;
 
 .about {
-	padding-top: 3rem;
-
 	.hero-title {
 		margin: 0;
 		line-height: 1.05;
@@ -21,14 +19,6 @@
 
 	h2 {
 		padding-top: 1.5rem;
-	}
-
-	.wrapper-hero-paragraph {
-		padding-top: 2rem;
-
-		p {
-			padding-bottom: 0.75rem;
-		}
 	}
 
 	.hero-tags {
@@ -178,8 +168,6 @@
 
 @include s.respond(lg) {
 	.about {
-		padding-top: 0;
-
 		.wrapper-hero {
 			display: flex;
 			justify-content: space-between;
