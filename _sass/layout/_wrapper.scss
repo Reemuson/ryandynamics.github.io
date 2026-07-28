@@ -3,15 +3,16 @@
 @use "../settings" as s;
 
 .site-container {
+	flex: 1 0 auto;
+	width: 100%;
 	max-width: s.$layout_max_width;
 	margin: 0 auto;
 	background-color: s.$colour_surface;
-	min-height: 100vh;
 	box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.04);
 }
 
 main {
-	padding: s.$layout_nav_height 2rem 2.5rem 2rem;
+	padding: s.$layout_nav_height 2rem s.$layout_page_bottom_space;
 }
 
 .wrapper-page {

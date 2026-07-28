@@ -137,7 +137,6 @@ $entry-surface-table-hover: rgba(0, 0, 0, 0.05);
 	.entry-body {
 		max-width: 100%;
 		min-width: 0;
-		padding-bottom: 4rem;
 	}
 
 	h2 {
@@ -318,10 +317,6 @@ $entry-surface-table-hover: rgba(0, 0, 0, 0.05);
 		.entry-header {
 			gap: 2rem;
 			margin-bottom: 2.5rem;
-		}
-
-		.entry-body {
-			padding-bottom: 5rem;
 		}
 
 		.table-scroll {
