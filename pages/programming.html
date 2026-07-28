@@ -1,73 +1,88 @@
 ---
-layout: default
-title: Embedded Programming & Firmware Development — Newcastle NSW
-description: Embedded software and firmware development for IoT, and industrial systems in Newcastle NSW.
-service_type: Embedded Programming & Firmware Development
+layout: service
+title: Embedded Firmware Support — Newcastle NSW
+description: Embedded C firmware, hardware bring-up and peripheral integration for electronics and prototype development in Newcastle, NSW.
+service_type: Embedded Firmware Support
+service_description: Embedded C firmware, hardware bring-up and peripheral integration provided primarily alongside electronics and prototype development.
 permalink: /services/programming/
 redirect_from: [/programming/, /programming, /programming.html]
 
 lead_source: Programming Service Page
 site_section: programming
-contact_form_title: Start an embedded project
-contact_form_intro: Tell me what you are building, what is failing and what outcome you need.
+service_slug: programming
 contact_project_type: Embedded & Control
+
+hero_title: Firmware that connects hardware, interfaces and control logic.
+hero_intro: >-
+  Ryan Dynamics develops embedded C firmware for hardware bring-up, peripheral
+  integration, user interfaces, control logic, diagnostics and development tools.
+hero_support: >-
+  Firmware is generally undertaken as part of electronics and prototype
+  development. Standalone work is reviewed case by case.
+
+fit_heading: When embedded firmware may fit
+fit_intro: >-
+  A useful starting point is an identified hardware platform, required behaviour
+  and enough access to the system to develop and test the firmware.
+fit_items:
+- A prototype board needs initial firmware and peripheral bring-up.
+- Sensors, actuators or communications interfaces need to be integrated.
+- Existing firmware needs a defined diagnostic or test utility.
+- A hardware prototype needs control logic or a local user interface.
+- Firmware and electronics need to be developed together around an agreed test setup.
+
+capabilities_intro: >-
+  Scope is kept specific to the hardware, interfaces and evidence that can be tested.
+capabilities:
+- title: Embedded C development
+  icon: cpu
+  items:
+  - STM32, RP2040 and ESP32 platforms
+  - Hardware bring-up and peripheral configuration
+  - Control logic and local user interfaces
+  - Diagnostics and development utilities
+- title: Hardware integration
+  icon: settings
+  items:
+  - UART, I²C, CAN, USB and BLE interfaces
+  - Sensor and actuator integration
+  - Board-level debugging alongside electronics development
+  - Interface behaviour defined around the connected equipment
+- title: Test and handover
+  icon: wrench
+  items:
+  - Repeatable bring-up and diagnostic procedures
+  - Source code and build instructions
+  - Basic interface documentation
+  - Testing against agreed functions and available hardware
+
+deliverables_intro: >-
+  Firmware handover is matched to the project stage and the hardware available for testing.
+deliverables:
+- Embedded C source code for the agreed hardware platform
+- Project files and practical build instructions
+- Basic interface, configuration and bring-up documentation
+- Diagnostic or test utilities where included in scope
+- A summary of the functions exercised during development
+deliverables_note: >-
+  Editable files, repository structure and handover requirements are agreed
+  before work begins. Firmware testing is limited to the hardware, fixtures and
+  operating conditions available for the project.
+
+related_services:
+- label: Electronics Design
+  url: /services/electronics/
+- label: 3D Printing & Prototyping
+  url: /services/3d-printing/
+
+contact_heading: Discuss an embedded firmware project
+contact_intro: >-
+  Use the form to outline the hardware and the behaviour the firmware needs to provide.
+contact_message_prompt: >-
+  What hardware are you working with, and what behaviour does the firmware need
+  to provide?
+contact_message_help: >-
+  Useful details include the processor or development board, schematic, existing
+  source code and toolchain, required peripherals or interfaces, available test
+  hardware and expected result.
 ---
-
-<div class="wrapper-page">
-	<section class="page programming" id="programming">
-		<div class="wrapper-hero">
-			<h1>Transform <span class="highlight-red">code</span> into
-				<span class="highlight-bold">control.</span>
-			</h1>
-			<div class="wrapper-hero-paragraph">
-				<p>
-					Embedded firmware for control systems, sensing, and hardware
-					integration.
-				</p>
-				<p>
-					Work includes bring-up, debugging, and development of code that
-					runs reliably on real hardware.
-				</p>
-				<p>
-					Projects are approached with a focus on stability, performance,
-					and practical deployment.
-				</p>
-			</div><!--/wrapper-hero-paragraph-->
-		</div><!--/wrapper-hero-->
-		<div class="wrapper-benefits">
-			<h2>Where this fits</h2>
-			<ul class="benefits">
-				<li>
-					<span class="lucide-icon benefit" aria-hidden="true">{% include lucide/cpu.svg %}</span>
-					<h3>Hardware Bring-up</h3>
-					<p>
-						Getting new boards and systems running, tested and stable.
-					</p>
-				</li>
-
-				<li>
-					<span class="lucide-icon benefit" aria-hidden="true">{% include lucide/settings.svg %}</span>
-					<h3>Control and Integration</h3>
-					<p>
-						Firmware for sensors, actuators and system-level behaviour.
-					</p>
-				</li>
-
-				<li>
-					<span class="lucide-icon benefit" aria-hidden="true">{% include lucide/wrench.svg %}</span>
-					<h3>Debugging and Refinement</h3>
-					<p>
-						Resolving issues and improving performance in existing systems.
-					</p>
-				</li>
-			</ul>
-		</div><!--/wrapper-benefits-->
-		<div id="wrapper-contact">
-			<h2>Start a project</h2>
-
-			{% include contact_form.html %}
-		</div><!--/wrapper-contact-->
-	</section>
-</div><!--/wrapper-page-->
-
-{% include service.html %}

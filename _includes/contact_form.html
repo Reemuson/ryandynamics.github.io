@@ -63,19 +63,19 @@
 						<option value="Embedded & Control" {% if
 							page.contact_project_type=="Embedded & Control" %}selected{%
 							endif %}>
-							Embedded & Control
+							Embedded Systems &amp; Firmware
 						</option>
 
 						<option value="Industrial Design" {% if
 							page.contact_project_type=="Industrial Design" %}selected{%
 							endif %}>
-							Industrial Design
+							CAD &amp; Technical Drafting
 						</option>
 
 						<option value="Additive Manufacturing" {% if
 							page.contact_project_type=="Additive Manufacturing" %}selected{%
 							endif %}>
-							Additive Manufacturing
+							3D Printing &amp; Prototyping
 						</option>
 
 						<option value="Multi-disciplinary" {% if
@@ -131,11 +131,15 @@
 					Project Summary <span class="required-mark">*</span>
 				</label>
 
+				{% assign message_prompt = page.contact_message_prompt |
+					default: 'What are you building, what is failing and what outcome do you need?' %}
+				{% assign message_help = page.contact_message_help |
+					default: 'Useful details can include photos, measurements, part numbers, power, signals, materials, quantity, environment, or deadline constraints.' %}
 				<textarea id="contact_message" name="message" class="input-required" rows="10" required
 					minlength="20" data-save-field aria-describedby="contact_message_error contact_message_count"
-					placeholder="What are you building, what is failing and what outcome do you need?
+					placeholder="{{ message_prompt | escape }}
 
-Useful details can include photos, measurements, part numbers, power, signals, materials, quantity, environment, or deadline constraints."></textarea>
+{{ message_help | escape }}"></textarea>
 				<div class="field-meta">
 					<p class="field-error" id="contact_message_error" data-field-error></p>
 					<p class="field-count" id="contact_message_count" data-character-count="contact_message"></p>

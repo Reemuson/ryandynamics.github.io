@@ -1,85 +1,107 @@
 ---
-layout: default
-title: 3D Printing Services in Newcastle NSW
-description: Local 3D printing for prototypes, small-batch production, and reverse-engineered parts in Newcastle NSW.
-service_type: 3D Printing
+layout: service
+title: 3D Printing and Functional Prototyping — Newcastle NSW
+description: 3D printing for functional prototypes, replacement parts, enclosures and suitable small batches in Newcastle, NSW.
+service_type: 3D Printing and Prototyping
+service_description: 3D printing, CAD and reverse engineering for functional prototypes, replacement components, enclosures and suitable small batches.
 permalink: /services/3d-printing/
 redirect_from: [/3d-printing/, /3d-printing, /3d-printing.html]
 
 lead_source: 3D Printing Service Page
 site_section: printing
-contact_form_title: Start a 3D printing project
-contact_form_intro: Tell me what you are building, what is failing and what outcome you need.
+service_slug: printing
 contact_project_type: Additive Manufacturing
 
+hero_title: Printed parts for fit checks, practical use and design development.
+hero_intro: >-
+  Ryan Dynamics provides 3D printing as a standalone service and as part of CAD,
+  reverse-engineering and prototype development.
+hero_support: >-
+  Work includes functional brackets, adapters, enclosures, replacement parts
+  and suitable small batches.
+hero_image:
+  src: /assets/images-src/services/3d-printing/gallery/print-motorbike-tank-01.jpg
+  alt: Full-size printed motorcycle fuel-tank prototype fitted to a motorcycle frame
+  caption: Full-size fuel-tank prototype produced for fitment and fabrication reference.
+
+fit_heading: When 3D printing may fit
+fit_intro: >-
+  Part suitability depends on geometry, loading, temperature, environment,
+  required life, surface finish and quantity.
+fit_items:
+- A concept needs a physical prototype for fit or assembly checks.
+- A damaged or unavailable plastic component needs to be reproduced.
+- A bracket, adapter or enclosure is required for a specialised application.
+- An existing model needs changes for additive manufacture.
+- A small batch of functional parts may be appropriate for the intended use.
+
+capabilities_intro: >-
+  Printing can start from a suitable model or include the CAD work needed to create one.
+capabilities:
+- title: Functional parts and prototypes
+  icon: box
+  items:
+  - Fit and assembly prototypes
+  - Brackets, adapters, enclosures and replacement parts
+  - Reproduction of damaged or unavailable plastic components
+  - Small batches where the process is suitable
+- title: Design support
+  icon: compass
+  items:
+  - CAD modelling when no printable file exists
+  - Reverse engineering from a physical part
+  - Design changes for additive manufacture
+  - Iteration after fit or assembly checks
+- title: Materials and inspection
+  icon: gauge
+  items:
+  - PLA, PETG, ABS, ASA and TPU
+  - PA considered after feasibility testing
+  - Dimensional inspection against agreed features
+  - Material selection based on the intended conditions
+
+deliverables_intro: >-
+  A project may cover printing only or include modelling, iteration and inspection.
+deliverables:
+- Printed prototypes, functional parts or suitable small batches
+- CAD models created or revised as part of the work
+- Agreed STEP, mesh or native files where included in scope
+- Dimensional checks on identified critical features
+- Revised parts following an agreed fit or assembly review
+deliverables_note: >-
+  Maximum single-part build volume is approximately 250 × 250 × 250 mm.
+  Material, orientation, finish and inspection requirements are agreed before
+  printing. A printed part is accepted only where the geometry and intended
+  conditions are suitable for the process.
+
+gallery_heading: Examples and applications
+gallery_intro: >-
+  Together with the fitment prototype above, these examples show design review,
+  replacement of an unavailable component and practical workshop storage.
 images:
-- { src: "/assets/images-src/services/3d-printing/gallery/print-motorbike-tank-01.jpg",
-alt: "Physical prototype of a unique motorcycle fuel tank for fitment and reference in aluminium fabrication.",
-caption: "Physical prototype of a unique motorcycle fuel tank for fitment and reference in aluminium fabrication." }
-- { src: "/assets/images-src/services/3d-printing/gallery/print-release-unit-01.jpg",
-alt: "Physical prototype of a final revision product design before manufacture in steel.",
-caption: "Physical prototype of a final revision product design before manufacture in steel." }
-- { src: "/assets/images-src/services/3d-printing/gallery/print-headphones-01.jpg",
-alt: "Replacement right side ear-cup for WW2 era RAAF pilot headset.",
-caption: "Replacement right side ear-cup for WW2 era RAAF pilot headset." }
-- { src: "/assets/images-src/services/3d-printing/gallery/print-screwdrivers-01.jpg",
-alt: "Stanley screwdriver mounting for pegboard storage system.",
-caption: "Stanley screwdriver mounting for pegboard storage system." }
+- src: /assets/images-src/services/3d-printing/gallery/print-release-unit-01.jpg
+  alt: Printed product prototype with internal cylindrical and mounting features
+  caption: Product prototype produced for design review before manufacture in steel.
+- src: /assets/images-src/services/3d-printing/gallery/print-headphones-01.jpg
+  alt: Pair of replacement black ear cups beside a vintage RAAF pilot headset
+  caption: Replacement ear cup reproduced for a Second World War-era RAAF pilot headset.
+- src: /assets/images-src/services/3d-printing/gallery/print-screwdrivers-01.jpg
+  alt: Colour-coded screwdriver holders installed on a workshop pegboard
+  caption: Small-batch printed holders for workshop pegboard storage.
+
+related_services:
+- label: CAD & Technical Drafting
+  url: /services/drafting/
+- label: Electronics Design
+  url: /services/electronics/
+
+contact_heading: Discuss a 3D printing project
+contact_intro: >-
+  Use the form to describe the part, intended use and current design information.
+contact_message_prompt: >-
+  What part do you need, and how will it be used?
+contact_message_help: >-
+  Useful details include a model or photographs, dimensions, loading,
+  temperature, environment, quantity, fit requirements, important surfaces and
+  preferred material or finish.
 ---
-
-<div class="wrapper-page">
-	<section class="page printing" id="printing">
-		<div class="wrapper-hero">
-			<h1>Turn <span class="highlight-bold">ideas</span> into
-				<span class="highlight-red">parts</span><span class="highlight-bold">.</span>
-			</h1>
-			<div class="wrapper-hero-paragraph">
-				<p>
-					Additive manufacturing for rapid prototyping, fit testing and
-					small-volume functional parts.
-				</p>
-				<p>
-					Work includes reproducing hard-to-source components and producing
-					parts for development, testing and short-run use.
-				</p>
-			</div><!--/wrapper-hero-->
-		</div><!--/wrapper-hero-->
-		<div class="wrapper-benefits">
-			<h2>Why this printing approach works</h2>
-			<ul class="benefits">
-				<li>
-					<span class="lucide-icon benefit" aria-hidden="true">{% include lucide/gauge.svg %}</span>
-					<h3>Rapid Prototyping</h3>
-					<p>
-						Parts produced quickly for testing, iteration and validation.
-					</p>
-				</li>
-
-				<li>
-					<span class="lucide-icon benefit" aria-hidden="true">{% include lucide/wand-sparkles.svg %}</span>
-					<h3>Fit and Functional Parts</h3>
-					<p>
-						Suitable for fit checks, assemblies and low-volume functional use.
-					</p>
-				</li>
-
-				<li>
-					<span class="lucide-icon benefit" aria-hidden="true">{% include lucide/settings.svg %}</span>
-					<h3>Material Selection</h3>
-					<p>
-						Materials selected based on strength, temperature and application.
-					</p>
-				</li>
-			</ul>
-		</div><!--/wrapper-benefits-->
-		<h2>Example Work</h2>
-		{% include lightbox.html images=page.images id='3d-printing' %}
-		<div id="wrapper-contact">
-			<h2>Start a Project</h2>
-
-			{% include contact_form.html %}
-		</div><!--/wrapper-contact-->
-	</section>
-</div><!--/wrapper-page-->
-
-{% include service.html %}

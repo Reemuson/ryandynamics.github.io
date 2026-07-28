@@ -17,6 +17,24 @@ body.lightbox-open {
 	align-items: stretch;
 }
 
+.gallery-item {
+	display: flex;
+	flex-direction: column;
+	min-width: 0;
+	margin: 0;
+}
+
+.gallery-item .gallery-thumb {
+	width: 100%;
+}
+
+.gallery-item-caption {
+	margin-top: 0.65rem;
+	color: s.$colour_text_muted;
+	font-size: 0.88rem;
+	line-height: 1.45;
+}
+
 .gallery-thumb {
 	display: block;
 	aspect-ratio: 4 / 3;

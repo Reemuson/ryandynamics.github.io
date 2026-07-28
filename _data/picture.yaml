@@ -5,8 +5,8 @@ presets:
     size: "(min-width: 1200px) 360px, (min-width: 768px) 45vw, 92vw"
     dimension_attributes: true
     format_quality:
-      webp: 78
-      jpg: 82
+      webp: 85
+      jpg: 85
     attributes:
       class: thumb
       loading: lazy
@@ -18,8 +18,8 @@ presets:
     size: "90vw"
     dimension_attributes: true
     format_quality:
-      webp: 82
-      jpg: 86
+      webp: 90
+      jpg: 90
     attributes:
       decoding: async
 
@@ -29,8 +29,8 @@ presets:
     size: "(min-width: 1200px) 560px, (min-width: 900px) 45vw, 96vw"
     dimension_attributes: true
     format_quality:
-      webp: 82
-      jpg: 86
+      webp: 90
+      jpg: 90
     attributes:
       loading: eager
       fetchpriority: high

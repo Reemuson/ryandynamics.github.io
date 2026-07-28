@@ -1,0 +1,173 @@
+---
+layout: default
+---
+
+{% assign service_id = page.service_slug | default: page.site_section %}
+
+<div class="wrapper-page">
+	<article class="page service-page service-page--{{ service_id }}" id="{{ service_id }}">
+		<header class="service-hero{% unless page.hero_image %} service-hero--text-only{% endunless %}">
+			<div class="service-hero-copy">
+				<h1>{{ page.hero_title }}</h1>
+				<p class="service-lede">{{ page.hero_intro }}</p>
+				{% if page.hero_support %}
+				<p class="service-support">{{ page.hero_support }}</p>
+				{% endif %}
+				<div class="service-hero-actions">
+					<a href="#wrapper-contact" class="button button-projects">
+						{{ page.hero_primary_cta | default: 'Discuss a Project' }}
+					</a>
+					<a href="#service-capabilities" class="button button-secondary">
+						View Capabilities
+					</a>
+				</div>
+			</div>
+
+			{% if page.hero_image %}
+			<figure class="service-hero-media">
+				{% assign hero_src = page.hero_image.src | remove_first: '/assets/images-src/' %}
+				{% picture hero {{ hero_src }} --alt {{ page.hero_image.alt }} %}
+				{% if page.hero_image.caption %}
+				<figcaption>{{ page.hero_image.caption }}</figcaption>
+				{% endif %}
+			</figure>
+			{% endif %}
+		</header>
+
+		<section class="service-section service-fit" aria-labelledby="service-fit-title">
+			<div class="service-section-heading">
+				<h2 id="service-fit-title">{{ page.fit_heading | default: 'This service may fit when' }}</h2>
+				{% if page.fit_intro %}<p>{{ page.fit_intro }}</p>{% endif %}
+			</div>
+			<ul class="service-fit-list">
+				{% for item in page.fit_items %}
+				<li>{{ item }}</li>
+				{% endfor %}
+			</ul>
+		</section>
+
+		<section class="service-section service-capabilities" id="service-capabilities"
+			aria-labelledby="service-capabilities-title">
+			<div class="service-section-heading">
+				<h2 id="service-capabilities-title">Capabilities</h2>
+				{% if page.capabilities_intro %}<p>{{ page.capabilities_intro }}</p>{% endif %}
+			</div>
+			<ul class="service-capability-list">
+				{% for capability in page.capabilities %}
+				<li class="service-capability">
+					<div class="service-capability-heading">
+						<span class="lucide-icon service-capability-icon" aria-hidden="true">
+							{% include lucide.html name=capability.icon %}
+						</span>
+						<h3>{{ capability.title }}</h3>
+					</div>
+					<ul>
+						{% for item in capability.items %}
+							<li>{{ item }}</li>
+						{% endfor %}
+					</ul>
+				</li>
+				{% endfor %}
+			</ul>
+		</section>
+
+		<section class="service-section service-deliverables"
+			aria-labelledby="service-deliverables-title">
+			<div class="service-section-heading">
+				<h2 id="service-deliverables-title">Possible deliverables</h2>
+				{% if page.deliverables_intro %}<p>{{ page.deliverables_intro }}</p>{% endif %}
+			</div>
+			<div class="service-deliverables-content">
+				<ul>
+					{% for item in page.deliverables %}
+						<li>{{ item }}</li>
+					{% endfor %}
+				</ul>
+			</div>
+			{% if page.deliverables_note %}
+			<p class="service-note service-deliverables-note">{{ page.deliverables_note }}</p>
+			{% endif %}
+		</section>
+
+		{% if page.evidence %}
+		<section class="service-section service-evidence" aria-labelledby="service-evidence-title">
+			<div class="service-section-heading">
+				<h2 id="service-evidence-title">
+					{{ page.evidence.heading | default: 'Relevant experience' }}
+				</h2>
+				{% if page.evidence.intro %}<p>{{ page.evidence.intro }}</p>{% endif %}
+			</div>
+
+			<div class="service-evidence-panel{% unless page.evidence.image %} service-evidence-panel--text{% endunless %}">
+				{% if page.evidence.image %}
+				<figure class="service-evidence-media">
+					{% assign evidence_src = page.evidence.image.src | remove_first: '/assets/images-src/' %}
+					{% picture thumb {{ evidence_src }} --alt {{ page.evidence.image.alt }} %}
+					{% if page.evidence.image.caption %}
+					<figcaption>{{ page.evidence.image.caption }}</figcaption>
+					{% endif %}
+				</figure>
+				{% endif %}
+
+				<div class="service-evidence-copy">
+					{% if page.evidence.title %}<h3>{{ page.evidence.title }}</h3>{% endif %}
+					{% if page.evidence.body %}<p>{{ page.evidence.body }}</p>{% endif %}
+					{% if page.evidence.items %}
+					<ul class="service-evidence-list">
+						{% for item in page.evidence.items %}
+						<li>
+							{% if item.label %}<p class="service-evidence-label">{{ item.label }}</p>{% endif %}
+							<h3>{{ item.title }}</h3>
+							{% if item.body %}<p>{{ item.body }}</p>{% endif %}
+						</li>
+						{% endfor %}
+					</ul>
+					{% endif %}
+					{% if page.evidence.note %}<p class="service-note">{{ page.evidence.note }}</p>{% endif %}
+					{% if page.evidence.link %}
+					<a href="{{ page.evidence.link.url | relative_url }}" class="button button-secondary">
+						{{ page.evidence.link.label }}
+					</a>
+					{% endif %}
+				</div>
+			</div>
+		</section>
+		{% endif %}
+
+		{% if page.images %}
+		<section class="service-section service-examples" aria-labelledby="service-examples-title">
+			<div class="service-section-heading">
+				<h2 id="service-examples-title">{{ page.gallery_heading | default: 'Example work' }}</h2>
+				{% if page.gallery_intro %}<p>{{ page.gallery_intro }}</p>{% endif %}
+			</div>
+			{% include lightbox.html images=page.images id=service_id show_captions=true %}
+		</section>
+		{% endif %}
+
+		{% if page.related_services %}
+		<nav class="service-section service-related" aria-labelledby="related-services-title">
+			<h2 id="related-services-title">Related services</h2>
+			<ul>
+				{% for related in page.related_services %}
+				<li>
+					<a href="{{ related.url | relative_url }}"
+						class="button button-learn">{{ related.label }}</a>
+				</li>
+				{% endfor %}
+			</ul>
+		</nav>
+		{% endif %}
+
+		<section class="service-section service-contact" id="wrapper-contact"
+			aria-labelledby="service-contact-title">
+			<div class="service-section-heading">
+				<h2 id="service-contact-title">{{ page.contact_heading | default: 'Discuss a project' }}</h2>
+				<p>{{ page.contact_intro }}</p>
+			</div>
+
+			{% include contact_form.html %}
+		</section>
+	</article>
+</div>
+
+{% include service.html %}

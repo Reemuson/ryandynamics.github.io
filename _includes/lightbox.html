@@ -14,8 +14,9 @@ Usage: {% include lightbox.html images=page.images id=page.slug %}
 		{%- assign alt_txt = img.alt | default: img.caption | default: 'Gallery image' | escape -%}
 		{%- assign ext = src_rel | split: '.' | last | downcase -%}
 
+		{%- if include.show_captions -%}<figure class="gallery-item">{%- endif -%}
 		<a href="{{ img.src | relative_url }}" class="gallery-thumb" data-gallery-trigger
-			data-gallery-index="{{ idx0 }}" aria-label="Open image {{ idx }}">
+			data-gallery-index="{{ idx0 }}" aria-label="Open image {{ idx }}: {{ alt_txt }}">
 			{%- if ext == 'gif' -%}
 			<img src="{{ img.src | relative_url }}" alt="{{ alt_txt }}" class="thumb" loading="lazy"
 				decoding="async">
@@ -23,6 +24,10 @@ Usage: {% include lightbox.html images=page.images id=page.slug %}
 			{% picture thumb {{ src_rel }} --alt {{ alt_txt }} %}
 			{%- endif -%}
 		</a>
+		{%- if include.show_captions -%}
+			{%- if img.caption -%}<figcaption class="gallery-item-caption">{{ img.caption }}</figcaption>{%- endif -%}
+		</figure>
+		{%- endif -%}
 		{%- endfor -%}
 	</div>
 

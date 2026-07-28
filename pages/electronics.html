@@ -1,89 +1,113 @@
 ---
-layout: default
-title: Electronics Design & PCB Prototyping — Newcastle NSW
-description: Electronics and PCB design in Newcastle NSW.
-service_type: Electronics Design
+layout: service
+title: Electronics Design, PCB and Wiring — Newcastle NSW
+description: Custom electronics design, PCB development, wiring documentation and small-run prototype assembly in Newcastle, NSW.
+service_type: Electronics Design and Documentation
+service_description: Custom electronics design, PCB development, wiring documentation and prototype assembly for equipment and specialised applications.
 permalink: /services/electronics/
 redirect_from: [/electronics/, /electronics, /electronics.html]
 
 lead_source: Electronics Service Page
 site_section: electronics
-contact_form_title: Start an electronics project
-contact_form_intro: Tell me what you are building, what is failing and what outcome you need.
+service_slug: electronics
 contact_project_type: Electronics Design
 
+hero_title: Electronics, PCBs and wiring for specialised equipment.
+hero_intro: >-
+  Ryan Dynamics develops custom circuits, printed circuit boards, wiring and
+  harness documentation for equipment, prototypes and one-off systems.
+hero_support: >-
+  Work can begin with a functional requirement, an existing board, incomplete
+  documentation or a damaged sample.
+hero_image:
+  src: /assets/images-src/services/electronics/hero/render-pcb-03.png
+  alt: Rendered custom PCBA showing component placement and connection points
+  caption: Input protection PCBA rendering with dense component placement.
+
+fit_heading: When electronics design may fit
+fit_intro: >-
+  Electronics work is scoped around the equipment, interfaces, operating
+  environment and the level of testing that is practical for the project.
+fit_items:
+- A new function requires a custom circuit, PCB, interface or controller.
+- An existing board needs to be documented, reviewed or modified.
+- Connectors, wiring, pinouts or harnesses need to be defined or reproduced.
+- A prototype requires assembly, bring-up or agreed electrical checks.
+- PCB, wiring and mechanical components need to be integrated as one assembly.
+
+capabilities_intro: >-
+  Work may cover one part of the electronics or a coordinated board-and-wiring package.
+capabilities:
+- title: Circuit and PCB development
+  icon: zap
+  items:
+  - Schematic capture and PCB layout
+  - Component selection and bills of materials
+  - Agreed manufacturing outputs for outsourced PCB production
+  - Documentation and modification of existing boards
+- title: Wiring and harnesses
+  icon: plug
+  items:
+  - Wiring, harness, connector and pinout drawings
+  - Harness design and component sourcing
+  - Prototype and small-run harness assembly
+  - Integration of boards, connectors and cabling
+- title: Prototypes and checks
+  icon: layers
+  items:
+  - Prototype and small-run PCB assembly
+  - PCB bring-up and controlled power-up
+  - Visual, continuity, pinout and electrical checks as agreed
+  - Functional testing where suitable equipment or a test fixture is available
+
+deliverables_intro: >-
+  The required files, physical assemblies and checks are defined for each project.
+deliverables:
+- Schematics, PCB layouts, bills of materials and agreed manufacturing files
+- Wiring diagrams, harness drawings, pinout tables and assembly information
+- Documented changes to an existing board or electrical assembly
+- Prototype boards or harnesses where assembly is included in scope
+- Agreed inspection, measurement or functional test results
+deliverables_note: >-
+  PCB manufacture is outsourced. Mains-powered product work requires
+  project-specific review of compliance, certification, insurance and testing
+  requirements before it can be accepted. Editable and native files are agreed
+  as part of the scope.
+
+gallery_heading: Electronics examples
+gallery_intro: >-
+  Examples include completed harness work and several forms of electronics
+  documentation.
 images:
-- { src: "/assets/images-src/services/electronics/gallery/draft-harness-01.jpg",
-alt: "Wire harness for agricultural implement.",
-caption: "Wire harness for agricultural implement." }
-- { src: "/assets/images-src/services/electronics/gallery/draft-schematic-01.jpg",
-alt: "Power generation schematic for a PCB.",
-caption: "Power generation schematic for a PCB." }
-- { src: "/assets/images-src/services/electronics/gallery/draft-pcb-01.jpg",
-alt: "Finalised PCB design.",
-caption: "Finalised PCB design." }
+- src: /assets/images-src/projects/overnight-connector-harnesses/hero/harnesses-bench.jpg
+  alt: Six completed replacement connector harnesses on a workshop bench
+  caption: Six replacement harnesses documented and assembled from a damaged sample, then checked before handover.
+- src: /assets/images-src/services/electronics/gallery/draft-harness-01.jpg
+  alt: Prototype wiring harness drawing with connectors, wire details and pinout information
+  caption: Prototype harness documentation for an agricultural equipment development project; the wider project did not proceed to production.
+- src: /assets/images-src/services/electronics/gallery/draft-schematic-01.jpg
+  alt: PCB power-generation schematic with component references and circuit notes
+  caption: Power-generation section of a PCB schematic.
+- src: /assets/images-src/services/electronics/gallery/draft-pcb-01.jpg
+  alt: PCB drawing showing board geometry, component placement and reference information
+  caption: PCB layout documentation showing board geometry and component placement.
+
+related_services:
+- label: CAD & Technical Drafting
+  url: /services/drafting/
+- label: Embedded Systems & Firmware
+  url: /services/programming/
+- label: 3D Printing & Prototyping
+  url: /services/3d-printing/
+
+contact_heading: Discuss an electronics project
+contact_intro: >-
+  Use the form to describe the equipment, required function and current project stage.
+contact_message_prompt: >-
+  What equipment, board or electrical assembly are you working with, and what
+  needs to change?
+contact_message_help: >-
+  Useful details include photographs, existing schematics or board files,
+  supply voltage, signals, interfaces, connectors, quantity, size constraints
+  and expected checks or handover files.
 ---
-
-<div class="wrapper-page">
-	<section class="page electronics" id="electronics">
-		<div class="wrapper-hero">
-			<h1>Connect <span class="highlight-bold">designs</span> with
-				<span class="highlight-red">electronics</span><span class="highlight-bold">.</span>
-			</h1>
-			<div class="wrapper-hero-paragraph">
-				<p>
-					Electronics and PCB design for prototypes, control systems, and
-					field equipment.
-				</p>
-				<p>
-					Work includes schematic capture, PCB layout, and wiring harness
-					design, with outputs suited to build, test, and integration.
-				</p>
-				<p>
-					Projects are developed with a focus on reliability,
-					manufacturability, and practical use in real-world environments.
-				</p>
-			</div><!--/wrapper-hero-paragraph-->
-		</div><!--/wrapper-hero-->
-		<div class="wrapper-benefits">
-			<h2>Why this electronics approach works</h2>
-			<ul class="benefits">
-				<li>
-					<span class="lucide-icon benefit benefit-1" aria-hidden="true">{% include lucide/plug.svg %}</span>
-					<h3>PCB and Harness Integration</h3>
-					<p>
-						Boards, wiring and connectors designed together for reliable
-						system integration.
-					</p>
-				</li>
-
-				<li>
-					<span class="lucide-icon benefit benefit-2" aria-hidden="true">{% include lucide/layers.svg %}</span>
-					<h3>Prototype to Build</h3>
-					<p>
-						From initial design through to build-ready documentation and
-						testable prototypes.
-					</p>
-				</li>
-
-				<li>
-					<span class="lucide-icon benefit benefit-3" aria-hidden="true">{% include lucide/shield-check.svg %}</span>
-					<h3>Field-Ready Design</h3>
-					<p>
-						Protection, wiring and layout suited to industrial and
-						outdoor environments.
-					</p>
-				</li>
-			</ul>
-		</div>
-		<h2>Example work</h2>
-		{% include lightbox.html images=page.images id='electronics' %}
-		<div id="wrapper-contact">
-			<h2>Start a project</h2>
-
-			{% include contact_form.html %}
-		</div><!--/wrapper-contact-->
-	</section>
-</div><!--/wrapper-page-->
-
-{% include service.html %}
