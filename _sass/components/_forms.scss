@@ -157,7 +157,7 @@
 
 		.form-button-contact {
 			min-width: auto;
-			margin-bottom: 2rem;
+			margin-bottom: 1rem;
 			padding: 1rem;
 			border: none;
 			background-color: s.$colour_accent_brand;
@@ -171,9 +171,34 @@
 			opacity: 0.72;
 		}
 
+		.form-collection-notice {
+			width: 100%;
+			margin: 0 0 1rem;
+			color: rgba(34, 34, 34, 0.72);
+			font-size: 0.875rem;
+			line-height: 1.5;
+
+			a {
+				color: s.$colour_accent_tech;
+				font-size: inherit;
+				text-decoration: underline;
+				text-underline-offset: 0.15em;
+
+				&:hover {
+					color: s.$colour_accent_brand;
+				}
+
+				&:focus-visible {
+					border-radius: 2px;
+					outline: 2px solid rgba(0, 0, 0, 0.3);
+					outline-offset: 3px;
+				}
+			}
+		}
+
 		.form-status {
 			min-height: 1.4em;
-			margin: -1rem 0 0;
+			margin: 0;
 			color: s.$colour_text_muted;
 			font-size: 0.95rem;
 			font-weight: 650;
@@ -198,6 +223,10 @@
 	overflow: hidden !important;
 	opacity: 0 !important;
 	pointer-events: none !important;
+}
+
+.grecaptcha-badge {
+	visibility: hidden;
 }
 
 @include s.respond(md) {

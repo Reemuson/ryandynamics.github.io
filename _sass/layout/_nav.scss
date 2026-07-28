@@ -3,7 +3,7 @@
 @use "../settings" as s;
 @use "sass:color";
 
-nav {
+.site-navigation {
 	background: s.$colour_nav;
 	top: 2.5vh;
 	height: s.$layout_nav_height;
@@ -158,7 +158,7 @@ nav {
 }
 
 @include s.respond(lg) {
-	nav {
+	.site-navigation {
 		position: static;
 		border-radius: 0;
 		margin: 0;

@@ -2,7 +2,7 @@
 	var activeGallery = null;
 
 	var setupNav = function () {
-		var nav = document.querySelector('nav');
+		var nav = document.querySelector('.site-navigation');
 		var toggle = document.querySelector('.nav-toggle');
 		var menu = document.getElementById('primary-navigation');
 		var dropdowns = Array.prototype.slice.call(nav ? nav.querySelectorAll('details') : []);
@@ -821,7 +821,7 @@
 							recaptchaField.value = '';
 						}
 
-						setStatus('Something went wrong. Please try again, or email Ryan Dynamics directly.', 'error');
+						setStatus('Your enquiry could not be sent. Please check your connection and try again later.', 'error');
 						resetSubmitButton();
 						debugLog('error', 'submission failed', error);
 					});

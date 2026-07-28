@@ -2,19 +2,75 @@
 
 @use "../settings" as s;
 
-footer {
+.site-footer {
 	flex: 0 0 auto;
 	width: 100%;
-	min-height: 2.5rem;
-	padding: 0.65rem 2rem;
+	padding: 1rem 2rem;
 	background-color: s.$colour_text_muted;
 	color: s.$colour_surface;
-	font-size: 0.8rem;
+	font-size: 0.875rem;
 	font-weight: 500;
-	text-align: center;
 	line-height: 1.4;
 
+	.footer-inner {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 0.65rem;
+		width: 100%;
+		max-width: s.$layout_max_width;
+		margin: 0 auto;
+	}
+
+	.footer-business {
+		margin: 0;
+		text-align: center;
+	}
+
+	.footer-links {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+
+		li + li::before {
+			content: "·";
+			margin: 0 0.75rem;
+			color: rgba(255, 255, 255, 0.65);
+		}
+	}
+
+	a {
+		color: s.$colour_surface;
+		font-size: inherit;
+		text-decoration: underline;
+		text-decoration-color: transparent;
+		text-underline-offset: 0.2em;
+		transition: text-decoration-color 0.15s ease;
+
+		&:hover {
+			text-decoration-color: currentColor;
+		}
+
+		&:focus-visible {
+			border-radius: 2px;
+			outline: 2px solid s.$colour_surface;
+			outline-offset: 3px;
+			text-decoration-color: currentColor;
+		}
+	}
+
 	@include s.respond(lg) {
-		font-size: s.$type_p;
+		.footer-inner {
+			flex-direction: row;
+			justify-content: space-between;
+			gap: 2rem;
+		}
+
+		.footer-business {
+			text-align: left;
+		}
 	}
 }

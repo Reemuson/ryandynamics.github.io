@@ -1,3 +1,14 @@
-<footer>
-	<p>© 2020–{{ site.time | date: "%Y" }} Ryan Dynamics • Newcastle, NSW</p>
+<footer class="site-footer">
+	<div class="footer-inner">
+		<p class="footer-business">
+			© 2020–{{ site.time | date: "%Y" }} Ryan Dynamics · ABN {{ site.business.abn }} · Newcastle, NSW
+		</p>
+		<nav class="footer-navigation" aria-label="Legal and business information">
+			<ul class="footer-links">
+				<li><a href="{{ '/privacy/' | relative_url }}">Privacy</a></li>
+				<li><a href="{{ '/website-terms/' | relative_url }}">Website Terms</a></li>
+				<li><a href="{{ '/contact/' | relative_url }}">Contact</a></li>
+			</ul>
+		</nav>
+	</div>
 </footer>
