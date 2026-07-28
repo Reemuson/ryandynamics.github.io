@@ -1,0 +1,19 @@
+{% if site.data.testimonials and site.data.testimonials.size > 0 %}
+<section class="home-section wrapper-testimonials" aria-labelledby="testimonials-title">
+	<h2 id="testimonials-title">Client feedback</h2>
+	<ul class="testimonial-list">
+		{% for testimonial in site.data.testimonials %}
+		<li class="testimonial">
+			<figure>
+				<blockquote>
+					<p>“{{ testimonial.quote }}”</p>
+				</blockquote>
+				<figcaption>
+					<cite>{{ testimonial.attribution }}</cite>
+				</figcaption>
+			</figure>
+		</li>
+		{% endfor %}
+	</ul>
+</section>
+{% endif %}

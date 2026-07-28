@@ -1,0 +1,52 @@
+// _sass/components/_testimonials.scss
+
+@use "../settings" as s;
+
+.wrapper-testimonials {
+	padding-top: 2rem;
+	border-top: 1px solid rgba(s.$colour_text, 0.16);
+
+	.testimonial-list {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr);
+		gap: 1.5rem;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	.testimonial {
+		min-width: 0;
+		padding-left: 1.25rem;
+		border-left: 3px solid s.$colour_accent_brand;
+
+		figure,
+		blockquote,
+		p {
+			margin: 0;
+		}
+
+		blockquote {
+			max-width: 64ch;
+			line-height: 1.65;
+		}
+
+		figcaption {
+			margin-top: 0.9rem;
+			color: s.$colour_text_muted;
+			font-size: 0.9rem;
+		}
+
+		cite {
+			font-style: normal;
+			font-weight: 650;
+		}
+	}
+}
+
+@include s.respond(md) {
+	.wrapper-testimonials .testimonial-list {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 2rem;
+	}
+}

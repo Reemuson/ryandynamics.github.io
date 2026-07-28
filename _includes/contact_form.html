@@ -142,8 +142,9 @@ Useful details can include photos, measurements, part numbers, power, signals, m
 				</div>
 			</div>
 
-			<button class="button form-button-contact" type="submit" data-submit-label="Send Enquiry">
-				Send Enquiry
+			{% assign submit_label = page.contact_submit_label | default: 'Send Enquiry' %}
+			<button class="button form-button-contact" type="submit" data-submit-label="{{ submit_label }}">
+				{{ submit_label }}
 			</button>
 
 			<p class="form-collection-notice">

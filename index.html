@@ -1,14 +1,15 @@
 ---
 layout: default
-title: Electronics & Control Systems for Real-World Hardware — Newcastle NSW
-description: Embedded electronics, control systems, and hardware development in Newcastle NSW.
+title: Electronics, Firmware & Technical Design — Newcastle NSW
+description: Electronics design, embedded firmware, CAD and practical prototyping support in Newcastle, NSW.
 permalink: /
 
 lead_source: Home Page
 site_section: home
-contact_form_title: Start a project discussion
-contact_form_intro: Typical projects include electronics, embedded control, product design and prototyping.
+contact_form_title: Discuss a project
+contact_form_intro: Send through the available details and any known requirements or constraints.
 contact_project_type: Select Project Type
+show_testimonials: false
 ---
 
 <div class="wrapper-page">
@@ -16,144 +17,177 @@ contact_project_type: Select Project Type
 		<div class="wrapper-hero">
 			<div class="box-1">
 				<h1 class="hero-title">
-					Where <span class="highlight-red">ideas</span>
-					<span class="hero-title-line">
-						<span class="highlight-red">switch</span>
-						into <span class="highlight-bold">action.</span>
-					</span>
+					Electronics, firmware and technical design for real-world equipment.
 				</h1>
-
-				<p class="hero-tags">
-					Newcastle, NSW • Electronics • Sensing • Firmware • Integration
-				</p>
 
 				<div class="wrapper-hero-paragraph">
 					<p>
-						Embedded electronics and control systems built for real-world equipment.
+						Ryan Dynamics develops custom electronics, embedded firmware, CAD
+						documentation and functional prototypes for equipment, one-off systems and
+						specialised applications. Based in Newcastle, NSW.
 					</p>
 				</div>
 
 				<div class="hero-cta">
-					<a href="projects-and-insights/"
+					<a href="{{ '/projects-and-insights/' | relative_url }}"
 						class="button button-projects">
-						View Projects
+						View Recent Work
 					</a>
-					<a href="#wrapper-contact" class="button button-secondary">
-						Start a Project
+					<a href="#wrapper-contact"
+						class="button button-secondary">
+						Discuss a Project
 					</a>
 				</div>
 			</div>
 
 			<div class="box-2">
 				<figure class="hero-figure">
-					<a href="services/electronics/">
+					<a href="{{ '/services/electronics/' | relative_url }}">
 						{% assign hero_src =
 						'/assets/images-src/services/electronics/hero/render-pcb-02.png' |
 						remove_first: '/assets/images-src/' %}
-						{% picture hero {{ hero_src }} --alt annotated PCB render showing labelled test points, connectors and protection circuitry %}
+						{% picture hero {{ hero_src }} --alt PCB render showing labelled test points, connectors and protection circuitry %}
 					</a>
 					<figcaption class="hero-caption">
-						Infrared to USB interface.
+						PCB design for an infrared-to-USB interface.
 					</figcaption>
 				</figure>
 			</div>
 		</div><!--/wrapper-hero-->
 
-		<div class="wrapper-benefits" id="capabilities">
-			<h2>Capabilities</h2>
+		<section class="home-section wrapper-problems" aria-labelledby="problems-title">
+			<div class="section-intro">
+				<h2 id="problems-title">Problems Ryan Dynamics can help solve</h2>
+				<p>
+					Some projects begin with a developed specification. Others begin with a damaged
+					part, incomplete documentation or equipment that needs a new function.
+				</p>
+			</div>
+
+			<ul class="problem-list">
+				<li>An obsolete or damaged electronic, wiring or mechanical part needs to be replaced.</li>
+				<li>Existing equipment needs a custom interface, controller, sensor or adapter.</li>
+				<li>A concept needs to be developed into electronics, firmware, CAD or a working prototype.</li>
+				<li>A physical component needs to be measured, documented, reproduced or modified.</li>
+				<li>Boards, wiring and mechanical components need to work together as a complete assembly.</li>
+			</ul>
+		</section>
+
+		<section class="home-section wrapper-selected-work" id="selected-work"
+			aria-labelledby="selected-work-title">
+			<h2 id="selected-work-title">Selected work</h2>
+			<ul class="selected-work-list">
+				<li class="selected-work-item">
+					<figure class="selected-work-media">
+						<a href="{{ '/project/overnight-connector-harnesses/' | relative_url }}">
+							{% assign selected_work_src =
+							'/assets/images-src/projects/overnight-connector-harnesses/hero/harnesses-bench.jpg' |
+							remove_first: '/assets/images-src/' %}
+							{% picture thumb {{ selected_work_src }} --alt six completed replacement connector harnesses on a workshop bench %}
+						</a>
+					</figure>
+					<div class="selected-work-copy">
+						<h3>Replacement harnesses produced from a damaged sample</h3>
+						<p>
+							A geophysical survey equipment client required six replacement connector
+							harnesses for a mobile charging station. Working from a damaged sample, the
+							harnesses were documented, assembled and electrically checked within an
+							overnight turnaround. The client confirmed that the replacements operated
+							correctly.
+						</p>
+						<a href="{{ '/project/overnight-connector-harnesses/' | relative_url }}"
+							class="button button-secondary">
+							View Project
+						</a>
+					</div>
+				</li>
+			</ul>
+		</section>
+
+		<section class="home-section wrapper-benefits" id="capabilities"
+			aria-labelledby="capabilities-title">
+			<h2 id="capabilities-title">Capabilities</h2>
 
 			<ul class="service-list">
 				<li class="service-card">
 					<div class="service-head">
 						<span class="lucide-icon service-icon" aria-hidden="true">{% include lucide/zap.svg %}</span>
-						<h3>Electronics</h3>
+						<h3>Electronics Design</h3>
 					</div>
 					<ul class="service-points">
-						<li>Custom PCB design</li>
+						<li>Schematics and custom PCB design</li>
 						<li>Power, sensing and protection</li>
-						<li>Harness design and integration</li>
+						<li>Connectors, wiring and harness integration</li>
 					</ul>
-					<a href="services/electronics/" class="button button-learn">
-						View Electronics Work
+					<a href="{{ '/services/electronics/' | relative_url }}"
+						class="button button-learn service-link">
+						Electronics
 					</a>
 				</li>
 
 				<li class="service-card">
 					<div class="service-head">
 						<span class="lucide-icon service-icon" aria-hidden="true">{% include lucide/cpu.svg %}</span>
-						<h3>Embedded &amp; Control</h3>
+						<h3>Embedded Systems</h3>
 					</div>
 					<ul class="service-points">
-						<li>Embedded C firmware</li>
-						<li>Control integration and bring-up</li>
-						<li>Automation and tooling</li>
+						<li>Embedded firmware</li>
+						<li>Sensor, actuator and control integration</li>
+						<li>Test, automation and development tools</li>
 					</ul>
-					<a href="services/programming/" class="button button-learn">
-						View Control Work
+					<a href="{{ '/services/programming/' | relative_url }}"
+						class="button button-learn service-link">
+						Embedded Systems
 					</a>
 				</li>
 
 				<li class="service-card">
 					<div class="service-head">
 						<span class="lucide-icon service-icon" aria-hidden="true">{% include lucide/compass.svg %}</span>
-						<h3>Industrial Design</h3>
+						<h3>CAD &amp; Technical Documentation</h3>
 					</div>
 					<ul class="service-points">
-						<li>Manufacture-focused CAD</li>
-						<li>Technical drawing packages</li>
-						<li>Assembly-aware design</li>
+						<li>CAD models and technical drawings</li>
+						<li>Reverse engineering and documentation</li>
+						<li>Component and assembly design</li>
 					</ul>
-					<a href="services/drafting/" class="button button-learn">
-						View Design Work
+					<a href="{{ '/services/drafting/' | relative_url }}"
+						class="button button-learn service-link">
+						Design &amp; Drafting
 					</a>
 				</li>
 
 				<li class="service-card">
 					<div class="service-head">
 						<span class="lucide-icon service-icon" aria-hidden="true">{% include lucide/box.svg %}</span>
-						<h3>Additive Manufacturing</h3>
+						<h3>Prototypes &amp; Short-Run Parts</h3>
 					</div>
 					<ul class="service-points">
-						<li>Functional prototypes</li>
-						<li>Small-batch parts</li>
-						<li>Material-driven iteration</li>
+						<li>Functional prototypes and enclosures</li>
+						<li>Small-batch printed components</li>
+						<li>Material selection and design iteration</li>
 					</ul>
-					<a href="services/3d-printing/" class="button button-learn">
-						View Manufacturing Work
+					<a href="{{ '/services/3d-printing/' | relative_url }}"
+						class="button button-learn service-link">
+						Prototyping
 					</a>
 				</li>
 			</ul>
-		</div><!--/wrapper-benefits-->
+		</section><!--/wrapper-benefits-->
 
-		<div class="wrapper-proof" id="typical-projects">
-			<div class="proof-panel">
-				<div class="proof-head">
-					<h2>Typical projects</h2>
-					<p class="proof-lede">
-						Ryan Dynamics supports practical hardware work from one-off
-						prototypes through to refined technical builds.
-					</p>
-				</div>
-
-				<ul class="proof-list">
-					<li>Custom control and protection electronics</li>
-					<li>Embedded firmware for sensing and automation</li>
-					<li>CAD, drafting and build-ready technical packages</li>
-					<li>Functional prototypes and short-run printed parts</li>
-				</ul>
-
-				<p class="proof-note">
-					Common applications include industrial equipment, field systems,
-					test fixtures, and prototype hardware.
-				</p>
-			</div>
-		</div>
+		{% if page.show_testimonials %}
+			{% include testimonials.html %}
+		{% endif %}
 
 		<div id="wrapper-contact">
-			<h2>Start a discussion</h2>
+			<h2>Discuss a project</h2>
+			<p class="contact-intro">
+				If you have a project, damaged part or incomplete design you would like to
+				discuss, use the form below. A complete specification is not necessary for an
+				initial enquiry.
+			</p>
 
 			{% include contact_form.html %}
 		</div><!--/wrapper-contact-->
 	</section>
 </div><!--/wrapper-page-->
-
