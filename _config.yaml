@@ -1,6 +1,6 @@
 title: Ryan Dynamics
 description: Industrial design, electronics & 3D printing in Newcastle, NSW, Australia
-url: https://www.ryandynamics.com
+url: https://www.ryandynamics.com.au
 baseurl: ""
 
 timezone: Australia/Sydney
@@ -9,7 +9,7 @@ recaptcha_site_key: "6Lf_MkstAAAAAPo44WcvGzZePeO-UaArZMl2BX_h"
 business:
   name: "Ryan Dynamics"
   legal_name: "Ryan Dynamics"
-  url: "https://www.ryandynamics.com"
+  url: "https://www.ryandynamics.com.au"
   logo: "/assets/images-src/shared/logos/logo-block.jpg"
   # image: ""
   abn: "18 531 301 208"
