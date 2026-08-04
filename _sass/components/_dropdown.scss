@@ -64,8 +64,8 @@
 			top: calc(100% + #{s.$layout_dropdown_gap});
 			left: 50%;
 			transform: translateX(-50%);
-			width: 13rem;
-			min-width: 0;
+			width: max-content;
+			min-width: 13rem;
 			margin: 0;
 			padding: 0.35rem;
 			z-index: 1300;
@@ -86,6 +86,7 @@
 				border: 1px solid transparent;
 				font-size: s.$type_p;
 				font-weight: 600;
+				white-space: nowrap;
 
 				&:hover,
 				&:focus-visible {

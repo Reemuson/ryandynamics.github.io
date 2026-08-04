@@ -15,10 +15,10 @@ layout: default
 				{% endif %}
 				<div class="service-hero-actions">
 					<a href="#wrapper-contact" class="button button-projects">
-						{{ page.hero_primary_cta | default: 'Discuss a Project' }}
+						{{ page.hero_primary_cta | default: 'Discuss a project' }}
 					</a>
 					<a href="#service-capabilities" class="button button-secondary">
-						View Capabilities
+						View capabilities
 					</a>
 				</div>
 			</div>
@@ -36,7 +36,7 @@ layout: default
 
 		<section class="service-section service-fit" aria-labelledby="service-fit-title">
 			<div class="service-section-heading">
-				<h2 id="service-fit-title">{{ page.fit_heading | default: 'This service may fit when' }}</h2>
+				<h2 id="service-fit-title">{{ page.fit_heading | default: 'When this service is suitable' }}</h2>
 				{% if page.fit_intro %}<p>{{ page.fit_intro }}</p>{% endif %}
 			</div>
 			<ul class="service-fit-list">

@@ -42,7 +42,7 @@
 			<div class="form-row">
 				<div class="field">
 					<label for="contact_project_type" class="label">
-						Project Type <span class="required-mark">*</span>
+						Project type <span class="required-mark">*</span>
 					</label>
 
 					<select id="contact_project_type" name="project_type"
@@ -57,25 +57,25 @@
 						<option value="Electronics Design" {% if
 							page.contact_project_type=="Electronics Design" %}selected{%
 							endif %}>
-							Electronics Design
+							Electronics design
 						</option>
 
 						<option value="Embedded & Control" {% if
 							page.contact_project_type=="Embedded & Control" %}selected{%
 							endif %}>
-							Embedded Systems &amp; Firmware
+							Embedded firmware
 						</option>
 
 						<option value="Industrial Design" {% if
 							page.contact_project_type=="Industrial Design" %}selected{%
 							endif %}>
-							CAD &amp; Technical Drafting
+							CAD and technical drafting
 						</option>
 
 						<option value="Additive Manufacturing" {% if
 							page.contact_project_type=="Additive Manufacturing" %}selected{%
 							endif %}>
-							3D Printing &amp; Prototyping
+							3D printing and prototyping
 						</option>
 
 						<option value="Multi-disciplinary" {% if
@@ -86,7 +86,7 @@
 
 						<option value="Not Sure" {% if page.contact_project_type=="Not Sure"
 							%}selected{% endif %}>
-							Not Sure
+							Not sure
 						</option>
 
 					</select>
@@ -95,7 +95,7 @@
 
 				<div class="field">
 					<label for="contact_project_stage" class="label">
-						Project Stage
+						Project stage
 						<span class="optional-mark">(optional)</span>
 					</label>
 
@@ -107,7 +107,7 @@
 						</option>
 
 						<option value="Idea / Concept">
-							Idea / Concept
+							Idea or concept
 						</option>
 
 						<option value="Existing problem to solve">
@@ -115,7 +115,7 @@
 						</option>
 
 						<option value="Early Prototype">
-							Early Prototype
+							Early prototype
 						</option>
 
 						<option value="Refinement for manufacture">
@@ -128,13 +128,13 @@
 
 			<div class="fieldtext">
 				<label for="contact_message" class="label">
-					Project Summary <span class="required-mark">*</span>
+					Project summary <span class="required-mark">*</span>
 				</label>
 
 				{% assign message_prompt = page.contact_message_prompt |
-					default: 'What are you building, what is failing and what outcome do you need?' %}
+					default: 'What are you building, what is failing and what result do you need?' %}
 				{% assign message_help = page.contact_message_help |
-					default: 'Useful details can include photos, measurements, part numbers, power, signals, materials, quantity, environment, or deadline constraints.' %}
+					default: 'Useful details include photographs, measurements, part numbers, power, signals, materials, quantity, environment or deadline constraints.' %}
 				<textarea id="contact_message" name="message" class="input-required" rows="10" required
 					minlength="20" data-save-field aria-describedby="contact_message_error contact_message_count"
 					placeholder="{{ message_prompt | escape }}
@@ -146,14 +146,14 @@
 				</div>
 			</div>
 
-			{% assign submit_label = page.contact_submit_label | default: 'Send Enquiry' %}
+			{% assign submit_label = page.contact_submit_label | default: 'Send enquiry' %}
 			<button class="button form-button-contact" type="submit" data-submit-label="{{ submit_label }}">
 				{{ submit_label }}
 			</button>
 
 			<p class="form-collection-notice">
-				We'll use your details to respond to your enquiry. Don't include sensitive personal
-				information. See our
+				We will use your details to respond to your enquiry. Do not include sensitive
+				personal information. See our
 				<a href="{{ '/privacy/' | relative_url }}">Privacy Policy</a>. This site is protected by
 				reCAPTCHA and the Google
 				<a href="https://policies.google.com/privacy" target="_blank"

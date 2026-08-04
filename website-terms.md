@@ -26,7 +26,7 @@ Ryan Dynamics (ABN 18 531 301 208) is a sole-trader business based in Newcastle,
 
 ## General information only
 
-Website content is provided as general information about Ryan Dynamics, its capabilities and examples of previous work. It is not engineering, electrical, safety, legal or other professional advice for your particular application.
+The website provides general information about Ryan Dynamics, its capabilities and examples of previous work. This content is not professional advice for your application. This includes engineering, electrical, safety and legal advice.
 
 Do not rely on website content, photographs, drawings, specifications, project examples or statements of capability as instructions to design, manufacture, modify, install, operate or maintain equipment. A suitable solution depends on the actual requirements, environment, hazards, standards, interfaces, assumptions, testing and approvals for the specific project.
 
@@ -36,12 +36,12 @@ You should obtain project-specific advice and carry out appropriate design revie
 
 Submitting an enquiry does not:
 
-- require Ryan Dynamics to accept or quote the work;
-- create a client, adviser, contractor or other professional relationship;
-- make information confidential by itself; or
+- require Ryan Dynamics to accept or quote the work
+- create a client, adviser, contractor or other professional relationship
+- make information confidential by itself
 - amount to acceptance of any scope, price, deadline or other term.
 
-Ryan Dynamics will only be engaged when the parties agree to a quotation, proposal or other written terms. Those project-specific terms will prevail over these website terms to the extent of any inconsistency.
+Ryan Dynamics is engaged only when the parties agree to a quotation, proposal or other written terms. If the terms conflict, the project-specific terms take precedence over these website terms.
 
 Do not send trade secrets, passwords, access credentials, export-controlled information or other highly sensitive material through the initial enquiry form. If confidential information is necessary, first ask about an appropriate confidentiality and transfer arrangement.
 
@@ -49,7 +49,7 @@ Do not send trade secrets, passwords, access credentials, export-controlled info
 
 Ryan Dynamics aims to keep website content useful and accurate but does not promise that it is complete, current, error-free or suitable for a particular purpose. Portfolio material may be simplified, anonymised, edited or shown without all project context.
 
-The website may be changed, suspended or withdrawn without notice. Ryan Dynamics does not guarantee uninterrupted access or that the website will always be free from faults, harmful code or third-party interference.
+Ryan Dynamics may change, suspend or withdraw the website without notice. Ryan Dynamics does not guarantee uninterrupted access. Ryan Dynamics also does not guarantee that the website is free from faults, harmful code or third-party interference.
 
 ## Intellectual property
 
@@ -67,20 +67,20 @@ This website uses icons from [Lucide](https://lucide.dev/) under the ISC License
 
 The website may link to, embed or use third-party websites and services. Ryan Dynamics does not control those services and is not responsible for their availability, security, content or privacy practices. A link or reference does not necessarily amount to endorsement.
 
-Your use of a third-party service may be subject to that provider's terms and privacy policy.
+A third-party provider may apply its terms and privacy policy to your use of its service.
 
 ## Liability
 
 To the maximum extent permitted by law, Ryan Dynamics is not liable for loss arising solely from:
 
-- reliance on general website content without a project-specific engagement;
-- inability to access or use the website;
-- a third-party website or service; or
+- reliance on general website content without a project-specific engagement
+- inability to access or use the website
+- a third-party website or service
 - unauthorised alteration, misuse or distribution of website content.
 
 Nothing in these terms excludes, restricts or modifies a guarantee, right, remedy or liability that cannot lawfully be excluded, restricted or modified, including applicable rights under the *Australian Consumer Law*.
 
-Any liability arising from services actually provided by Ryan Dynamics will be governed by the applicable quotation, proposal or terms of engagement, together with any rights that cannot lawfully be excluded.
+The applicable quotation, proposal or engagement terms govern liability from services that Ryan Dynamics provides. Rights that cannot lawfully be excluded also apply.
 
 ## Privacy
 
@@ -92,7 +92,7 @@ These terms are governed by the laws of New South Wales, Australia. The parties 
 
 ## Changes to these terms
 
-These terms may be updated from time to time. The current version and its effective date will be published on this page.
+Ryan Dynamics may update these terms. Ryan Dynamics publishes the current version and its effective date on this page.
 
 ## Contact
 

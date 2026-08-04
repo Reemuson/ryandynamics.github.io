@@ -10,35 +10,34 @@ body_class: page-404
 <div class="wrapper-page">
 	<section class="page four-oh-four" id="four-oh-four">
 		<div class="four-oh-four-hero">
-			<h1>That page is not here.</h1>
+			<h1>Page not found</h1>
 			<div class="wrapper-hero-paragraph">
 				<p>
-					The page you're after either moved or never existed. Here are the quickest ways back into the
-					site.
+					The page moved or did not exist. Use one of these links to continue.
 				</p>
 			</div><!--/wrapper-hero-paragraph-->
 			<div class="hero-cta">
-				<a class="button button-projects" href="{{ '/' | relative_url }}">Back to Home</a>
+				<a class="button button-projects" href="{{ '/' | relative_url }}">Return home</a>
 				<a class="button button-learn" href="{{ '/services/electronics/' | relative_url }}">Services</a>
-				<a class="button button-secondary" href="{{ '/projects-and-insights/' | relative_url }}">Projects &amp; Insights</a>
+				<a class="button button-secondary" href="{{ '/projects-and-insights/' | relative_url }}">Projects and insights</a>
 			</div>
 		</div><!--/four-oh-four-hero-->
 
 		<div class="four-oh-four-grid">
 			<div class="four-oh-four-card">
 				<h2>Services</h2>
-				<p>Browse the main service pages for drafting, 3D printing, electronics, or embedded work.</p>
+				<p>View the main service pages for drafting, 3D printing, electronics or embedded firmware.</p>
 				<ul>
-					<li><a href="{{ '/services/drafting/' | relative_url }}">Design &amp; Drafting</a></li>
-					<li><a href="{{ '/services/3d-printing/' | relative_url }}">3D Printing</a></li>
-					<li><a href="{{ '/services/electronics/' | relative_url }}">Electronics Design</a></li>
-					<li><a href="{{ '/services/programming/' | relative_url }}">Embedded &amp; Control</a></li>
+					<li><a href="{{ '/services/drafting/' | relative_url }}">CAD and technical drafting</a></li>
+					<li><a href="{{ '/services/3d-printing/' | relative_url }}">3D printing and prototyping</a></li>
+					<li><a href="{{ '/services/electronics/' | relative_url }}">Electronics design</a></li>
+					<li><a href="{{ '/services/programming/' | relative_url }}">Embedded firmware</a></li>
 				</ul>
 			</div>
 
 			<div class="four-oh-four-card">
-				<h2>Projects &amp; Insights</h2>
-				<p>See recent case studies and practical notes from real hardware work.</p>
+				<h2>Projects and insights</h2>
+				<p>View recent case studies and practical notes from hardware work.</p>
 				{% assign recent_projects = site.project | sort: 'date' | reverse | slice: 0, 3 %}
 				<ul>
 					{% for p in recent_projects %}
@@ -49,8 +48,8 @@ body_class: page-404
 
 			<div class="four-oh-four-card">
 				<h2>Contact</h2>
-				<p>If you were trying to start a project, head back to the form and send the details through.</p>
-				<a class="button button-secondary" href="{{ '/contact/' | relative_url }}">Start a Project</a>
+				<p>To start a project, return to the form and send the project details.</p>
+				<a class="button button-secondary" href="{{ '/contact/' | relative_url }}">Start a project</a>
 			</div>
 		</div><!--/four-oh-four-grid-->
 	</section>
