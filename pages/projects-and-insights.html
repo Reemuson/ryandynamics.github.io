@@ -9,18 +9,16 @@ redirect_from: [/projects-and-insights, /projects-and-insights.html]
 <div class="wrapper-page">
 	<section class="page projects-and-insights" id="projects-and-insights">
 		<div class="wrapper-hero">
-			<h1>Technical <span class="highlight-bold">projects</span> and
-				<span class="highlight-red">insights.</span>
-			</h1>
+			<h1>Projects and insights.</h1>
 			<div class="wrapper-hero-paragraph">
 				<p>
-					Case studies and technical notes from hardware, CAD, electronics,
-					firmware and functional prototyping work.
+					Project examples and technical notes about hardware, CAD, electronics,
+					firmware and functional prototypes.
 				</p>
 			</div><!--/wrapper-hero-paragraph-->
 		</div><!--/wrapper-hero-->
 
-		<details class="project-filters" data-filter-controls hidden>
+		<details class="project-filters" data-filter-controls aria-hidden="true">
 			<summary>
 				<span>Filter and sort</span>
 				<span data-filter-count></span>
@@ -33,11 +31,11 @@ redirect_from: [/projects-and-insights, /projects-and-insights.html]
 		</details>
 
 		<div class="wrapper-projects" data-filter-section>
-			<h2 class="section-title">Projects</h2>
+			<h2 class="section-title">Project examples</h2>
 			<div class="wrapper-section-paragraph">
 				<p>
-					Selected builds with constraints, design decisions and implementation
-					notes. Measured results are included when available.
+					Selected builds show the requirements, design decisions and implementation
+					work. Results are included when they are available.
 				</p>
 			</div><!--/wrapper-section-paragraph-->
 			<div class="wrapper-card">
@@ -52,9 +50,9 @@ redirect_from: [/projects-and-insights, /projects-and-insights.html]
 			</div><!--/wrapper-card-->
 		</div><!--/wrapper-projects-->
 		<div class="wrapper-insights" data-filter-section>
-			<h2 class="section-title">Insights</h2>
+			<h2 class="section-title">Technical insights</h2>
 			<div class="wrapper-section-paragraph">
-				<p>Practical notes about materials, process choices, trade-offs and hardware development decisions.</p>
+				<p>Practical notes about materials, process choices, trade-offs and hardware development.</p>
 			</div><!--/wrapper-section-paragraph-->
 			<div class="wrapper-card">
 				{% if site.insight and site.insight != empty %}

@@ -422,7 +422,7 @@
 		state.tags = state.tags.filter(function (tag, index) {
 			return tags.indexOf(tag) !== -1 && state.tags.indexOf(tag) === index;
 		});
-		controls.hidden = false;
+		controls.setAttribute('aria-hidden', 'false');
 
 		if (state.kind !== 'all' || state.tags.length || state.sort !== 'desc') {
 			controls.open = true;
@@ -606,6 +606,29 @@
 			var successRedirect = form.getAttribute('data-success-redirect') || '';
 			var debugConsole = /^(localhost|127\.0\.0\.1)$/.test(window.location.hostname);
 			var storageKey = 'contact-form:' + window.location.pathname;
+			var recaptchaPromise = null;
+
+			var loadRecaptcha = function () {
+				if (window.grecaptcha && typeof window.grecaptcha.execute === 'function') {
+					return Promise.resolve(window.grecaptcha);
+				}
+
+				if (recaptchaPromise) {
+					return recaptchaPromise;
+				}
+
+				recaptchaPromise = new Promise(function (resolve, reject) {
+					var script = document.createElement('script');
+					script.src = 'https://www.google.com/recaptcha/api.js?render=' + encodeURIComponent(recaptchaSiteKey);
+					script.async = true;
+					script.defer = true;
+					script.onload = function () { waitForRecaptcha().then(resolve, reject); };
+					script.onerror = function () { reject(new Error('Could not load reCAPTCHA')); };
+					document.head.appendChild(script);
+				});
+
+				return recaptchaPromise;
+			};
 
 			var getSavedDraft = function () {
 				try {
@@ -780,7 +803,7 @@
 				}
 
 				// Grab a fresh v3 token right before submit because tokens expire quickly.
-				waitForRecaptcha()
+				loadRecaptcha()
 					.then(function (grecaptcha) {
 						if (!recaptchaSiteKey) {
 							throw new Error('Missing reCAPTCHA site key');
