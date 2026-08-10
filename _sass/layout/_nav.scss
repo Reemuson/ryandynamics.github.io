@@ -36,7 +36,7 @@
 		.logo {
 			display: block;
 			height: calc(s.$layout_nav_height * 1.5);
-			width: auto;
+			width: calc(s.$layout_nav_height * 1.5);
 			z-index: 11;
 		}
 	}

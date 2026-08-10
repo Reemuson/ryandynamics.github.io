@@ -113,14 +113,15 @@ $entry-surface-table-hover: rgba(0, 0, 0, 0.05);
 		display: block;
 		width: 100%;
 		max-width: 100%;
+		aspect-ratio: $entry-hero-aspect-ratio;
+		overflow: hidden;
 	}
 
 	.entry-hero-media img {
 		display: block;
 		width: 100%;
 		max-width: 100%;
-		height: auto;
-		aspect-ratio: $entry-hero-aspect-ratio;
+		height: 100%;
 		object-fit: cover;
 		object-position: var(--entry-hero-position, center);
 		border: 1px solid $entry-border-media;

@@ -1,7 +1,7 @@
 presets:
   thumb:
     formats: [webp, jpg]
-    widths: [360, 540, 720, 960]
+    widths: [320, 480, 640, 800]
     size: "(min-width: 1200px) 360px, (min-width: 768px) 45vw, 92vw"
     dimension_attributes: true
     format_quality:
@@ -25,8 +25,8 @@ presets:
 
   hero:
     formats: [webp, jpg]
-    widths: [400, 640, 960, 1200, 1600]
-    size: "(min-width: 1200px) 560px, (min-width: 900px) 45vw, 96vw"
+    widths: [360, 400, 640, 720, 800, 1200, 1600]
+    size: "(min-width: 1200px) 560px, (min-width: 900px) 45vw, 92vw"
     dimension_attributes: true
     format_quality:
       webp: 90
