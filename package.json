@@ -1,0 +1,16 @@
+{
+	"private": true,
+	"scripts": {
+		"build": "bundle exec jekyll build",
+		"serve": "bundle exec jekyll serve",
+		"setup:chrome": "npx @puppeteer/browsers install chrome@stable",
+		"lighthouse:mobile": "node scripts/run-lighthouse.mjs mobile",
+		"lighthouse:desktop": "node scripts/run-lighthouse.mjs desktop",
+		"check:performance": "npm run lighthouse:mobile && npm run lighthouse:desktop"
+	},
+	"devDependencies": {
+		"@puppeteer/browsers": "2.10.10",
+		"chrome-launcher": "1.2.1",
+		"lighthouse": "13.4.1"
+	}
+}

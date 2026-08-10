@@ -1,0 +1,44 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Build site",
+			"type": "npm",
+			"script": "build",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"problemMatcher": []
+		},
+		{
+			"label": "Serve site",
+			"type": "npm",
+			"script": "serve",
+			"isBackground": true,
+			"problemMatcher": [],
+			"presentation": {
+				"reveal": "always",
+				"panel": "dedicated"
+			}
+		},
+		{
+			"label": "Lighthouse: mobile",
+			"type": "npm",
+			"script": "lighthouse:mobile",
+			"problemMatcher": []
+		},
+		{
+			"label": "Lighthouse: desktop",
+			"type": "npm",
+			"script": "lighthouse:desktop",
+			"problemMatcher": []
+		},
+		{
+			"label": "Lighthouse: check performance",
+			"type": "npm",
+			"script": "check:performance",
+			"problemMatcher": []
+		}
+	]
+}
