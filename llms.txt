@@ -1,0 +1,23 @@
+# Ryan Dynamics
+
+> Ryan Dynamics provides industrial design, electronics, embedded firmware, CAD drafting, and 3D printing services in Newcastle, NSW, Australia.
+
+## Main pages
+
+- [Home](https://www.ryandynamics.com.au/): Overview of services and selected work.
+- [Projects and insights](https://www.ryandynamics.com.au/projects-and-insights/): Project case studies and technical articles.
+- [Contact](https://www.ryandynamics.com.au/contact/): Project enquiries and contact form.
+- [Privacy policy](https://www.ryandynamics.com.au/privacy/): Privacy information.
+- [Website terms](https://www.ryandynamics.com.au/website-terms/): Website use terms.
+
+## Services
+
+- [Electronics](https://www.ryandynamics.com.au/services/electronics/): Custom PCBs, wiring, and specialised equipment electronics.
+- [Embedded firmware](https://www.ryandynamics.com.au/services/programming/): Firmware for hardware, interfaces, and control logic.
+- [CAD drafting](https://www.ryandynamics.com.au/services/drafting/): Models, drawings, parts, assemblies, and fabrication documentation.
+- [3D printing](https://www.ryandynamics.com.au/services/3d-printing/): Printed prototypes and practical parts.
+
+## Contact
+
+- Email: contact@ryandynamics.com
+- Location: Newcastle, NSW, Australia
